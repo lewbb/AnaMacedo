@@ -157,13 +157,60 @@ section{padding:52px 20px}
 @media(min-width:800px){.hg{display:grid;grid-template-columns:1.2fr 340px;gap:48px;align-items:center;max-width:1100px}.hpic{display:flex}
 .two{grid-template-columns:1.3fr 1fr;align-items:start}.two aside{position:sticky;top:80px}}
 @media(min-width:720px){section{padding:64px 32px}}
+
+/* ===== reorganização: abas + painéis do menu ===== */
+nav a{font-size:1.35rem}
+nav small{font:600 .75rem 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:16px 0 2px}
+nav small:first-child{margin-top:0}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 0 22px;padding:2px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:1.5px solid currentColor;background:none;color:inherit;border-radius:999px;padding:8px 18px;font:500 .95rem 'DM Sans',sans-serif;cursor:pointer;white-space:nowrap}
+.tab.on{background:var(--gold);border-color:var(--gold);color:var(--plum)}
+.tp{display:none}.tp.on{display:block}
+.panel{position:fixed;inset:0;z-index:25;display:none;overflow-y:auto;overscroll-behavior:contain;background:var(--off);color:var(--ink)}
+.panel.on{display:block;animation:pin .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes pin{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.phead{position:sticky;top:0;z-index:5;background:var(--plum);color:var(--off);padding:calc(10px + env(safe-area-inset-top,0px)) 20px 12px}
+.prow{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.prow .script{font-size:1.9rem;line-height:1;color:var(--gold)}
+.pback{background:none;border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;padding:6px 16px;font:500 .95rem 'DM Sans',sans-serif;cursor:pointer}
+.phead .tabs{margin:0}
+.panel .tp>section{min-height:calc(100svh - 120px);padding-top:36px;padding-bottom:110px}
+body.pn #fab{z-index:27}body.pn #prog{display:none}
+html[data-t=dark] .panel{background:#1b0d2b;color:var(--off)}
+.pbn{border:1.5px solid var(--gold);border-radius:18px;padding:14px 18px;max-width:520px;margin:0 0 20px;font-size:.95rem}
+.ba div{color:var(--off)}
+
+[hidden]{display:none!important}
+#p-admin{background:var(--plum);color:var(--off)}
+body.adm #fab{display:none}
+.apane{max-width:640px;margin:0 auto;padding:24px 20px 110px}
+.acard{background:var(--plum2);border-radius:22px;padding:16px;margin-bottom:12px}
+.acard h3{font:800 1.1rem 'Syne',sans-serif}.acard p{margin:6px 0 0}
+.atop{display:flex;justify-content:space-between;gap:10px}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.btn.sm{padding:8px 16px;font-size:.92rem}
+.islot{display:flex;gap:14px;align-items:center}
+.islot img,.islot .ph{width:64px;height:84px;border-radius:12px;object-fit:cover;background:var(--plum);flex:none}
+.islot input{display:none}
+h3.ag{margin:24px 0 10px}.aerr{color:#f3c8c8;min-height:1.4em;margin:0}.vazio{opacity:.75;text-align:center;padding:30px 0}
+.hpic.has{display:flex;height:360px;margin-top:28px}
+@media(min-width:800px){.hpic.has{height:440px;margin-top:0}}
 </style>
+<meta name="description" content="Ana Macedo: nail designer, design de sobrancelha e lash lifting. Veja os valores, os trabalhos e peça seu horário pelo WhatsApp.">
+<meta name="theme-color" content="#26123a">
+<meta property="og:title" content="Ana Macedo | Nail designer, sobrancelha e lash">
+<meta property="og:description" content="Seu estilo começa nos detalhes. Veja os valores, os trabalhos e peça seu horário.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
 <div id="prog"></div>
 <header><span class="script">Ana Macedo</span><button id="mbtn" aria-expanded="false" aria-controls="menu">menu</button></header>
 <nav id="menu" aria-label="Menu principal">
-<a href="#quiz">Qual procedimento?</a><a href="#servicos">Serviços e valores</a><a href="#galeria">Trabalhos</a><a href="#parceria">Parcerias</a><a href="#cuidados">Cuidados e FAQ</a><a href="#sobre">Sobre mim</a><a href="#agendar">Agendar</a>
+<small>Na página</small>
+<a href="#servicos">Serviços e valores</a><a href="#galeria">Trabalhos</a><a href="#agendar">Agendar</a>
+<small>Mais</small>
+<a href="#" data-p="descubra:quiz">Qual procedimento é o meu?</a><a href="#" data-p="duvidas:guia">Guia dos serviços</a><a href="#" data-p="duvidas:faq">Dúvidas e cuidados</a><a href="#" data-p="duvidas:local">Como chegar e regras</a><a href="#" data-p="sobre:sobre">Sobre mim</a><a href="#" data-p="extras:vale">Vale-presente</a><a href="#" data-p="extras:cal">Meu horário</a><a href="#" id="mAdm" data-p="admin:ped" hidden>⚙ Painel da Ana</a>
 </nav>
 
 <section id="hero" class="dark" data-msg="Olá! Vim pelo site e gostaria de agendar um horário.">
@@ -178,36 +225,43 @@ section{padding:52px 20px}
 <p class="info">Seg a sáb · Pix, dinheiro ou cartão · Horário confirmado pelo WhatsApp</p>
 </div><div class="hpic"><span class="script">sua foto aqui</span><i style="top:14%;left:-8%">Lash lifting</i><i style="top:46%;right:-8%">Nail art</i><i style="bottom:12%;left:-4%">Brow lamination</i></div></div>
 </section>
-
-<div class="dark" style="padding:0 0 34px"><div id="stories"><a href="#quiz"><b>✦</b>Quiz</a><a href="#servicos"><b>$</b>Valores</a><a href="#galeria"><b>♥</b>Trabalhos</a><a href="#antes"><b>⇄</b>Antes/ depois</a><a href="#parceria"><b>★</b>Sarah</a><a href="#agendar"><b>✎</b>Agendar</a></div></div>
 <div class="mq" id="mq" aria-hidden="true"></div>
-<section id="quiz" data-msg="Olá! Fiz o quiz do site e queria ajuda para escolher meu procedimento.">
-<div class="wrap"><h2>Qual procedimento é a sua cara?</h2><p class="lead">Responde rapidinho e descobre por onde começar.</p><div class="qbox" id="qbox"></div></div>
-</section>
-
 <section id="servicos" class="dark2" data-msg="Olá! Vi os valores no site e gostaria de agendar.">
-<div class="wrap wide"><h2>Serviços e valores</h2><p class="lead">Valores exatos. Pagamento em Pix, dinheiro ou cartão.</p><div class="two"><div id="svc"></div><aside><div class="bx" id="pm"></div><h3 style="margin:22px 0 10px">Combos</h3><div class="g1" id="cmb"></div><p style="opacity:.7;font-size:.9rem">Valores podem variar de acordo com o procedimento.</p></aside></div></div>
+<div class="wrap wide"><h2>Serviços e valores</h2><p class="lead">Valores exatos. Pagamento em Pix, dinheiro ou cartão.</p><p><button class="btn ghost" data-p="descubra:quiz">Não sabe qual escolher? Faça o quiz</button></p><div class="two"><div><div class="tabs" data-g="svc"><button class="tab on" data-t="unha">Unhas</button><button class="tab" data-t="sobr">Sobrancelhas</button><button class="tab" data-t="lash">Lash</button></div><div id="svc"></div></div><aside><div class="bx" id="pm"></div><h3 style="margin:22px 0 10px">Combos</h3><div class="g1" id="cmb"></div><p style="opacity:.7;font-size:.9rem">Valores podem variar de acordo com o procedimento.</p></aside></div></div>
 </section>
 
 <section id="galeria" data-msg="Olá! Vi seus trabalhos no site e quero um modelo parecido.">
-<div class="wrap"><h2>Trabalhos e inspirações</h2><p class="lead">Toque no coração dos modelos que amou e mande todos de uma vez pelo WhatsApp.</p>
+<div class="wrap"><h2>Trabalhos e inspirações</h2>
+<div class="tabs" data-g="gal"><button class="tab on" data-t="mod">Modelos</button><button class="tab" data-t="ba">Antes e depois</button></div>
+<div class="tp on" data-g="gal" data-id="mod"><p class="lead">Toque no coração dos modelos que amou e mande todos de uma vez pelo WhatsApp.</p>
 <div class="filters" id="filters"></div><div class="grid" id="grid"></div>
 <div id="favbar"><span id="favtxt"></span><a class="btn gold" id="favwa" href="#">Enviar meus favoritos</a></div></div>
-</section>
-
-<section id="antes" class="dark" data-msg="Olá! Vi o antes e depois no site e quero transformar minhas unhas.">
-<div class="wrap"><h2>Antes e depois</h2><p class="lead">Arraste para ver a transformação.</p>
+<div class="tp" data-g="gal" data-id="ba"><p class="lead">Arraste para ver a transformação.</p>
 <div class="ba"><div class="af">Depois</div><div class="be" id="be">Antes</div><i id="bar"></i><input type="range" id="rng" min="0" max="100" value="50" aria-label="Comparar antes e depois"></div></div>
+</div>
 </section>
 
-<section id="parceria" data-msg="Olá! Vim pela parceria com a Sarah e gostaria de agendar.">
-<div class="wrap"><div class="pcard"><div class="script" style="font-size:2.4rem;color:var(--gold)">parceria</div>
-<h2>Veio pela Sarah? Tem mimo exclusivo.</h2>
-<p>Quem chega indicada pela Sarah ganha um brinde exclusivo no atendimento. Avise no agendamento marcando a opção "Vim pela Sarah". Também somos parceiras da Carol (Marie).</p>
-<a class="btn gold" href="#agendar">Agendar com benefício</a></div></div>
+<section id="agendar" class="dark" data-msg="Olá! Gostaria de agendar um horário.">
+<div class="wrap"><h2>Peça seu horário</h2><p class="lead">Você envia o pedido e eu confirmo pelo WhatsApp.</p>
+<div class="pbn"><b>Veio pela Sarah?</b> Quem chega indicada por ela ganha um brinde exclusivo. Marque a opção "Vim pela Sarah" abaixo. Também somos parceiras da Carol (Marie).</div>
+<form id="f">
+<label>Seu nome<input id="fn" required autocomplete="name"></label>
+<label>Serviço<select id="fs"></select></label>
+<label>Data desejada<input type="date" id="fd" required></label>
+<label>Horário<input type="time" id="fh" required></label>
+<p id="oc" style="margin:0;font-size:.92rem;color:var(--gold)"></p>
+<label>Observações<textarea id="fo" rows="3"></textarea></label>
+<label class="ck"><input type="checkbox" id="fsa"> Vim pela Sarah</label>
+<p id="err" role="alert"></p>
+<button class="btn gold" type="submit">Enviar pedido pelo WhatsApp</button>
+</form></div>
 </section>
+<footer><div class="script">Ana Macedo</div><p>seu estilo começa nos detalhes</p><a class="btn ghost" href="#" id="igBtn2" target="_blank" rel="noopener">Ver Instagram</a><p style="margin:18px 0 0"><button class="btn ghost" style="font-size:.85rem;padding:8px 16px" data-p="admin:ped">Área da Ana</button></p></footer>
 
-<section id="cuidados" class="dark2" data-msg="Olá! Tenho uma dúvida sobre os procedimentos.">
+<div class="panel" id="p-descubra" role="dialog" aria-modal="true" aria-label="Descubra"><div class="phead"><div class="prow"><span class="script">Descubra</span><button class="pback" data-close>← voltar</button></div><div class="tabs" data-g="descubra"><button class="tab on" data-t="quiz">Qual procedimento?</button><button class="tab" data-t="estilo">Meu estilo</button></div></div><div class="tp on" data-g="descubra" data-id="quiz"><section id="quiz" data-msg="Olá! Fiz o quiz do site e queria ajuda para escolher meu procedimento.">
+<div class="wrap"><h2>Qual procedimento é a sua cara?</h2><p class="lead">Responde rapidinho e descobre por onde começar.</p><div class="qbox" id="qbox"></div></div>
+</section></div><div class="tp" data-g="descubra" data-id="estilo"><section id="estilo" data-msg="Olá! Fiz o quiz de estilo do site e quero um modelo assim."><div class="wrap"><h2>Qual é o seu estilo?</h2><p class="lead">Responda e veja o que combina com você.</p><div class="qbox" id="sbox"></div></div></section></div></div>
+<div class="panel" id="p-duvidas" role="dialog" aria-modal="true" aria-label="Dúvidas"><div class="phead"><div class="prow"><span class="script">Dúvidas</span><button class="pback" data-close>← voltar</button></div><div class="tabs" data-g="duvidas"><button class="tab on" data-t="faq">Perguntas</button><button class="tab" data-t="guia">Cada serviço</button><button class="tab" data-t="local">Local e regras</button></div></div><div class="tp on" data-g="duvidas" data-id="faq"><section id="cuidados" class="dark2" data-msg="Olá! Tenho uma dúvida sobre os procedimentos.">
 <div class="wrap"><h2>Cuidados e perguntas frequentes</h2>
 <details><summary>Como me preparar?</summary><p>Para lash e brow lamination, venha de banho tomado. Para unhas, o ideal é não estar roendo as unhas.</p></details>
 <details><summary>Quando volto para manutenção?</summary><p>Unhas: de 15 a 20 dias. Lash: a cada 3 meses. Sobrancelha: cerca de 15 dias, se for certinho, mas varia de pessoa para pessoa.</p></details>
@@ -217,41 +271,25 @@ section{padding:52px 20px}
 <details><summary>Quais dias você atende?</summary><p>De segunda a sábado. Domingo não atendo.</p></details>
 <details><summary>Onde é o atendimento?</summary><p>Te passo o local e os valores pelo WhatsApp assim que você pedir seu horário.</p></details>
 </div>
-</section>
-
-<section id="sobre" data-msg="Olá! Li sobre você no site e gostaria de agendar.">
+</section></div><div class="tp" data-g="duvidas" data-id="guia"><section id="guia" class="dark" data-msg="Olá! Tenho dúvidas sobre um procedimento."><div class="wrap"><h2>Cada serviço explicado</h2><div class="filters" id="gt"></div><div id="gb"></div><h2 style="margin-top:44px">Quando fazer a manutenção?</h2><div class="g2" id="man"></div><a class="btn gold" href="#agendar">Quero agendar minha manutenção</a></div></section></div><div class="tp" data-g="duvidas" data-id="local"><section id="local" data-msg="Olá! Gostaria de saber como chegar."><div class="wrap"><h2>Localização</h2><div class="g2" id="loc"></div><a class="btn gold" id="maps" target="_blank" rel="noopener" href="#">Como chegar</a><h2 style="margin-top:44px">Política de atendimento</h2><div class="g2" id="pol"></div><p style="opacity:.7;font-size:.9rem">Valores podem variar de acordo com o procedimento.</p></div></section></div></div>
+<div class="panel" id="p-sobre" role="dialog" aria-modal="true" aria-label="Sobre"><div class="phead"><div class="prow"><span class="script">Sobre</span><button class="pback" data-close>← voltar</button></div><div class="tabs" data-g="sobre"><button class="tab on" data-t="sobre">Sobre mim</button><button class="tab" data-t="qr">QR Code</button></div></div><div class="tp on" data-g="sobre" data-id="sobre"><section id="sobre" data-msg="Olá! Li sobre você no site e gostaria de agendar.">
 <div class="wrap"><h2>Sobre mim</h2>
 <p class="lead" style="opacity:1">Sou a Ana, perfeccionista assumida. Trabalho com cílios há 3 anos, sobrancelha há 2 e unhas há 1, e cada detalhe conta no resultado.</p>
 <p class="lead" style="opacity:1">Tenho cursos e certificados profissionalizantes.</p>
 <div class="quote">Será um prazer cuidar de você e fazer parte da sua autoestima.</div>
 <a class="btn gold" href="#" id="igBtn" target="_blank" rel="noopener">Seguir @nails_anamacedo</a></div>
-</section>
-
-
-<section id="estilo" data-msg="Olá! Fiz o quiz de estilo do site e quero um modelo assim."><div class="wrap"><h2>Qual é o seu estilo?</h2><p class="lead">Responda e veja o que combina com você.</p><div class="qbox" id="sbox"></div></div></section>
-<section id="guia" class="dark" data-msg="Olá! Tenho dúvidas sobre um procedimento."><div class="wrap"><h2>Cada serviço explicado</h2><div class="filters" id="gt"></div><div id="gb"></div><h2 style="margin-top:44px">Quando fazer a manutenção?</h2><div class="g2" id="man"></div><a class="btn gold" href="#agendar">Quero agendar minha manutenção</a></div></section>
-<section id="local" data-msg="Olá! Gostaria de saber como chegar."><div class="wrap"><h2>Localização</h2><div class="g2" id="loc"></div><a class="btn gold" id="maps" target="_blank" rel="noopener" href="#">Como chegar</a><h2 style="margin-top:44px">Política de atendimento</h2><div class="g2" id="pol"></div><p style="opacity:.7;font-size:.9rem">Valores podem variar de acordo com o procedimento.</p></div></section>
-<section id="vale" class="dark2" data-msg="Olá! Quero comprar um vale-presente."><div class="wrap"><h2>Vale-presente</h2><p class="lead">Presenteie alguém: a pessoa escolhe o presente.</p>
+</section></div><div class="tp" data-g="sobre" data-id="qr"><section id="qr" data-msg="Olá! Vi o QR Code e gostaria de agendar."><div class="wrap" style="display:grid;gap:24px;align-items:center"><div><h2>QR Code</h2><p class="lead" style="opacity:1">Aponte a câmera e vá direto para o site, o portfólio, o WhatsApp e o agendamento.</p><div id="qrl" style="display:flex;gap:8px;flex-wrap:wrap"></div></div><div><div id="qrc" style="background:#fff;padding:14px;border-radius:20px;display:inline-block"></div></div></div></section></div></div>
+<div class="panel" id="p-extras" role="dialog" aria-modal="true" aria-label="Vale e horário"><div class="phead"><div class="prow"><span class="script">Vale e horário</span><button class="pback" data-close>← voltar</button></div><div class="tabs" data-g="extras"><button class="tab on" data-t="vale">Vale-presente</button><button class="tab" data-t="cal">Meu horário</button></div></div><div class="tp on" data-g="extras" data-id="vale"><section id="vale" class="dark2" data-msg="Olá! Quero comprar um vale-presente."><div class="wrap"><h2>Vale-presente</h2><p class="lead">Presenteie alguém: a pessoa escolhe o presente.</p>
 <form onsubmit="return false"><label>Para quem<input id="vt" placeholder="Nome de quem vai receber"></label><label>De<input id="vf"></label><label>Presente<select id="vs"><option>Unhas</option><option>Sobrancelhas</option><option>Lash lifting</option><option>Valor personalizado</option></select></label><label>Valor (R$)<input id="vv" inputmode="numeric" placeholder="Ex.: 120"></label></form>
-<div id="gift"></div><p><a class="btn gold" id="vw" target="_blank" rel="noopener" href="#">Solicitar vale pelo WhatsApp</a></p></div></section>
-<section id="calendario" class="dark" data-msg="Olá! Preciso remarcar meu horário."><div class="wrap"><h2>Meu horário</h2><p class="lead">Depois que eu confirmar, salve no seu calendário. Precisou mudar? Reagende em um toque.</p>
+<div id="gift"></div><p><a class="btn gold" id="vw" target="_blank" rel="noopener" href="#">Solicitar vale pelo WhatsApp</a></p></div></section></div><div class="tp" data-g="extras" data-id="cal"><section id="calendario" class="dark" data-msg="Olá! Preciso remarcar meu horário."><div class="wrap"><h2>Meu horário</h2><p class="lead">Depois que eu confirmar, salve no seu calendário. Precisou mudar? Reagende em um toque.</p>
 <form onsubmit="return false"><label>Serviço<select id="cs"></select></label><label>Data<input type="date" id="cd"></label><label>Hora<input type="time" id="ch" value="14:00"></label></form>
-<p id="cb" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"></p></div></section>
-<section id="agendar" class="dark" data-msg="Olá! Gostaria de agendar um horário.">
-<div class="wrap"><h2>Peça seu horário</h2><p class="lead">Você envia o pedido e eu confirmo pelo WhatsApp.</p>
-<form id="f">
-<label>Seu nome<input id="fn" required autocomplete="name"></label>
-<label>Serviço<select id="fs"></select></label>
-<label>Data desejada<input type="date" id="fd" required></label>
-<label>Melhor horário<input id="fh" placeholder="Ex.: à tarde, depois das 18h"></label>
-<label>Observações<textarea id="fo" rows="3"></textarea></label>
-<label class="ck"><input type="checkbox" id="fsa"> Vim pela Sarah</label>
-<p id="err" role="alert"></p>
-<button class="btn gold" type="submit">Enviar pedido pelo WhatsApp</button>
-</form></div>
-</section>
-
-<footer><div class="script">Ana Macedo</div><p>seu estilo começa nos detalhes</p><a class="btn ghost" href="#" id="igBtn2" target="_blank" rel="noopener">Ver Instagram</a></footer>
+<p id="cb" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"></p></div></section></div></div>
+<div class="panel" id="p-admin" role="dialog" aria-modal="true" aria-label="Painel da Ana"><div class="phead"><div class="prow"><span class="script">Painel da Ana</span><span><button class="pback" id="aOut" hidden>sair</button> <button class="pback" data-close>← modo cliente</button></span></div>
+<div class="tabs" data-g="admin" id="aTabs" hidden><button class="tab on" data-t="ped">Pedidos</button><button class="tab" data-t="img">Imagens</button><button class="tab" data-t="val">Valores</button></div></div>
+<div class="tp on apane" data-g="admin" data-id="login"><h2>Entrar no painel</h2><form id="aLf"><label>E-mail<input type="email" id="aEm" required autocomplete="username"></label><label>Senha<input type="password" id="aPw" required autocomplete="current-password"></label><p class="aerr" id="aLe" role="alert"></p><button class="btn gold" type="submit">Entrar</button></form></div>
+<div class="tp apane" data-g="admin" data-id="ped"><h2>Pedidos de horário</h2><div class="tabs" id="aF"></div><div id="aL"></div><p style="text-align:center"><button class="btn ghost sm" id="aR">Atualizar</button></p></div>
+<div class="tp apane" data-g="admin" data-id="img"><h2>Imagens do site</h2><p style="opacity:.8">Escolha uma foto do celular ou do computador. Ela aparece no site na hora.</p><div id="aImg"></div></div>
+<div class="tp apane" data-g="admin" data-id="val"><h2>Valores e local</h2><div id="aVal"></div></div></div>
 <a id="agb" href="#agendar">Agendar horário</a>
 <div id="lb" role="dialog" aria-modal="true" aria-label="Modelo"><button class="nv" id="lbx" aria-label="Fechar">✕</button><div id="lbi"></div><div id="lbt" class="script" style="font-size:2rem;color:var(--gold)"></div><div class="row"><button class="nv" id="lbp" aria-label="Anterior">‹</button><button class="btn ghost" id="lbf" style="color:var(--off)"></button><button class="nv" id="lbn" aria-label="Próximo">›</button></div><a class="btn gold" id="lbw" target="_blank" rel="noopener" href="#">Quero este modelo</a><p style="margin:0;font-size:.85rem;opacity:.7">Toque duas vezes na foto para favoritar</p></div>
 <a id="fab" href="#" target="_blank" rel="noopener">WhatsApp</a>
@@ -290,7 +328,8 @@ $('#igBtn').href=$('#igBtn2').href=IG;
 /* menu */
 const menu=$('#menu'),mb=$('#mbtn');
 mb.onclick=()=>{const o=menu.classList.toggle('open');mb.textContent=o?'fechar':'menu';mb.setAttribute('aria-expanded',o)};
-menu.querySelectorAll('a').forEach(a=>a.onclick=()=>{menu.classList.remove('open');mb.textContent='menu';mb.setAttribute('aria-expanded',false)});
+const closeMenu=()=>{menu.classList.remove('open');mb.textContent='menu';mb.setAttribute('aria-expanded',false)};
+menu.querySelectorAll('a').forEach(a=>a.onclick=e=>{closeMenu();if(a.dataset.p){e.preventDefault();const [p,t]=a.dataset.p.split(':');openP(p,t)}});
 /* whatsapp por seção */
 const fab=$('#fab');fab.href=wa($('#hero').dataset.msg);$('#heroWa').href=fab.href;$('#heroWa').target='_blank';
 new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)fab.href=wa(e.target.dataset.msg)}),{threshold:.5}).observe&&
@@ -304,10 +343,10 @@ const s=document.createElement('span');s.className='spark';s.textContent='✦';s
 hero.addEventListener('pointermove',spark);hero.addEventListener('touchmove',spark,{passive:true});
 /* serviços */
 const svc=$('#svc');
-Object.keys(GRUPOS).forEach(g=>{
+function rSvc(){svc.innerHTML='';Object.keys(GRUPOS).forEach(g=>{
 const list=SERV.filter(s=>s.t===g);
-svc.insertAdjacentHTML('beforeend',`<div class="${g==='lash'?'quiet':''}"><div class="grp">${GRUPOS[g]}</div>`+list.map(s=>`<div class="card"><h3>${s.n}</h3><div class="pr">${money(s.preco)}</div><p>${s.d}</p><div class="meta">${s.tempo?'<span>Duração: '+s.tempo+'</span>':''}<a href="${wa('Olá! Gostaria de agendar '+s.n+'.')}" target="_blank" rel="noopener">Agendar este</a></div></div>`).join('')+'</div>');
-});
+svc.insertAdjacentHTML('beforeend',`<div class="tp${g==='unha'?' on':''}${g==='lash'?' quiet':''}" data-g="svc" data-id="${g}">`+list.map(s=>`<div class="card"><h3>${s.n}</h3><div class="pr">${money(s.preco)}</div><p>${s.d}</p><div class="meta">${s.tempo?'<span>Duração: '+s.tempo+'</span>':''}<a href="${wa('Olá! Gostaria de agendar '+s.n+'.')}" target="_blank" rel="noopener">Agendar este</a></div></div>`).join('')+'</div>');
+});}rSvc();
 $('#fs').innerHTML=SERV.map(s=>`<option>${s.n}</option>`).join('');
 /* quiz */
 const byN=n=>SERV.find(s=>s.n===n);
@@ -324,7 +363,7 @@ let fav=[];try{fav=JSON.parse(localStorage.getItem('fav')||'[]')}catch(e){}
 let cat='tudo';
 const cats=['tudo','unhas','sobrancelhas','lash'];
 $('#filters').innerHTML=cats.map(c=>`<button class="chip ${c==='tudo'?'on':''}" data-c="${c}">${c==='tudo'?'Tudo':c[0].toUpperCase()+c.slice(1)}</button>`).join('');
-$('#filters').onclick=e=>{const c=e.target.dataset.c;if(!c)return;cat=c;document.querySelectorAll('.chip').forEach(b=>b.classList.toggle('on',b.dataset.c===c));draw()};
+$('#filters').onclick=e=>{const c=e.target.dataset.c;if(!c)return;cat=c;document.querySelectorAll('#filters .chip').forEach(b=>b.classList.toggle('on',b.dataset.c===c));draw()};
 function draw(){$('#grid').innerHTML=FOTOS.map((f,i)=>({f,i})).filter(x=>cat==='tudo'||x.f.c===cat).map(({f,i})=>{
 const bg=bgs(f,i);
 return `<div class="tile" data-i="${i}" style="${bg}"><span>${f.t}</span><button class="heart ${fav.includes(i)?'on':''}" data-i="${i}" aria-label="Favoritar modelo ${i+1}">${fav.includes(i)?'♥':'♡'}</button></div>`}).join('');
@@ -337,6 +376,19 @@ draw();
 $('#rng').oninput=e=>{const v=e.target.value;$('#be').style.clipPath=`inset(0 ${100-v}% 0 0)`;$('#bar').style.left=v+'%'};
 /* agenda */
 const d=$('#fd');d.min=new Date().toISOString().slice(0,10);
+/* horários ocupados (pedidos já confirmados pela Ana) */
+let ocup=[];
+const toMin=h=>{const [a,b]=String(h).split(':');return +a*60+ +b};
+const fmtH=m=>String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0');
+function dur(nome){const t=(SERV.find(x=>x.n===nome)||{}).tempo||'';let m=0;const h=t.match(/(\d+)h(\d+)?/);if(h)m=+h[1]*60+(+h[2]||0);else{const q=t.match(/(\d+)\s*min/);if(q)m=+q[1]}return m||90}
+function conflito(){const dv=d.value,hv=$('#fh').value;if(!dv||!hv)return null;const ini=toMin(hv),fim=ini+dur($('#fs').value);
+return ocup.find(o=>o.data===dv&&ini<toMin(o.horario)+o.duracao_min&&toMin(o.horario)<fim)||null}
+function mostrarOcup(){const l=ocup.filter(o=>o.data===d.value).sort((a,b)=>toMin(a.horario)-toMin(b.horario));
+$('#oc').textContent=l.length?'Horários já ocupados neste dia: '+l.map(o=>fmtH(toMin(o.horario))+' às '+fmtH(toMin(o.horario)+o.duracao_min)).join(', ')+'.':'';
+$('#err').textContent=conflito()?'Esse horário já está ocupado. Escolha outro.':''}
+async function carregarOcupados(){if(!sb)return;try{const {data,error}=await sb.rpc('horarios_ocupados');if(!error&&data)ocup=data}catch(e){console.warn(e)}mostrarOcup()}
+['fd','fh','fs'].forEach(id=>$('#'+id).addEventListener('input',mostrarOcup));
+carregarOcupados();
 async function handleAgendamento(e) {
   e.preventDefault();
   const err=$('#err');
@@ -344,6 +396,8 @@ async function handleAgendamento(e) {
     err.textContent='Não atendo aos domingos. Escolha outra data.';
     return;
   }
+  await carregarOcupados();
+  if(conflito()){err.textContent='Esse horário já está ocupado. Escolha outro (veja os horários ocupados acima).';return}
   err.textContent='';
   const [y,m,dd]=d.value.split('-');
   let msg=`Olá! Gostaria de agendar ${$('#fs').value}.\nNome: ${$('#fn').value}\nData: ${dd}/${m}/${y}\nHorário: ${$('#fh').value||'a combinar'}`;
@@ -357,6 +411,7 @@ async function handleAgendamento(e) {
         data: d.value,
         horario: $('#fh').value,
         obs: $('#fo').value,
+        duracao_min: dur($('#fs').value),
         vim_pela_sarah: $('#fsa').checked
       });
       if (error) console.error(error);
@@ -403,7 +458,7 @@ Sobrancelhas:{o:'Design ou brow lamination: desenho alinhado ao rosto e fios org
 const gt=$('#gt');gt.innerHTML=Object.keys(G).map((k,i)=>`<button class="chip${i?'':' on'}" style="color:var(--off);border-color:var(--orq)" data-k="${k}">${k}</button>`).join('');
 function gs(k){const g=G[k];$('#gb').innerHTML=`<div class="g2"><div class="bx"><h3>O que é?</h3><p>${g.o}</p></div><div class="bx"><h3>Como funciona?</h3><p>${g.c}</p></div><div class="bx"><h3>Quanto tempo dura?</h3><p>${g.t}</p></div><div class="bx"><h3>Para quem?</h3><p>${g.p}</p></div></div><h3 style="margin-top:22px">Cuidados depois</h3><div class="g2"><div class="bx"><h3>O que evitar</h3><p>${g.e}</p></div><div class="bx"><h3>Como cuidar</h3><p>${g.q}</p></div><div class="bx"><h3>Quando fazer de novo</h3><p>${g.r}</p></div></div>`}
 gt.onclick=e=>{const k=e.target.dataset.k;if(!k)return;gt.querySelectorAll('.chip').forEach(b=>b.classList.toggle('on',b===e.target));gs(k)};gs('Unhas');
-$('#man').innerHTML=[['Unhas','2 a 3 semanas'],['Lash lifting','cerca de 3 meses'],['Sobrancelhas','cerca de 2 semanas']].map(a=>`<div class="bx"><h3>${a[0]}</h3><p class="pr">${a[1]}</p><p>aproximadamente</p></div>`).join('');
+$('#man').innerHTML=[['Unhas','15 a 20 dias'],['Lash lifting','cerca de 3 meses'],['Sobrancelhas','cerca de 15 dias']].map(a=>`<div class="bx"><h3>${a[0]}</h3><p class="pr">${a[1]}</p><p>aproximadamente</p></div>`).join('');
 /* promo + combos */
 const now=new Date(),ed=new Date(now.getFullYear(),now.getMonth()+1,0,23,59,59),dl=Math.ceil((ed-now)/864e5);
 $('#pm').innerHTML=`<h3>PROMOÇÕES DO MÊS</h3><p>Lash lifting + sobrancelha · <span class="pr">${money(null)}</span></p><p>Até ${ed.toLocaleDateString('pt-BR')} · oferta termina em <b id="dl">${dl}</b> ${dl===1?'dia':'dias'}</p><a class="btn gold" target="_blank" rel="noopener" href="${wa('Olá! Quero a promoção do mês (lash lifting + sobrancelha).')}">Quero aproveitar</a>`;
@@ -433,10 +488,95 @@ const tg=document.createElement('button');tg.id='tg';tg.setAttribute('aria-label
 function th(t){document.documentElement.dataset.t=t;tg.textContent=t==='dark'?'☀':'☾';try{localStorage.setItem('t',t)}catch(e){}}
 let t0='light';try{t0=localStorage.getItem('t')||'light'}catch(e){}th(t0);tg.onclick=()=>th(document.documentElement.dataset.t==='dark'?'light':'dark');
 /* menu extra + animações ao rolar */
-menu.insertAdjacentHTML('beforeend','<a href="#estilo">Seu estilo</a><a href="#guia">Guia dos serviços</a><a href="#local">Localização e política</a><a href="#vale">Vale-presente</a><a href="#calendario">Meu horário</a>');
-menu.querySelectorAll('a').forEach(a=>a.onclick=()=>{menu.classList.remove('open');mb.textContent='menu'});
 const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll('.card,.bx,.qbox,.pcard').forEach(e=>{e.classList.add('rv');ro.observe(e)});
+
+/* QR Code: coloque em SITE_URL o endereço final do site */
+const SITE_URL='';
+if(typeof QRCode!=='undefined')new QRCode($('#qrc'),{text:SITE_URL||location.href.split('#')[0],width:170,height:170,colorDark:'#26123a',colorLight:'#ffffff'});
+else $('#qrc').textContent=SITE_URL||location.href;
+$('#qrl').innerHTML=['Cartão de visita','Cartão fidelidade','Balcão','Embalagem','Panfleto','Espelho do salão','Cartão pós-atendimento'].map(t=>`<span style="border:1.5px solid currentColor;border-radius:999px;padding:5px 13px;font-size:.88rem">${t}</span>`).join('');
+
+/* ===== abas e painéis do menu ===== */
+function setTab(g,t){
+document.querySelectorAll(`.tabs[data-g="${g}"] .tab`).forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+document.querySelectorAll(`.tp[data-g="${g}"]`).forEach(x=>{const on=x.dataset.id===t;x.classList.toggle('on',on);
+if(on&&x.closest('.panel')){const sc=x.querySelector('section[data-msg]');if(sc)fab.href=wa(sc.dataset.msg);x.closest('.panel').scrollTop=0}})}
+let curP=null;
+function showP(id,tab){hideP(true);const p=$('#p-'+id);if(!p)return;curP=p;p.classList.add('on');document.body.classList.add('pn');document.body.classList.toggle('adm',id==='admin');document.body.style.overflow='hidden';
+if(id==='admin'){tab=isAdmin?(tab&&tab!=='login'?tab:'ped'):'login';if(isAdmin)loadPed()}setTab(id,tab||p.querySelector('.tabs .tab').dataset.t);p.scrollTop=0}
+function hideP(keep){if(curP)curP.classList.remove('on');curP=null;if(!keep){document.body.classList.remove('pn','adm');document.body.style.overflow='';fab.href=wa($('#hero').dataset.msg)}}
+function openP(id,tab){showP(id,tab);history.pushState({p:id,t:tab},'')}
+function closeP(){if(history.state&&history.state.p)history.back();else hideP()}
+addEventListener('popstate',()=>{const st=history.state;if(st&&st.p)showP(st.p,st.t);else hideP()});
+document.addEventListener('click',e=>{
+const tb=e.target.closest('.tab');if(tb){setTab(tb.parentElement.dataset.g,tb.dataset.t);return}
+const pb=e.target.closest('[data-p]');if(pb&&!pb.closest('nav')){e.preventDefault();const [p,t]=pb.dataset.p.split(':');openP(p,t);return}
+if(e.target.closest('[data-close]')){closeP();return}
+const a=e.target.closest('.panel a[href^="#"]');if(a&&a.getAttribute('href').length>1){const tg=document.querySelector(a.getAttribute('href'));
+if(tg&&!tg.closest('.panel')){e.preventDefault();hideP();history.replaceState(null,'');tg.scrollIntoView()}}});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&curP&&!lb.classList.contains('on'))closeP()});
+
+/* ===== modo admin: pedidos, imagens e valores (tudo protegido pelo login do Supabase) ===== */
+const $$=q=>[...document.querySelectorAll(q)];
+const esc=t=>String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const CERT=['Design de sobrancelhas','Lash lifting','Nail Designer','Nail Art'];
+const SLOTS=[['hero','Foto principal (topo do site)']].concat(FOTOS.map((f,i)=>['g'+i,'Trabalho '+(i+1)+' · '+f.t]),[['antes','Antes'],['depois','Depois']],CERT.map((c,i)=>['c'+i,'Certificado: '+c]));
+let isAdmin=false,CFG={img:{},preco:{},promo:null,combos:[{},{}],loc:{}},fil='pendente',peds=[];
+function setAdmin(on){isAdmin=on;$('#aTabs').hidden=$('#aOut').hidden=$('#mAdm').hidden=!on}
+async function saveCfg(){const {error}=await sb.from('site_config').upsert({id:1,data:CFG});return error}
+function applyCfg(){
+const I=CFG.img||{},P=CFG.preco||{},C=CFG.combos||[{},{}],bg=u=>`url('${u}') center/cover`;
+SERV.forEach(s=>{if(s.n in P)s.preco=P[s.n]});FOTOS.forEach((f,i)=>f.img=I['g'+i]||'');Object.assign(LOC,CFG.loc||{});
+const cur=($('.tabs[data-g=svc] .tab.on')||{dataset:{t:'unha'}}).dataset.t;rSvc();setTab('svc',cur);draw();
+$('#pm .pr').textContent=money(CFG.promo);
+$$('#cmb .bx').forEach((b,i)=>{b.querySelector('s').textContent='De '+money((C[i]||{}).de);b.querySelector('.pr').textContent='Por '+money((C[i]||{}).por)});
+const lv=[LOC.end,LOC.est,LOC.ref,LOC.hor];$$('#loc .bx p').forEach((p,i)=>p.textContent=lv[i]);
+$('#maps').href=LOC.maps||wa('Olá! Como chego ao local do atendimento?');
+const h=$('.hpic'),ht=h.querySelector('.script');h.style.background=I.hero?bg(I.hero):'';h.classList.toggle('has',!!I.hero);ht.hidden=!!I.hero;
+$('.ba .af').style.background=I.depois?bg(I.depois):'';$('.ba .be').style.background=I.antes?bg(I.antes):'';
+$$('#sobre .g2 .bx').forEach((b,i)=>{const u=I['c'+i];b.innerHTML=`<p><b>${CERT[i]}</b></p>`+(u?`<img src="${esc(u)}" alt="Certificado ${CERT[i]}" style="width:100%;border-radius:12px;margin-top:6px">`:'<p style="opacity:.6">(foto do certificado)</p>')})}
+async function loadCfg(){if(sb){try{const {data}=await sb.from('site_config').select('data').eq('id',1).maybeSingle();if(data&&data.data)CFG=Object.assign(CFG,data.data)}catch(e){console.warn(e)}}applyCfg();rImg();rVal()}
+/* login */
+if(sb)sb.auth.getSession().then(({data})=>setAdmin(!!(data&&data.session)));
+$('#aLf').onsubmit=async e=>{e.preventDefault();$('#aLe').textContent='';
+const {error}=await sb.auth.signInWithPassword({email:$('#aEm').value.trim(),password:$('#aPw').value});
+if(error){$('#aLe').textContent='E-mail ou senha incorretos.';return}$('#aPw').value='';setAdmin(true);setTab('admin','ped');loadPed()};
+$('#aOut').onclick=async()=>{await sb.auth.signOut();setAdmin(false);setTab('admin','login')};
+/* pedidos */
+const NOMES={pendente:'Pendentes',confirmado:'Confirmados',cancelado:'Cancelados',todos:'Todos'};
+async function loadPed(){const {data,error}=await sb.from('agendamentos').select('*').order('data').order('criado_em');
+if(error){$('#aL').innerHTML='<p class="vazio">Não foi possível carregar. '+esc(error.message)+'</p>';return}peds=data||[];drawPed()}
+function drawPed(){$('#aF').innerHTML=Object.keys(NOMES).map(k=>`<button class="tab${k===fil?' on':''}" data-k="${k}">${NOMES[k]} (${k==='todos'?peds.length:peds.filter(a=>a.status===k).length})</button>`).join('');
+const it=peds.filter(a=>fil==='todos'||a.status===fil);if(!it.length){$('#aL').innerHTML='<p class="vazio">Nenhum pedido aqui por enquanto.</p>';return}
+$('#aL').innerHTML=it.map(a=>{const dia=new Date(a.data+'T12:00').toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'2-digit'});
+const b=(st,t,c)=>`<button class="btn sm ${c}" data-id="${esc(a.id)}" data-st="${st}">${t}</button>`;
+const ac=a.status==='pendente'?b('confirmado','Confirmar','gold')+b('cancelado','Cancelar','ghost'):a.status==='confirmado'?b('cancelado','Cancelar','ghost')+b('pendente','Voltar para pendente','ghost'):b('pendente','Reabrir','ghost');
+return `<div class="acard"><div class="atop"><h3>${esc(a.servico)}</h3><b style="color:var(--gold);white-space:nowrap">${esc(dia)}</b></div><p><b>${esc(a.nome)}</b>${a.horario?' · '+esc(a.horario):''}</p>${a.obs?`<p>${esc(a.obs)}</p>`:''}${a.vim_pela_sarah?'<p style="color:var(--gold)">✦ Veio pela Sarah</p>':''}<p style="opacity:.7;font-size:.85rem">Status: ${esc(a.status)}</p><div class="acts">${ac}</div></div>`}).join('')}
+$('#aF').onclick=e=>{const k=e.target.dataset.k;if(k){fil=k;drawPed()}};
+$('#aL').onclick=async e=>{const b=e.target.closest('button[data-id]');if(!b)return;b.disabled=true;
+const {error}=await sb.from('agendamentos').update({status:b.dataset.st}).eq('id',b.dataset.id);
+if(error){alert('Não foi possível atualizar: '+error.message);b.disabled=false;return}loadPed()};
+$('#aR').onclick=loadPed;setInterval(()=>{if(isAdmin&&curP&&curP.id==='p-admin')loadPed()},30000);
+/* imagens */
+function rImg(){$('#aImg').innerHTML=SLOTS.map(([k,l])=>{const u=(CFG.img||{})[k];
+return `<div class="acard islot">${u?`<img src="${esc(u)}" alt="">`:'<div class="ph"></div>'}<div style="flex:1"><b>${esc(l)}</b><div class="acts"><label class="btn sm gold" style="display:inline-block">${u?'Trocar':'Enviar foto'}<input type="file" accept="image/*" data-s="${k}"></label>${u?`<button class="btn sm ghost" data-rm="${k}">Remover</button>`:''}</div></div></div>`}).join('')}
+const shrink=f=>new Promise((ok,no)=>{const im=new Image();im.onload=()=>{const k=Math.min(1,1400/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);c.toBlob(b=>b?ok(b):no(new Error('imagem inválida')),'image/jpeg',.85)};im.onerror=()=>no(new Error('imagem inválida'));im.src=URL.createObjectURL(f)});
+$('#aImg').onchange=async e=>{const f=e.target.files[0],k=e.target.dataset.s;if(!f||!k)return;e.target.parentElement.firstChild.textContent='Enviando…';
+try{const b=await shrink(f),n=`${k}-${Date.now()}.jpg`,{error}=await sb.storage.from('site').upload(n,b,{contentType:'image/jpeg'});if(error)throw error;
+CFG.img=CFG.img||{};CFG.img[k]=sb.storage.from('site').getPublicUrl(n).data.publicUrl;const er=await saveCfg();if(er)throw er;applyCfg()}catch(x){alert('Não foi possível enviar: '+(x.message||x))}rImg()};
+$('#aImg').onclick=async e=>{const k=e.target.dataset.rm;if(!k)return;delete CFG.img[k];const er=await saveCfg();if(er)alert(er.message);applyCfg();rImg()};
+/* valores e local */
+function rVal(){const C=CFG.combos||[{},{}],f=(id,l,v,ph)=>`<label>${l}<input id="${id}" value="${esc(v??'')}"${ph?` placeholder="${ph}"`:''}></label>`;
+$('#aVal').innerHTML=`<h3 class="ag">Serviços (R$)</h3><div class="g1">${SERV.map((s,i)=>f('vp'+i,s.n,s.preco,'ex.: 120')).join('')}</div>
+<h3 class="ag">Promoção e combos (R$)</h3><div class="g1">${f('vpm','Promoção do mês: lash + sobrancelha',CFG.promo)}${f('vc0d','Combo Olhar · valor "de"',(C[0]||{}).de)}${f('vc0p','Combo Olhar · valor "por"',(C[0]||{}).por)}${f('vc1d','Combo Beauty · valor "de"',(C[1]||{}).de)}${f('vc1p','Combo Beauty · valor "por"',(C[1]||{}).por)}</div>
+<h3 class="ag">Local</h3><div class="g1">${f('vle','Endereço',LOC.end)}${f('vlp','Estacionamento',LOC.est)}${f('vlr','Pontos de referência',LOC.ref)}${f('vlh','Horários',LOC.hor)}${f('vlm','Link do Google Maps',LOC.maps)}</div>
+<p><button class="btn gold" id="vSave">Salvar alterações</button> <span id="vOk"></span></p>`}
+$('#aVal').onclick=async e=>{if(e.target.id!=='vSave')return;const n=id=>{const v=$('#'+id).value.trim().replace(',','.');return v===''||isNaN(v)?null:Number(v)};
+CFG.preco={};SERV.forEach((s,i)=>CFG.preco[s.n]=n('vp'+i));CFG.promo=n('vpm');CFG.combos=[{de:n('vc0d'),por:n('vc0p')},{de:n('vc1d'),por:n('vc1p')}];
+CFG.loc={end:$('#vle').value,est:$('#vlp').value,ref:$('#vlr').value,hor:$('#vlh').value,maps:$('#vlm').value.trim()};
+const er=await saveCfg();$('#vOk').textContent=er?'Erro: '+er.message:'Salvo ✓';if(!er)applyCfg()};
+loadCfg();
 </script>
 </body>
 </html>
