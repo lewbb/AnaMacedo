@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ana Macedo | Nail designer, sobrancelha e lash</title>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Rock+Salt&family=Pinyon+Script&family=Syne:wght@600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--plum:#26123a;--plum2:#3a2058;--orq:#7a56a8;--gold:#c9a45c;--off:#f6f1ea;--lilac:#e4d8f2;--ink:#2a1a3d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--off);color:var(--ink);font:400 16px/1.6 'DM Sans',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Syne',system-ui,sans-serif;margin:0;line-height:1.05}
+h2{font-size:clamp(2rem,8vw,3.4rem);font-weight:800;margin-bottom:.4em}
+.script{font-family:'Pinyon Script','Snell Roundhand',cursive;font-weight:400}
+section{padding:72px 20px}
+.wrap{max-width:960px;margin:0 auto}
+.dark{background:var(--plum);color:var(--off)}.dark2{background:var(--plum2);color:var(--off)}
+.dark h2,.dark2 h2{color:var(--off)}
+p.lead{max-width:52ch;opacity:.85;margin:0 0 28px}
+.btn{display:inline-block;border:0;border-radius:999px;padding:14px 26px;font:500 1rem 'DM Sans',sans-serif;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn:active{transform:scale(.96)}.btn:hover{box-shadow:0 8px 24px rgba(201,164,92,.35)}
+.gold{background:var(--gold);color:var(--plum)}
+.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+/* topo */
+header{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:calc(10px + env(safe-area-inset-top,0px)) 20px 10px;background:rgba(38,18,58,.82);backdrop-filter:blur(10px);color:var(--off)}
+header .script{font-size:1.9rem;line-height:1}
+#mbtn{background:none;border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;padding:6px 16px;font:500 .95rem 'DM Sans';cursor:pointer}
+nav{position:fixed;inset:0;z-index:19;background:var(--plum);display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0 32px;transform:translateY(-100%);transition:transform .45s cubic-bezier(.7,0,.2,1)}
+nav.open{transform:none}
+nav a{font:800 2.2rem 'Syne';color:var(--off);text-decoration:none;padding:4px 0}
+nav a:hover{color:var(--gold)}
+/* hero */
+#hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:96px;touch-action:pan-y}
+#hero h1{font-size:clamp(4.2rem,24vw,10rem);font-weight:400;color:var(--gold);line-height:.9;margin:.1em 0 .2em;animation:rise 1.2s cubic-bezier(.2,.8,.2,1) both}
+#hero .tag{font:600 clamp(1.1rem,4.5vw,1.6rem) 'Syne';margin-bottom:12px;animation:rise 1.2s .25s both}
+#hero .btns{display:flex;gap:12px;flex-wrap:wrap;animation:rise 1.2s .45s both}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+.nail{position:absolute;width:90px;height:150px;border:1.5px solid var(--gold);border-radius:50% 50% 45% 45%/60% 60% 40% 40%;opacity:.35;animation:float 9s ease-in-out infinite}
+.nail.a{right:8%;top:22%}.nail.b{right:26%;top:58%;transform:rotate(25deg);animation-delay:-3s;width:60px;height:100px}.nail.c{right:-2%;top:64%;transform:rotate(-18deg);animation-delay:-6s;background:rgba(201,164,92,.12)}
+@keyframes float{50%{translate:0 -22px}}
+.spark{position:absolute;pointer-events:none;color:var(--gold);font-size:18px;animation:spk .9s forwards;z-index:2}
+@keyframes spk{from{opacity:1;transform:scale(1) rotate(0)}to{opacity:0;transform:translateY(-30px) scale(.2) rotate(120deg)}}
+/* quiz */
+.qbox{background:#fff;border-radius:28px;padding:28px;box-shadow:0 20px 50px rgba(58,32,88,.12);max-width:560px}
+.qbox h3{font-size:1.6rem;margin-bottom:18px}
+.opt{display:block;width:100%;text-align:left;background:var(--off);border:1.5px solid var(--lilac);border-radius:16px;padding:14px 18px;margin-bottom:10px;font:500 1rem 'DM Sans';color:var(--ink);cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--gold);transform:translateX(6px)}
+.res b{font:800 2rem 'Syne';display:block;color:var(--plum2)}
+/* serviços */
+.grp{font:400 2.4rem 'Pinyon Script';color:var(--gold);margin:32px 0 12px}
+.card{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:18px 0;border-bottom:1px solid rgba(246,241,234,.18)}
+.card h3{font-size:1.25rem}.card p{margin:0;opacity:.75;font-size:.95rem;grid-column:1}
+.card .pr{font:800 1.2rem 'Syne';color:var(--gold);text-align:right}
+.card .meta{grid-column:1/-1;display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:.9rem;opacity:.9}
+.card .meta a{color:var(--gold)}
+.quiet .card h3{font-size:1.05rem;font-weight:600}
+/* galeria */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.chip{border:1.5px solid var(--plum2);background:none;color:var(--plum2);border-radius:999px;padding:8px 18px;font:500 .95rem 'DM Sans';cursor:pointer}
+.chip.on{background:var(--plum2);color:var(--off)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.tile{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:3/4;background-size:cover;background-position:center}
+.tile:nth-child(3n+1){aspect-ratio:3/4.6}
+.tile span{position:absolute;left:12px;bottom:10px;color:var(--off);font:600 .9rem 'Syne';text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.heart{position:absolute;top:10px;right:10px;width:42px;height:42px;border-radius:50%;border:0;background:rgba(246,241,234,.85);font-size:1.3rem;cursor:pointer;transition:transform .25s}
+.heart.on{background:var(--gold);transform:scale(1.15) rotate(-8deg)}
+#favbar{margin-top:20px;display:none;align-items:center;gap:14px;flex-wrap:wrap}
+/* antes e depois */
+.ba{position:relative;max-width:480px;aspect-ratio:1;border-radius:26px;overflow:hidden;user-select:none}
+.ba div{position:absolute;inset:0;display:flex;align-items:flex-end;padding:16px;font:600 1rem 'Syne'}
+.ba .af{background:linear-gradient(135deg,#c9a45c,#7a56a8 70%)}
+.ba .be{background:linear-gradient(135deg,#8c7a70,#a89b92);clip-path:inset(0 50% 0 0)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba i{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--off);pointer-events:none}
+/* parceria */
+.pcard{border:1.5px solid var(--gold);border-radius:28px;padding:28px;background:#fff;max-width:600px}
+.pcard h2{font-size:clamp(1.8rem,7vw,2.6rem)}
+/* faq */
+details{border-bottom:1px solid rgba(246,241,234,.2);padding:14px 0}
+summary{font:600 1.1rem 'Syne';cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';float:right;color:var(--gold);transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:10px 0 0;opacity:.85}
+/* sobre e form */
+.quote{font:400 clamp(1.8rem,7vw,2.8rem) 'Pinyon Script';color:var(--plum2);line-height:1.15;margin:20px 0}
+form{display:grid;gap:14px;max-width:520px}
+label{display:grid;gap:6px;font-weight:500}
+input,select,textarea{font:400 1rem 'DM Sans';padding:13px 16px;border-radius:14px;border:1.5px solid rgba(246,241,234,.3);background:rgba(246,241,234,.08);color:var(--off);width:100%}
+select option{color:#222}
+input[type=checkbox]{width:auto;accent-color:var(--gold)}
+.ck{display:flex;gap:10px;align-items:center}
+#err{color:#f3c8c8;min-height:1.4em;margin:0}
+footer{background:#180b28;color:var(--off);padding:40px 20px calc(96px + env(safe-area-inset-bottom,0px));text-align:center}
+footer .script{font-size:2.6rem;color:var(--gold)}
+#fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:18;background:var(--gold);color:var(--plum);border-radius:999px;padding:14px 22px;font:600 1rem 'DM Sans';text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3);animation:pulse 3s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 10px 30px rgba(0,0,0,.3),0 0 0 0 rgba(201,164,92,.5)}50%{box-shadow:0 10px 30px rgba(0,0,0,.3),0 0 0 14px rgba(201,164,92,0)}}
+@media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}section{padding:96px 32px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+section{position:relative;overflow:hidden}.wrap{position:relative;z-index:1}
+*{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--gold);z-index:30}
+#stories{display:flex;gap:16px;overflow-x:auto;padding:4px 20px 8px;scrollbar-width:none;scroll-snap-type:x proximity}
+#stories::-webkit-scrollbar{display:none}
+#stories a{flex:none;width:76px;text-align:center;color:var(--off);text-decoration:none;font:600 .78rem/1.2 'Syne';scroll-snap-align:start}
+#stories b{display:grid;place-items:center;width:68px;height:68px;margin:0 auto 6px;border-radius:50%;background:var(--plum2);border:2.5px solid var(--gold);box-shadow:0 0 0 3px var(--plum),0 0 0 5px var(--orq);font:400 1.6rem 'Pinyon Script';color:var(--gold);transition:transform .3s}
+#stories a:active b{transform:scale(.86) rotate(-14deg)}
+.mq{background:var(--gold);color:var(--plum);overflow:hidden;white-space:nowrap;padding:12px 0;transform:rotate(-1.6deg);margin:0 -12px;position:relative;z-index:4}
+.mq div{display:inline-block;animation:mq 26s linear infinite;font:800 1.25rem 'Syne'}
+.mq i{font:400 1.9rem 'Pinyon Script';margin:0 16px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.rn{cursor:pointer;line-height:1.25}.rn span span{display:inline-block;padding:0 .07em;line-height:1.1}
+.star{position:absolute;color:var(--gold);pointer-events:none;animation:spin 14s linear infinite}
+@keyframes spin{to{rotate:360deg}}
+.sf{position:fixed;animation:spk2 .8s forwards;z-index:50}
+@keyframes spk2{from{opacity:1}to{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.2) rotate(180deg)}}
+.tile{border:5px solid #fff;box-shadow:0 8px 22px rgba(58,32,88,.18);transform:rotate(var(--r,0deg));transition:transform .3s;cursor:pointer}
+.tile:nth-child(odd){--r:-1.6deg}.tile:nth-child(even){--r:1.4deg}.tile:active{transform:scale(.96)}
+.tile::before{content:'';position:absolute;top:8px;left:50%;width:54px;height:16px;background:rgba(201,164,92,.8);transform:translateX(-50%) rotate(-4deg);z-index:1}
+#lb{position:fixed;inset:0;z-index:40;background:rgba(24,11,40,.95);display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;color:var(--off)}
+#lb.on{display:flex}
+#lbi{position:relative;width:min(84vw,400px);aspect-ratio:3/4;max-height:58svh;border-radius:24px;background-size:cover;background-position:center;border:6px solid #fff;user-select:none}
+#lb .row{display:flex;gap:12px;align-items:center;justify-content:center}
+.nv{background:none;border:1.5px solid var(--gold);color:var(--gold);width:46px;height:46px;border-radius:50%;font-size:1.4rem;cursor:pointer}
+#lbx{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px}
+.burst{position:absolute;inset:0;display:grid;place-items:center;font-size:6rem;color:var(--gold);pointer-events:none;animation:bst .8s forwards}
+@keyframes bst{from{opacity:1;transform:scale(.4)}to{opacity:0;transform:scale(1.6)}}
+#agb{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:18;background:var(--off);color:var(--plum);border:2px solid var(--gold);border-radius:999px;padding:12px 20px;font:600 1rem 'DM Sans';text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3);transition:transform .4s}
+@media(max-width:480px){#hero .btns .btn{flex:1 1 100%;text-align:center}#agb,#fab{font-size:.92rem;padding:12px 15px}}
+
+nav{justify-content:flex-start;overflow-y:auto;padding:84px 32px 32px}nav a{font-size:1.5rem}
+.g2{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:16px 0}
+.bx{border:1.5px solid var(--gold);border-radius:22px;padding:18px}.bx h3{font-size:1.2rem;margin-bottom:6px}.bx p{margin:4px 0;font-size:.95rem}
+.bx s{opacity:.6}.bx .pr{font:800 1.3rem 'Syne';color:var(--gold)}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+#gift{background:linear-gradient(135deg,var(--gold),var(--orq));color:var(--plum);border-radius:24px;padding:26px;max-width:520px;margin-top:18px}
+#gift b{font:800 1.6rem 'Syne'}#gift .script{font-size:2.4rem}
+#tg{background:none;border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;width:38px;height:34px;cursor:pointer;margin-right:8px}
+html[data-t=dark] body{background:#1b0d2b}
+html[data-t=dark] section:not(.dark):not(.dark2){background:#1b0d2b;color:var(--off)}
+html[data-t=dark] .qbox,html[data-t=dark] .pcard{background:var(--plum2);color:var(--off)}
+html[data-t=dark] .opt{background:var(--plum);color:var(--off);border-color:var(--orq)}
+html[data-t=dark] .chip{color:var(--off);border-color:var(--orq)}html[data-t=dark] .chip.on{background:var(--gold);color:var(--plum)}
+html[data-t=dark] .quote,html[data-t=dark] .res b{color:var(--gold)}
+
+section{padding:52px 20px}
+.wide{max-width:1100px}.two{display:grid;gap:28px}.g1{display:grid;gap:12px}
+.two #svc>div:first-child .grp{margin-top:0}.grp{margin:22px 0 6px}.card{padding:14px 0}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 0}.pills a{border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;padding:7px 16px;text-decoration:none;font:600 .9rem 'Syne'}
+.stats{display:flex;gap:22px;flex-wrap:wrap;margin:22px 0 10px}.stats div{font-size:.85rem;opacity:.9}.stats b{display:block;font:400 2.6rem/1 'Pinyon Script';color:var(--gold)}
+.info{font-size:.85rem;opacity:.7;margin:0}
+.hpic{display:none;position:relative;height:440px;border-radius:200px 200px 28px 28px;border:2px solid var(--gold);background:linear-gradient(160deg,var(--plum2),var(--orq));align-items:center;justify-content:center;color:var(--gold);font-size:2.2rem}
+.hpic i{position:absolute;font:600 .9rem 'Syne';font-style:normal;background:var(--gold);color:var(--plum);border-radius:999px;padding:8px 16px;box-shadow:0 8px 24px rgba(0,0,0,.3);animation:float 7s ease-in-out infinite}
+@media(min-width:800px){.hg{display:grid;grid-template-columns:1.2fr 340px;gap:48px;align-items:center;max-width:1100px}.hpic{display:flex}
+.two{grid-template-columns:1.3fr 1fr;align-items:start}.two aside{position:sticky;top:80px}}
+@media(min-width:720px){section{padding:64px 32px}}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<header><span class="script">Ana Macedo</span><button id="mbtn" aria-expanded="false" aria-controls="menu">menu</button></header>
+<nav id="menu" aria-label="Menu principal">
+<a href="#quiz">Qual procedimento?</a><a href="#servicos">Serviços e valores</a><a href="#galeria">Trabalhos</a><a href="#parceria">Parcerias</a><a href="#cuidados">Cuidados e FAQ</a><a href="#sobre">Sobre mim</a><a href="#agendar">Agendar</a>
+</nav>
+
+<section id="hero" class="dark" data-msg="Olá! Vim pelo site e gostaria de agendar um horário.">
+<span class="nail a"></span><span class="nail b"></span><span class="nail c"></span>
+<div class="wrap hg"><div>
+<div class="tag">seu estilo começa nos detalhes</div>
+<h1 class="script" data-sp="-.12">Ana Macedo</h1>
+<p class="lead">Unhas, sobrancelha e lash feitas com capricho. Escolha o procedimento, veja os valores e peça seu horário em um toque.</p>
+<div class="btns"><a class="btn gold" id="heroWa" href="#">Chamar no WhatsApp</a><a class="btn ghost" href="#galeria">Ver trabalhos</a></div>
+<div class="pills"><a href="#servicos">✦ Unhas</a><a href="#servicos">✦ Sobrancelhas</a><a href="#servicos">✦ Lash Lifting</a></div>
+<div class="stats"><div><b>3</b>anos de lash</div><div><b>2</b>anos de sobrancelha</div><div><b>1</b>ano de unhas</div></div>
+<p class="info">Seg a sáb · Pix, dinheiro ou cartão · Horário confirmado pelo WhatsApp</p>
+</div><div class="hpic"><span class="script">sua foto aqui</span><i style="top:14%;left:-8%">Lash lifting</i><i style="top:46%;right:-8%">Nail art</i><i style="bottom:12%;left:-4%">Brow lamination</i></div></div>
+</section>
+
+<div class="dark" style="padding:0 0 34px"><div id="stories"><a href="#quiz"><b>✦</b>Quiz</a><a href="#servicos"><b>$</b>Valores</a><a href="#galeria"><b>♥</b>Trabalhos</a><a href="#antes"><b>⇄</b>Antes/ depois</a><a href="#parceria"><b>★</b>Sarah</a><a href="#agendar"><b>✎</b>Agendar</a></div></div>
+<div class="mq" id="mq" aria-hidden="true"></div>
+<section id="quiz" data-msg="Olá! Fiz o quiz do site e queria ajuda para escolher meu procedimento.">
+<div class="wrap"><h2>Qual procedimento é a sua cara?</h2><p class="lead">Responde rapidinho e descobre por onde começar.</p><div class="qbox" id="qbox"></div></div>
+</section>
+
+<section id="servicos" class="dark2" data-msg="Olá! Vi os valores no site e gostaria de agendar.">
+<div class="wrap wide"><h2>Serviços e valores</h2><p class="lead">Valores exatos. Pagamento em Pix, dinheiro ou cartão.</p><div class="two"><div id="svc"></div><aside><div class="bx" id="pm"></div><h3 style="margin:22px 0 10px">Combos</h3><div class="g1" id="cmb"></div><p style="opacity:.7;font-size:.9rem">Valores podem variar de acordo com o procedimento.</p></aside></div></div>
+</section>
+
+<section id="galeria" data-msg="Olá! Vi seus trabalhos no site e quero um modelo parecido.">
+<div class="wrap"><h2>Trabalhos e inspirações</h2><p class="lead">Toque no coração dos modelos que amou e mande todos de uma vez pelo WhatsApp.</p>
+<div class="filters" id="filters"></div><div class="grid" id="grid"></div>
+<div id="favbar"><span id="favtxt"></span><a class="btn gold" id="favwa" href="#">Enviar meus favoritos</a></div></div>
+</section>
+
+<section id="antes" class="dark" data-msg="Olá! Vi o antes e depois no site e quero transformar minhas unhas.">
+<div class="wrap"><h2>Antes e depois</h2><p class="lead">Arraste para ver a transformação.</p>
+<div class="ba"><div class="af">Depois</div><div class="be" id="be">Antes</div><i id="bar"></i><input type="range" id="rng" min="0" max="100" value="50" aria-label="Comparar antes e depois"></div></div>
+</section>
+
+<section id="parceria" data-msg="Olá! Vim pela parceria com a Sarah e gostaria de agendar.">
+<div class="wrap"><div class="pcard"><div class="script" style="font-size:2.4rem;color:var(--gold)">parceria</div>
+<h2>Veio pela Sarah? Tem mimo exclusivo.</h2>
+<p>Quem chega indicada pela Sarah ganha um brinde exclusivo no atendimento. Avise no agendamento marcando a opção "Vim pela Sarah". Também somos parceiras da Carol (Marie).</p>
+<a class="btn gold" href="#agendar">Agendar com benefício</a></div></div>
+</section>
+
+<section id="cuidados" class="dark2" data-msg="Olá! Tenho uma dúvida sobre os procedimentos.">
+<div class="wrap"><h2>Cuidados e perguntas frequentes</h2>
+<details><summary>Como me preparar?</summary><p>Para lash e brow lamination, venha de banho tomado. Para unhas, o ideal é não estar roendo as unhas.</p></details>
+<details><summary>Quando volto para manutenção?</summary><p>Unhas: de 15 a 20 dias. Lash: a cada 3 meses. Sobrancelha: cerca de 15 dias, se for certinho, mas varia de pessoa para pessoa.</p></details>
+<details><summary>E os cuidados depois?</summary><p>Depois do atendimento eu te passo tudo pelo WhatsApp.</p></details>
+<details><summary>Como funciona o cancelamento?</summary><p>Avise com 24 horas de antecedência. Para remarcar ou cancelar, é só falar comigo pelo WhatsApp.</p></details>
+<details><summary>E se eu atrasar?</summary><p>Passou de 10 minutos de atraso, o horário é desmarcado. Se for atrasar, me avise.</p></details>
+<details><summary>Quais dias você atende?</summary><p>De segunda a sábado. Domingo não atendo.</p></details>
+<details><summary>Onde é o atendimento?</summary><p>Te passo o local e os valores pelo WhatsApp assim que você pedir seu horário.</p></details>
+</div>
+</section>
+
+<section id="sobre" data-msg="Olá! Li sobre você no site e gostaria de agendar.">
+<div class="wrap"><h2>Sobre mim</h2>
+<p class="lead" style="opacity:1">Sou a Ana, perfeccionista assumida. Trabalho com cílios há 3 anos, sobrancelha há 2 e unhas há 1, e cada detalhe conta no resultado.</p>
+<p class="lead" style="opacity:1">Tenho cursos e certificados profissionalizantes.</p>
+<div class="quote">Será um prazer cuidar de você e fazer parte da sua autoestima.</div>
+<a class="btn gold" href="#" id="igBtn" target="_blank" rel="noopener">Seguir @nails_anamacedo</a></div>
+</section>
+
+
+<section id="estilo" data-msg="Olá! Fiz o quiz de estilo do site e quero um modelo assim."><div class="wrap"><h2>Qual é o seu estilo?</h2><p class="lead">Responda e veja o que combina com você.</p><div class="qbox" id="sbox"></div></div></section>
+<section id="guia" class="dark" data-msg="Olá! Tenho dúvidas sobre um procedimento."><div class="wrap"><h2>Cada serviço explicado</h2><div class="filters" id="gt"></div><div id="gb"></div><h2 style="margin-top:44px">Quando fazer a manutenção?</h2><div class="g2" id="man"></div><a class="btn gold" href="#agendar">Quero agendar minha manutenção</a></div></section>
+<section id="local" data-msg="Olá! Gostaria de saber como chegar."><div class="wrap"><h2>Localização</h2><div class="g2" id="loc"></div><a class="btn gold" id="maps" target="_blank" rel="noopener" href="#">Como chegar</a><h2 style="margin-top:44px">Política de atendimento</h2><div class="g2" id="pol"></div><p style="opacity:.7;font-size:.9rem">Valores podem variar de acordo com o procedimento.</p></div></section>
+<section id="vale" class="dark2" data-msg="Olá! Quero comprar um vale-presente."><div class="wrap"><h2>Vale-presente</h2><p class="lead">Presenteie alguém: a pessoa escolhe o presente.</p>
+<form onsubmit="return false"><label>Para quem<input id="vt" placeholder="Nome de quem vai receber"></label><label>De<input id="vf"></label><label>Presente<select id="vs"><option>Unhas</option><option>Sobrancelhas</option><option>Lash lifting</option><option>Valor personalizado</option></select></label><label>Valor (R$)<input id="vv" inputmode="numeric" placeholder="Ex.: 120"></label></form>
+<div id="gift"></div><p><a class="btn gold" id="vw" target="_blank" rel="noopener" href="#">Solicitar vale pelo WhatsApp</a></p></div></section>
+<section id="calendario" class="dark" data-msg="Olá! Preciso remarcar meu horário."><div class="wrap"><h2>Meu horário</h2><p class="lead">Depois que eu confirmar, salve no seu calendário. Precisou mudar? Reagende em um toque.</p>
+<form onsubmit="return false"><label>Serviço<select id="cs"></select></label><label>Data<input type="date" id="cd"></label><label>Hora<input type="time" id="ch" value="14:00"></label></form>
+<p id="cb" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"></p></div></section>
+<section id="agendar" class="dark" data-msg="Olá! Gostaria de agendar um horário.">
+<div class="wrap"><h2>Peça seu horário</h2><p class="lead">Você envia o pedido e eu confirmo pelo WhatsApp.</p>
+<form id="f">
+<label>Seu nome<input id="fn" required autocomplete="name"></label>
+<label>Serviço<select id="fs"></select></label>
+<label>Data desejada<input type="date" id="fd" required></label>
+<label>Melhor horário<input id="fh" placeholder="Ex.: à tarde, depois das 18h"></label>
+<label>Observações<textarea id="fo" rows="3"></textarea></label>
+<label class="ck"><input type="checkbox" id="fsa"> Vim pela Sarah</label>
+<p id="err" role="alert"></p>
+<button class="btn gold" type="submit">Enviar pedido pelo WhatsApp</button>
+</form></div>
+</section>
+
+<footer><div class="script">Ana Macedo</div><p>seu estilo começa nos detalhes</p><a class="btn ghost" href="#" id="igBtn2" target="_blank" rel="noopener">Ver Instagram</a></footer>
+<a id="agb" href="#agendar">Agendar horário</a>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Modelo"><button class="nv" id="lbx" aria-label="Fechar">✕</button><div id="lbi"></div><div id="lbt" class="script" style="font-size:2rem;color:var(--gold)"></div><div class="row"><button class="nv" id="lbp" aria-label="Anterior">‹</button><button class="btn ghost" id="lbf" style="color:var(--off)"></button><button class="nv" id="lbn" aria-label="Próximo">›</button></div><a class="btn gold" id="lbw" target="_blank" rel="noopener" href="#">Quero este modelo</a><p style="margin:0;font-size:.85rem;opacity:.7">Toque duas vezes na foto para favoritar</p></div>
+<a id="fab" href="#" target="_blank" rel="noopener">WhatsApp</a>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+/* ====== EDITE AQUI ====== */
+const sb = supabase.createClient('https://macedo.supabase.co', 'Macedoana0908*'); IG='https://instagram.com/nails_anamacedo';
+// preco: número (ex.: 120) ou null para mostrar "R$ ––". tipo: unha | sobr | lash
+const SERV=[
+{n:'Alongamento',t:'unha',d:'Aumenta o comprimento e define o formato das unhas.',tempo:'até 2h30',preco:null},
+{n:'Manutenção do alongamento',t:'unha',d:'Repõe o crescimento e renova o alongamento. Volte de 15 a 20 dias.',tempo:'',preco:null},
+{n:'Banho de gel',t:'unha',d:'Camada de gel sobre a unha natural. Reforça sem aumentar o tamanho.',tempo:'1h30',preco:null},
+{n:'Esmaltação em gel e blindagem',t:'unha',d:'Alinha a unha e protege com cor e brilho que duram semanas.',tempo:'1h ou mais',preco:null},
+{n:'Esmaltação tradicional',t:'unha',d:'Esmalte comum, rápido e leve.',tempo:'1h',preco:null},
+{n:'Pedicure',t:'unha',d:'Cuidado completo para os pés.',tempo:'',preco:null},
+{n:'Design de sobrancelha',t:'sobr',d:'Sobrancelha desenhada e alinhada ao seu rosto.',tempo:'40min',preco:null},
+{n:'Brow lamination',t:'sobr',d:'Fios alinhados e preenchidos, com efeito mais volumoso.',tempo:'1h30',preco:null},
+{n:'Lash lifting',t:'lash',d:'Curvatura e levantamento dos seus próprios cílios.',tempo:'1h30',preco:null}];
+// img: coloque a URL da foto (ou arquivo) para trocar o degradê. cat: unhas | sobrancelhas | lash
+const FOTOS=[
+{c:'unhas',t:'Alongamento',img:''},{c:'unhas',t:'Nail art',img:''},{c:'unhas',t:'Banho de gel',img:''},{c:'unhas',t:'Blindagem',img:''},
+{c:'unhas',t:'Esmaltação em gel',img:''},{c:'unhas',t:'Alongamento',img:''},{c:'sobrancelhas',t:'Design',img:''},{c:'sobrancelhas',t:'Brow lamination',img:''},
+{c:'unhas',t:'Nail art',img:''},{c:'lash',t:'Lash lifting',img:''},{c:'unhas',t:'Banho de gel',img:''},{c:'unhas',t:'Alongamento',img:''}];
+const GRUPOS={unha:'Unhas',sobr:'Sobrancelhas',lash:'Lash'};
+/* ======================== */
+const $=s=>document.querySelector(s);
+const wa=m=>`https://wa.me/${WA}?text=${encodeURIComponent(m)}`;
+const money=p=>p==null?'R$ ––':'R$ '+Number(p).toFixed(2).replace('.',',');
+$('#igBtn').href=$('#igBtn2').href=IG;
+/* menu */
+const menu=$('#menu'),mb=$('#mbtn');
+mb.onclick=()=>{const o=menu.classList.toggle('open');mb.textContent=o?'fechar':'menu';mb.setAttribute('aria-expanded',o)};
+menu.querySelectorAll('a').forEach(a=>a.onclick=()=>{menu.classList.remove('open');mb.textContent='menu';mb.setAttribute('aria-expanded',false)});
+/* whatsapp por seção */
+const fab=$('#fab');fab.href=wa($('#hero').dataset.msg);$('#heroWa').href=fab.href;$('#heroWa').target='_blank';
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)fab.href=wa(e.target.dataset.msg)}),{threshold:.5}).observe&&
+document.querySelectorAll('section[data-msg]').forEach(s=>{});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)fab.href=wa(e.target.dataset.msg)}),{threshold:.45});
+document.querySelectorAll('section[data-msg]').forEach(s=>io.observe(s));
+/* brilhos no hero */
+const hero=$('#hero');let last=0;
+const spark=e=>{const n=Date.now();if(n-last<60)return;last=n;const p=e.touches?e.touches[0]:e,r=hero.getBoundingClientRect();
+const s=document.createElement('span');s.className='spark';s.textContent='✦';s.style.left=(p.clientX-r.left)+'px';s.style.top=(p.clientY-r.top)+'px';hero.appendChild(s);setTimeout(()=>s.remove(),900)};
+hero.addEventListener('pointermove',spark);hero.addEventListener('touchmove',spark,{passive:true});
+/* serviços */
+const svc=$('#svc');
+Object.keys(GRUPOS).forEach(g=>{
+const list=SERV.filter(s=>s.t===g);
+svc.insertAdjacentHTML('beforeend',`<div class="${g==='lash'?'quiet':''}"><div class="grp">${GRUPOS[g]}</div>`+list.map(s=>`<div class="card"><h3>${s.n}</h3><div class="pr">${money(s.preco)}</div><p>${s.d}</p><div class="meta">${s.tempo?'<span>Duração: '+s.tempo+'</span>':''}<a href="${wa('Olá! Gostaria de agendar '+s.n+'.')}" target="_blank" rel="noopener">Agendar este</a></div></div>`).join('')+'</div>');
+});
+$('#fs').innerHTML=SERV.map(s=>`<option>${s.n}</option>`).join('');
+/* quiz */
+const byN=n=>SERV.find(s=>s.n===n);
+const Q=[
+{q:'Como estão suas unhas hoje?',o:[['Quero unhas maiores',{r:'Alongamento'}],['Já tenho alongamento',{r:'Manutenção do alongamento'}],['Prefiro manter a minha unha natural',{g:1}]]},
+{q:'Quer deixar a unha natural mais forte?',o:[['Sim, quero reforço',{r:'Banho de gel'}],['Não, só quero cor',{g:2}]]},
+{q:'Quanto tempo quer que a cor dure?',o:[['Semanas, com brilho e proteção',{r:'Esmaltação em gel e blindagem'}],['Só um esmalte rápido',{r:'Esmaltação tradicional'}]]}];
+function qs(i){const b=$('#qbox');b.innerHTML=`<h3>${Q[i].q}</h3>`;
+Q[i].o.forEach(([t,a])=>{const x=document.createElement('button');x.className='opt';x.textContent=t;x.onclick=()=>a.r?qr(a.r):qs(a.g);b.appendChild(x)})}
+function qr(n){const s=byN(n);$('#qbox').innerHTML=`<div class="res"><p>Combina com você:</p><b>${s.n}</b><p>${s.d}</p><p>${s.tempo?'Duração: '+s.tempo+' · ':''}${money(s.preco)}</p></div><a class="btn gold" target="_blank" rel="noopener" href="${wa('Olá! Fiz o quiz do site e gostaria de agendar '+s.n+'.')}">Agendar pelo WhatsApp</a> <button class="btn ghost" style="color:var(--plum2)" id="redo">Refazer</button>`;$('#redo').onclick=()=>qs(0)}
+qs(0);
+/* galeria */
+let fav=[];try{fav=JSON.parse(localStorage.getItem('fav')||'[]')}catch(e){}
+let cat='tudo';
+const cats=['tudo','unhas','sobrancelhas','lash'];
+$('#filters').innerHTML=cats.map(c=>`<button class="chip ${c==='tudo'?'on':''}" data-c="${c}">${c==='tudo'?'Tudo':c[0].toUpperCase()+c.slice(1)}</button>`).join('');
+$('#filters').onclick=e=>{const c=e.target.dataset.c;if(!c)return;cat=c;document.querySelectorAll('.chip').forEach(b=>b.classList.toggle('on',b.dataset.c===c));draw()};
+function draw(){$('#grid').innerHTML=FOTOS.map((f,i)=>({f,i})).filter(x=>cat==='tudo'||x.f.c===cat).map(({f,i})=>{
+const bg=bgs(f,i);
+return `<div class="tile" data-i="${i}" style="${bg}"><span>${f.t}</span><button class="heart ${fav.includes(i)?'on':''}" data-i="${i}" aria-label="Favoritar modelo ${i+1}">${fav.includes(i)?'♥':'♡'}</button></div>`}).join('');
+const bar=$('#favbar');bar.style.display=fav.length?'flex':'none';
+$('#favtxt').textContent=fav.length+(fav.length===1?' modelo favoritado':' modelos favoritados');
+$('#favwa').href=wa('Olá! Amei estes modelos do site: '+fav.map(i=>FOTOS[i].t+' (#'+(i+1)+')').join(', ')+'. Podemos agendar?');$('#favwa').target='_blank'}
+$('#grid').onclick=e=>{const h=e.target.closest('.heart');if(!h){const t=e.target.closest('.tile');if(t)openLb(+t.dataset.i);return}tf(+h.dataset.i)};
+draw();
+/* antes e depois */
+$('#rng').oninput=e=>{const v=e.target.value;$('#be').style.clipPath=`inset(0 ${100-v}% 0 0)`;$('#bar').style.left=v+'%'};
+/* agenda */
+const d=$('#fd');d.min=new Date().toISOString().slice(0,10);
+async function handleAgendamento(e) {
+  e.preventDefault();
+  const err=$('#err');
+  if(new Date(d.value+'T12:00').getDay()===0) {
+    err.textContent='Não atendo aos domingos. Escolha outra data.';
+    return;
+  }
+  err.textContent='';
+  const [y,m,dd]=d.value.split('-');
+  let msg=`Olá! Gostaria de agendar ${$('#fs').value}.\nNome: ${$('#fn').value}\nData: ${dd}/${m}/${y}\nHorário: ${$('#fh').value||'a combinar'}`;
+  if($('#fo').value)msg+=`\nObs: ${$('#fo').value}`;
+  if($('#fsa').checked)msg+='\nVim pela Sarah.';
+  const { error } = await sb.from('agendamentos').insert({
+    nome: $('#fn').value,
+    servico: $('#fs').value,
+    data: d.value,
+    horario: $('#fh').value,
+    obs: $('#fo').value,
+    vim_pela_sarah: $('#fsa').checked
+  });
+  if (error) console.error(error);
+  location.href = wa(msg);
+};
+
+function bgs(f,i){return f.img?`background-image:url('${f.img}')`:`background:linear-gradient(${140+i*23}deg,hsl(${268+i*7} 32% ${30+(i%4)*7}%),hsl(${38+i*3} 42% ${48+(i%3)*6}%))`}
+function tf(i){fav=fav.includes(i)?fav.filter(x=>x!==i):[...fav,i];try{localStorage.setItem('fav',JSON.stringify(fav))}catch(e){}draw();if(lb.classList.contains('on'))shw(cur)}
+let cur=0;const lb=$('#lb'),lbi=$('#lbi');
+function shw(i){cur=(i+FOTOS.length)%FOTOS.length;const f=FOTOS[cur];lbi.setAttribute('style',bgs(f,cur));$('#lbt').textContent=f.t;$('#lbf').textContent=fav.includes(cur)?'♥ Favoritado':'♡ Favoritar';$('#lbw').href=wa('Olá! Quero um modelo como este: '+f.t+' (#'+(cur+1)+').')}
+function openLb(i){shw(i);lb.classList.add('on');document.body.style.overflow='hidden'}
+function closeLb(){lb.classList.remove('on');document.body.style.overflow=''}
+$('#lbx').onclick=closeLb;$('#lbp').onclick=()=>shw(cur-1);$('#lbn').onclick=()=>shw(cur+1);$('#lbf').onclick=()=>tf(cur);
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')shw(cur-1);if(e.key==='ArrowRight')shw(cur+1)});
+let sx=0,lt=0;lb.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>60)shw(cur+(dx<0?1:-1))},{passive:true});
+lbi.addEventListener('pointerup',()=>{const n=Date.now();if(n-lt<320){if(!fav.includes(cur))tf(cur);const b=document.createElement('div');b.className='burst';b.textContent='♥';lbi.appendChild(b);setTimeout(()=>b.remove(),800)}lt=n});
+/* botão agendar fixo some na seção de agendar */
+const agb=$('#agb');new IntersectionObserver(es=>es.forEach(e=>agb.style.transform=e.isIntersecting?'translateY(170%)':'none'),{threshold:.25}).observe($('#agendar'));
+/* letras estilo colagem */
+function rn(el){const t=el.dataset.t||(el.dataset.t=el.textContent);el.textContent='';el.classList.add('rn');
+const F=[['Abril Fatface',1],['Syne',.95],['Pinyon Script',1.25],['Rock Salt',.7]],C=[['var(--gold)','var(--plum)'],['var(--plum2)','var(--off)'],['var(--lilac)','var(--plum)'],['transparent','var(--plum2)'],['var(--plum)','var(--gold)']];
+t.split(' ').forEach(w=>{const ws=document.createElement('span');ws.style.cssText='display:inline-block;white-space:nowrap;margin-right:.25em';
+[...w].forEach(ch=>{const s=document.createElement('span'),f=F[Math.random()*4|0],c=C[Math.random()*5|0];s.textContent=ch;s.style.cssText=`font-family:'${f[0]}',serif;font-size:${f[1]}em;background:${c[0]};color:${c[1]};transform:rotate(${(Math.random()*8-4).toFixed(1)}deg)`;ws.appendChild(s)});el.appendChild(ws)});el.onclick=()=>rn(el)}
+rn($('#quiz h2'));rn($('#galeria h2'));
+/* faixa em movimento */
+$('#mq').innerHTML='<div>'+'anti basic nails<i>✦</i>seu estilo começa nos detalhes<i>✦</i>bora agendar<i>✦</i>unha, sobrancelha e lash<i>✦</i>'.repeat(4)+'</div>';
+/* estrelas + parallax + progresso */
+document.querySelectorAll('section:not(#hero)').forEach((sc,i)=>{for(let k=0;k<2;k++){const e=document.createElement('span');e.className='star';e.textContent='✦';e.dataset.sp=k?-.08:.12;e.style.cssText=`${k?'left:5%':'right:6%'};top:${k?'64%':'5%'};font-size:${28+((i+k)%3)*14}px;opacity:.5`;sc.appendChild(e)}});
+const sps=[...document.querySelectorAll('[data-sp]')];
+function tick(){const H=innerHeight;sps.forEach(e=>{const r=e.parentElement.getBoundingClientRect();if(r.bottom<0||r.top>H)return;e.style.translate=`0 ${(r.top+r.height/2-H/2)*e.dataset.sp}px`});$('#prog').style.width=(scrollY/Math.max(1,document.documentElement.scrollHeight-H)*100)+'%'}
+addEventListener('scroll',()=>requestAnimationFrame(tick),{passive:true});tick();
+/* brilhos ao tocar em qualquer lugar */
+document.addEventListener('pointerdown',e=>{if(e.target.closest('input,textarea,select,summary,#lb'))return;for(let k=0;k<6;k++){const s=document.createElement('span');s.className='spark sf';s.textContent='✦';s.style.cssText=`left:${e.clientX}px;top:${e.clientY}px;--dx:${(Math.random()-.5)*120}px;--dy:${(Math.random()-.7)*120}px;font-size:${10+Math.random()*14}px`;document.body.appendChild(s);setTimeout(()=>s.remove(),800)}});
+
+/* ===== extras da apresentação ===== */
+const LOC={end:'Enviado pelo WhatsApp ao solicitar o horário',maps:'',est:'Consulte pelo WhatsApp',ref:'Consulte pelo WhatsApp',hor:'Segunda a sábado (domingo não atendo)'};
+const G={Unhas:{o:'Alongamento, banho de gel e esmaltação para deixar as mãos e pés bonitos e resistentes.',c:'Preparo da unha, aplicação do material ou esmalte, acabamento e finalização.',t:'De 1h a 2h30, conforme o serviço.',p:'Quem quer unhas mais longas, mais fortes ou apenas uma cor nova.',e:'Usar as unhas como ferramenta, abrir latas, roer ou puxar o material.',q:'Hidrate as cutículas com óleo e use luvas em produtos de limpeza.',r:'Manutenção de 15 a 20 dias.'},
+Sobrancelhas:{o:'Design ou brow lamination: desenho alinhado ao rosto e fios organizados.',c:'Mapeamento do formato, alinhamento e finalização; na lamination, os fios são fixados e preenchidos.',t:'Design 40min · Lamination 1h30.',p:'Quem quer moldar, alinhar ou dar volume às sobrancelhas.',e:'Molhar, esfregar e usar maquiagem na região nas primeiras 24h.',q:'Mantenha os fios penteados e hidratados.',r:'Cerca de 15 dias (varia de pessoa para pessoa).'},
+'Lash lifting':{o:'Curvatura e levantamento dos seus próprios cílios, sem extensão.',c:'Os cílios são levantados, fixados e finalizados, deixando o olhar aberto.',t:'Cerca de 1h30; o efeito dura em torno de 3 meses.',p:'Quem quer destacar o olhar sem extensão.',e:'Molhar, usar rímel e esfregar os olhos nas primeiras 24h.',q:'Penteie com cuidado e evite produtos oleosos na região.',r:'A cada 3 meses.'}};
+const gt=$('#gt');gt.innerHTML=Object.keys(G).map((k,i)=>`<button class="chip${i?'':' on'}" style="color:var(--off);border-color:var(--orq)" data-k="${k}">${k}</button>`).join('');
+function gs(k){const g=G[k];$('#gb').innerHTML=`<div class="g2"><div class="bx"><h3>O que é?</h3><p>${g.o}</p></div><div class="bx"><h3>Como funciona?</h3><p>${g.c}</p></div><div class="bx"><h3>Quanto tempo dura?</h3><p>${g.t}</p></div><div class="bx"><h3>Para quem?</h3><p>${g.p}</p></div></div><h3 style="margin-top:22px">Cuidados depois</h3><div class="g2"><div class="bx"><h3>O que evitar</h3><p>${g.e}</p></div><div class="bx"><h3>Como cuidar</h3><p>${g.q}</p></div><div class="bx"><h3>Quando fazer de novo</h3><p>${g.r}</p></div></div>`}
+gt.onclick=e=>{const k=e.target.dataset.k;if(!k)return;gt.querySelectorAll('.chip').forEach(b=>b.classList.toggle('on',b===e.target));gs(k)};gs('Unhas');
+$('#man').innerHTML=[['Unhas','2 a 3 semanas'],['Lash lifting','cerca de 3 meses'],['Sobrancelhas','cerca de 2 semanas']].map(a=>`<div class="bx"><h3>${a[0]}</h3><p class="pr">${a[1]}</p><p>aproximadamente</p></div>`).join('');
+/* promo + combos */
+const now=new Date(),ed=new Date(now.getFullYear(),now.getMonth()+1,0,23,59,59),dl=Math.ceil((ed-now)/864e5);
+$('#pm').innerHTML=`<h3>PROMOÇÕES DO MÊS</h3><p>Lash lifting + sobrancelha · <span class="pr">${money(null)}</span></p><p>Até ${ed.toLocaleDateString('pt-BR')} · oferta termina em <b id="dl">${dl}</b> ${dl===1?'dia':'dias'}</p><a class="btn gold" target="_blank" rel="noopener" href="${wa('Olá! Quero a promoção do mês (lash lifting + sobrancelha).')}">Quero aproveitar</a>`;
+$('#cmb').innerHTML=[['COMBO OLHAR','Design de sobrancelha + Lash lifting'],['COMBO BEAUTY','Unhas + sobrancelha']].map(c=>`<div class="bx"><h3>${c[0]}</h3><p>${c[1]}</p><p><s>De R$ ––</s> <span class="pr">Por R$ ––</span></p><a class="btn ghost" style="font-size:.9rem;padding:10px 18px" target="_blank" rel="noopener" href="${wa('Olá! Tenho interesse no '+c[0]+'.')}">Quero este combo</a></div>`).join('');
+/* quiz de estilo */
+const SQ=[['Qual estilo você prefere?',['Delicado','Elegante','Marcante','Romântico']],['Qual formato?',['Quadrado','Almond','Bailarina','Stiletto']]];let sa=[];
+function sq(i){const b=$('#sbox');if(i>1){b.innerHTML=`<div class="res"><p>RESULTADO</p><b>${sa[0]} + ${sa[1]}</b><p>Seu estilo combina com unhas ${sa[0].toLowerCase()}s no formato ${sa[1].toLowerCase()}. Veja os trabalhos relacionados.</p></div><a class="btn gold" href="#galeria">Ver trabalhos</a> <a class="btn ghost" style="color:var(--plum2)" target="_blank" rel="noopener" href="${wa('Olá! Meu estilo é '+sa[0].toLowerCase()+', formato '+sa[1].toLowerCase()+'. Pode me indicar um modelo?')}">Falar no WhatsApp</a> <button class="btn ghost" style="color:var(--plum2)" id="sr">Refazer</button>`;$('#sr').onclick=()=>{sa=[];sq(0)};return}
+b.innerHTML=`<h3>${SQ[i][0]}</h3>`;SQ[i][1].forEach(t=>{const x=document.createElement('button');x.className='opt';x.textContent=t;x.onclick=()=>{sa.push(t);sq(i+1)};b.appendChild(x)})}sq(0);
+/* localização e política */
+$('#loc').innerHTML=[['Endereço',LOC.end],['Estacionamento',LOC.est],['Pontos de referência',LOC.ref],['Horários de atendimento',LOC.hor]].map(a=>`<div class="bx"><h3>${a[0]}</h3><p>${a[1]}</p></div>`).join('');
+$('#maps').href=LOC.maps||wa('Olá! Como chego ao local do atendimento?');
+$('#pol').innerHTML=[['Cancelamento','Avise com 24h de antecedência pelo WhatsApp.'],['Atrasos','Passou de 10 minutos, o horário é desmarcado.'],['Pagamento','Pix, dinheiro ou cartão.'],['Acompanhantes','Avise antes se for levar acompanhante.']].map(a=>`<div class="bx"><h3>${a[0]}</h3><p>${a[1]}</p></div>`).join('');
+/* vale-presente */
+function gf(){const v=$('#vv').value;$('#gift').innerHTML=`<div class="script">Vale-presente</div><p>Para ${$('#vt').value||'você'}, com carinho${$('#vf').value?' · de '+$('#vf').value:''}</p><b>${$('#vs').value}${v?' · R$ '+v:''}</b>`;$('#vw').href=wa(`Olá! Quero um vale-presente.\nPara: ${$('#vt').value||'-'}\nDe: ${$('#vf').value||'-'}\nPresente: ${$('#vs').value}${v?'\nValor: R$ '+v:''}`)}
+['#vt','#vf','#vs','#vv'].forEach(x=>$(x).oninput=gf);gf();
+/* calendário e reagendar */
+$('#cs').innerHTML=SERV.map(x=>`<option>${x.n}</option>`).join('');$('#cd').min=d.min;
+function cal(){const dv=$('#cd').value,hv=$('#ch').value;const cb=$('#cb');if(!dv){cb.innerHTML='<span style="opacity:.7">Escolha a data do seu horário confirmado.</span>';return}
+const st=new Date(dv+'T'+hv),en=new Date(st.getTime()+90*6e4),z=x=>x.toISOString().replace(/[-:]|\.\d+/g,''),ti='Ana Macedo · '+$('#cs').value,[y,m,dd]=dv.split('-');
+const ics=URL.createObjectURL(new Blob([`BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:${z(st)}\nDTEND:${z(en)}\nSUMMARY:${ti}\nEND:VEVENT\nEND:VCALENDAR`],{type:'text/calendar'}));
+cb.innerHTML=`<a class="btn gold" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(ti)}&dates=${z(st)}/${z(en)}">Google Calendar</a><a class="btn ghost" target="_blank" rel="noopener" href="https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(ti)}&startdt=${st.toISOString()}&enddt=${en.toISOString()}">Outlook</a><a class="btn ghost" download="horario.ics" href="${ics}">Apple / app do celular</a><a class="btn ghost" target="_blank" rel="noopener" href="${wa(`Olá! Preciso reagendar meu horário de ${dd}/${m} às ${hv.replace(':','h')}. Quais horários estão disponíveis?`)}">Reagendar</a>`}
+['#cs','#cd','#ch'].forEach(x=>$(x).oninput=cal);cal();
+/* sobre: certificados + instagram */
+$('#sobre .wrap').insertAdjacentHTML('beforeend',`<h3 style="margin-top:40px">Formação profissional</h3><div class="g2">${['Design de sobrancelhas','Lash lifting','Nail Designer','Nail Art'].map(c=>`<div class="bx"><p><b>${c}</b></p><p style="opacity:.6">(foto do certificado)</p></div>`).join('')}</div><h3 style="margin-top:28px">Siga meu trabalho</h3><p>@nails_anamacedo: descubra no Instagram e volte aqui para ver serviços, valores e agendar.</p>`);
+/* dark mode */
+const tg=document.createElement('button');tg.id='tg';tg.setAttribute('aria-label','Alternar tema claro/escuro');const hw=document.createElement('div');hw.style.display='flex';mb.replaceWith(hw);hw.append(tg,mb);
+function th(t){document.documentElement.dataset.t=t;tg.textContent=t==='dark'?'☀':'☾';try{localStorage.setItem('t',t)}catch(e){}}
+let t0='light';try{t0=localStorage.getItem('t')||'light'}catch(e){}th(t0);tg.onclick=()=>th(document.documentElement.dataset.t==='dark'?'light':'dark');
+/* menu extra + animações ao rolar */
+menu.insertAdjacentHTML('beforeend','<a href="#estilo">Seu estilo</a><a href="#guia">Guia dos serviços</a><a href="#local">Localização e política</a><a href="#vale">Vale-presente</a><a href="#calendario">Meu horário</a>');
+menu.querySelectorAll('a').forEach(a=>a.onclick=()=>{menu.classList.remove('open');mb.textContent='menu'});
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.card,.bx,.qbox,.pcard').forEach(e=>{e.classList.add('rv');ro.observe(e)});
+</script>
+</body>
+</html>
