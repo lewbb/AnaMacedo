@@ -197,6 +197,21 @@ h3.ag{margin:24px 0 10px}.aerr{color:#f3c8c8;min-height:1.4em;margin:0}.vazio{op
 .hpic.has{display:flex;height:360px;margin-top:28px}
 @media(min-width:800px){.hpic.has{height:440px;margin-top:0}}
 #slots{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}#slots .chip{color:var(--off);border-color:var(--orq)}#slots .chip.on{background:var(--gold);color:var(--plum);border-color:var(--gold)}.bar{height:8px;border-radius:8px;background:var(--gold);margin:4px 0 10px}.kpi{font:800 1.8rem Syne;color:var(--gold)}
+#pc{max-width:420px;background:var(--off);color:var(--plum);border:3px solid var(--gold);border-radius:28px;padding:18px 14px 14px;position:relative;margin-top:8px;box-shadow:0 14px 36px rgba(0,0,0,.25)}
+#pc .mh{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+#pc .mt{flex:1;font:400 clamp(1.6rem,7vw,2.2rem)/1.3 'Abril Fatface',serif;color:var(--plum);background:#fff;border:3px solid var(--gold);border-radius:999px;padding:2px 14px;text-align:center}
+#pc .mn{flex:none;width:40px;height:40px;border-radius:50%;border:2px solid var(--gold);background:var(--off);color:var(--plum);font-size:1.3rem;line-height:1;padding:0;cursor:pointer}
+#pc .mn:disabled{opacity:.3;cursor:default}
+#pc .wd,#pc .dg{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+#pc .wd span{background:var(--gold);color:var(--plum);font:700 .62rem Syne;text-align:center;padding:6px 0;border-radius:8px}
+#pc .dg{margin-top:5px}
+#pc .dg button{aspect-ratio:1;border:1.5px solid var(--lilac);background:#fff;border-radius:12px;font:800 1rem Syne;color:var(--plum2);cursor:pointer;padding:0;transition:.15s}
+#pc .dg button:hover:not(:disabled){border-color:var(--gold);transform:scale(1.08)}
+#pc .dg button:disabled{opacity:.28;cursor:default}
+#pc .dg button.hj{border-style:dashed;border-color:var(--gold)}
+#pc .dg button.on{background:var(--gold);border-color:var(--gold);color:var(--plum);transform:scale(1.08);box-shadow:0 4px 12px rgba(201,164,92,.5)}
+#pc::before,#pc::after{content:'✦';position:absolute;color:var(--gold);font-size:18px}
+#pc::before{top:-12px;left:18px}#pc::after{bottom:-10px;right:22px;font-size:24px}
 </style>
 <meta name="description" content="Ana Macedo: nail designer, design de sobrancelha e lash lifting. Veja os valores, os trabalhos e peça seu horário pelo WhatsApp.">
 <meta name="theme-color" content="#26123a">
@@ -248,7 +263,7 @@ h3.ag{margin:24px 0 10px}.aerr{color:#f3c8c8;min-height:1.4em;margin:0}.vazio{op
 <form id="f">
 <label>Seu nome<input id="fn" required autocomplete="name"></label>
 <label>Serviço<select id="fs"></select></label>
-<label>Data desejada<input type="date" id="fd" required></label>
+<div><b>Data</b><div id="pc"></div><input type="hidden" id="fd"></div>
 <div><b>Horário</b><div id="slots"></div><input type="hidden" id="fh"></div>
 <p id="oc" style="margin:0;font-size:.92rem;color:var(--gold)"></p>
 <label>Observações<textarea id="fo" rows="3"></textarea></label>
@@ -401,10 +416,19 @@ $('#slots').onclick=e=>{const h=e.target.dataset.h;if(!h)return;$('#fh').value=h
 function mostrarOcup(){$('#oc').textContent='';$('#err').textContent='';drawSlots()}
 async function carregarOcupados(){if(!sb)return;try{const {data,error}=await sb.rpc('horarios_ocupados');if(!error&&data)ocup=data;const r=await sb.rpc('horarios_bloqueados');if(!r.error&&r.data&&!isAdmin)bloq=r.data}catch(e){console.warn(e)}mostrarOcup()}
 ['fd','fh','fs'].forEach(id=>$('#'+id).addEventListener('input',mostrarOcup));
+/* calendário bonitinho */
+const MESES=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];let cm=new Date();cm.setDate(1);
+function drawCal(){const y=cm.getFullYear(),mo=cm.getMonth(),t=new Date(),dif=(y-t.getFullYear())*12+mo-t.getMonth(),n=new Date(y,mo+1,0).getDate(),hj=hojeStr(),z=x=>String(x).padStart(2,'0');
+let c='';for(let i=0;i<new Date(y,mo,1).getDay();i++)c+='<i></i>';
+for(let k=1;k<=n;k++){const ds=`${y}-${z(mo+1)}-${z(k)}`,off=ds<hj||new Date(y,mo,k).getDay()===0;c+=`<button type="button" data-d="${ds}"${off?' disabled':''} class="${ds===d.value?'on ':''}${ds===hj?'hj':''}">${k}</button>`}
+$('#pc').innerHTML=`<div class="mh"><button type="button" class="mn" data-m="-1" aria-label="Mês anterior"${dif<=0?' disabled':''}>‹</button><div class="mt">${MESES[mo]}</div><button type="button" class="mn" data-m="1" aria-label="Próximo mês"${dif>=3?' disabled':''}>›</button></div><div class="wd">${['DOM','SEG','TER','QUA','QUI','SEX','SÁB'].map(x=>`<span>${x}</span>`).join('')}</div><div class="dg">${c}</div>`}
+$('#pc').onclick=e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.m){cm.setMonth(cm.getMonth()+ +b.dataset.m);drawCal();return}
+if(b.dataset.d){d.value=b.dataset.d;d.dispatchEvent(new Event('input'));drawCal()}};drawCal();
 mostrarOcup();carregarOcupados();
 async function handleAgendamento(e) {
   e.preventDefault();
   const err=$('#err');
+  if(!d.value){err.textContent='Escolha uma data no calendário.';return}
   if(new Date(d.value+'T12:00').getDay()===0) {
     err.textContent='Não atendo aos domingos. Escolha outra data.';
     return;
