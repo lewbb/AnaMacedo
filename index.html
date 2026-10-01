@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ana Macedo | Nail designer, sobrancelha e lash</title>
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Rock+Salt&family=Pinyon+Script&family=Syne:wght@600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Rock+Salt&family=Pinyon+Script&family=Playfair+Display:wght@600;800&family=Cinzel:wght@600&family=Dela+Gothic+One&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--plum:#26123a;--plum2:#3a2058;--orq:#7a56a8;--gold:#c9a45c;--off:#f6f1ea;--lilac:#e4d8f2;--ink:#2a1a3d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-behavior:smooth;scroll-padding-top:64px}
 *,*::before,*::after{box-sizing:inherit}
-body{margin:0;background:var(--off);color:var(--ink);font:400 16px/1.6 'DM Sans',system-ui,sans-serif;overflow-x:hidden}
-h1,h2,h3{font-family:'Syne',system-ui,sans-serif;margin:0;line-height:1.05}
+body{margin:0;background:var(--off);color:var(--ink);font:400 16px/1.6 'Montserrat',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',system-ui,sans-serif;margin:0;line-height:1.05}
 h2{font-size:clamp(2rem,8vw,3.4rem);font-weight:800;margin-bottom:.4em}
 .script{font-family:'Pinyon Script','Snell Roundhand',cursive;font-weight:400}
 section{padding:72px 20px}
@@ -18,7 +18,7 @@ section{padding:72px 20px}
 .dark{background:var(--plum);color:var(--off)}.dark2{background:var(--plum2);color:var(--off)}
 .dark h2,.dark2 h2{color:var(--off)}
 p.lead{max-width:52ch;opacity:.85;margin:0 0 28px}
-.btn{display:inline-block;border:0;border-radius:999px;padding:14px 26px;font:500 1rem 'DM Sans',sans-serif;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn{display:inline-block;border:0;border-radius:999px;padding:14px 26px;font:500 1rem 'Montserrat',sans-serif;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s}
 .btn:active{transform:scale(.96)}.btn:hover{box-shadow:0 8px 24px rgba(201,164,92,.35)}
 .gold{background:var(--gold);color:var(--plum)}
 .ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
@@ -26,15 +26,15 @@ p.lead{max-width:52ch;opacity:.85;margin:0 0 28px}
 /* topo */
 header{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:calc(10px + env(safe-area-inset-top,0px)) 20px 10px;background:rgba(38,18,58,.82);backdrop-filter:blur(10px);color:var(--off)}
 header .script{font-size:1.9rem;line-height:1}
-#mbtn{background:none;border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;padding:6px 16px;font:500 .95rem 'DM Sans';cursor:pointer}
+#mbtn{background:none;border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;padding:6px 16px;font:500 .95rem 'Montserrat';cursor:pointer}
 nav{position:fixed;inset:0;z-index:19;background:var(--plum);display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0 32px;transform:translateY(-100%);transition:transform .45s cubic-bezier(.7,0,.2,1)}
 nav.open{transform:none}
-nav a{font:800 2.2rem 'Syne';color:var(--off);text-decoration:none;padding:4px 0}
+nav a{font:800 2.2rem 'Playfair Display';color:var(--off);text-decoration:none;padding:4px 0}
 nav a:hover{color:var(--gold)}
 /* hero */
 #hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:96px;touch-action:pan-y}
 #hero h1{font-size:clamp(4.2rem,24vw,10rem);font-weight:400;color:var(--gold);line-height:.9;margin:.1em 0 .2em;animation:rise 1.2s cubic-bezier(.2,.8,.2,1) both}
-#hero .tag{font:600 clamp(1.1rem,4.5vw,1.6rem) 'Syne';margin-bottom:12px;animation:rise 1.2s .25s both}
+#hero .tag{font:600 clamp(1rem,4vw,1.4rem) 'Cinzel';margin-bottom:12px;animation:rise 1.2s .25s both}
 #hero .btns{display:flex;gap:12px;flex-wrap:wrap;animation:rise 1.2s .45s both}
 @keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
 .nail{position:absolute;width:90px;height:150px;border:1.5px solid var(--gold);border-radius:50% 50% 45% 45%/60% 60% 40% 40%;opacity:.35;animation:float 9s ease-in-out infinite}
@@ -45,31 +45,31 @@ nav a:hover{color:var(--gold)}
 /* quiz */
 .qbox{background:#fff;border-radius:28px;padding:28px;box-shadow:0 20px 50px rgba(58,32,88,.12);max-width:560px}
 .qbox h3{font-size:1.6rem;margin-bottom:18px}
-.opt{display:block;width:100%;text-align:left;background:var(--off);border:1.5px solid var(--lilac);border-radius:16px;padding:14px 18px;margin-bottom:10px;font:500 1rem 'DM Sans';color:var(--ink);cursor:pointer;transition:.2s}
+.opt{display:block;width:100%;text-align:left;background:var(--off);border:1.5px solid var(--lilac);border-radius:16px;padding:14px 18px;margin-bottom:10px;font:500 1rem 'Montserrat';color:var(--ink);cursor:pointer;transition:.2s}
 .opt:hover{border-color:var(--gold);transform:translateX(6px)}
-.res b{font:800 2rem 'Syne';display:block;color:var(--plum2)}
+.res b{font:800 2rem 'Playfair Display';display:block;color:var(--plum2)}
 /* serviços */
 .grp{font:400 2.4rem 'Pinyon Script';color:var(--gold);margin:32px 0 12px}
 .card{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:18px 0;border-bottom:1px solid rgba(246,241,234,.18)}
 .card h3{font-size:1.25rem}.card p{margin:0;opacity:.75;font-size:.95rem;grid-column:1}
-.card .pr{font:800 1.2rem 'Syne';color:var(--gold);text-align:right}
+.card .pr{font:800 1.2rem 'Playfair Display';color:var(--gold);text-align:right}
 .card .meta{grid-column:1/-1;display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:.9rem;opacity:.9}
 .card .meta a{color:var(--gold)}
 .quiet .card h3{font-size:1.05rem;font-weight:600}
 /* galeria */
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
-.chip{border:1.5px solid var(--plum2);background:none;color:var(--plum2);border-radius:999px;padding:8px 18px;font:500 .95rem 'DM Sans';cursor:pointer}
+.chip{border:1.5px solid var(--plum2);background:none;color:var(--plum2);border-radius:999px;padding:8px 18px;font:500 .95rem 'Montserrat';cursor:pointer}
 .chip.on{background:var(--plum2);color:var(--off)}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .tile{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:3/4;background-size:cover;background-position:center}
 .tile:nth-child(3n+1){aspect-ratio:3/4.6}
-.tile span{position:absolute;left:12px;bottom:10px;color:var(--off);font:600 .9rem 'Syne';text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.tile span{position:absolute;left:12px;bottom:10px;color:var(--off);font:600 .9rem 'Playfair Display';text-shadow:0 1px 8px rgba(0,0,0,.5)}
 .heart{position:absolute;top:10px;right:10px;width:42px;height:42px;border-radius:50%;border:0;background:rgba(246,241,234,.85);font-size:1.3rem;cursor:pointer;transition:transform .25s}
 .heart.on{background:var(--gold);transform:scale(1.15) rotate(-8deg)}
 #favbar{margin-top:20px;display:none;align-items:center;gap:14px;flex-wrap:wrap}
 /* antes e depois */
 .ba{position:relative;max-width:480px;aspect-ratio:1;border-radius:26px;overflow:hidden;user-select:none}
-.ba div{position:absolute;inset:0;display:flex;align-items:flex-end;padding:16px;font:600 1rem 'Syne'}
+.ba div{position:absolute;inset:0;display:flex;align-items:flex-end;padding:16px;font:600 1rem 'Playfair Display'}
 .ba .af{background:linear-gradient(135deg,#c9a45c,#7a56a8 70%)}
 .ba .be{background:linear-gradient(135deg,#8c7a70,#a89b92);clip-path:inset(0 50% 0 0)}
 .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
@@ -79,7 +79,7 @@ nav a:hover{color:var(--gold)}
 .pcard h2{font-size:clamp(1.8rem,7vw,2.6rem)}
 /* faq */
 details{border-bottom:1px solid rgba(246,241,234,.2);padding:14px 0}
-summary{font:600 1.1rem 'Syne';cursor:pointer;list-style:none}
+summary{font:600 1.1rem 'Playfair Display';cursor:pointer;list-style:none}
 summary::-webkit-details-marker{display:none}
 summary::after{content:'+';float:right;color:var(--gold);transition:transform .3s}
 details[open] summary::after{transform:rotate(45deg)}
@@ -88,14 +88,14 @@ details p{margin:10px 0 0;opacity:.85}
 .quote{font:400 clamp(1.8rem,7vw,2.8rem) 'Pinyon Script';color:var(--plum2);line-height:1.15;margin:20px 0}
 form{display:grid;gap:14px;max-width:520px}
 label{display:grid;gap:6px;font-weight:500}
-input,select,textarea{font:400 1rem 'DM Sans';padding:13px 16px;border-radius:14px;border:1.5px solid rgba(246,241,234,.3);background:rgba(246,241,234,.08);color:var(--off);width:100%}
+input,select,textarea{font:400 1rem 'Montserrat';padding:13px 16px;border-radius:14px;border:1.5px solid rgba(246,241,234,.3);background:rgba(246,241,234,.08);color:var(--off);width:100%}
 select option{color:#222}
 input[type=checkbox]{width:auto;accent-color:var(--gold)}
 .ck{display:flex;gap:10px;align-items:center}
 #err{color:#f3c8c8;min-height:1.4em;margin:0}
 footer{background:#180b28;color:var(--off);padding:40px 20px calc(96px + env(safe-area-inset-bottom,0px));text-align:center}
 footer .script{font-size:2.6rem;color:var(--gold)}
-#fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:18;background:var(--gold);color:var(--plum);border-radius:999px;padding:14px 22px;font:600 1rem 'DM Sans';text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3);animation:pulse 3s infinite}
+#fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:18;background:var(--gold);color:var(--plum);border-radius:999px;padding:14px 22px;font:600 1rem 'Montserrat';text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3);animation:pulse 3s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 10px 30px rgba(0,0,0,.3),0 0 0 0 rgba(201,164,92,.5)}50%{box-shadow:0 10px 30px rgba(0,0,0,.3),0 0 0 14px rgba(201,164,92,0)}}
 @media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}section{padding:96px 32px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -105,11 +105,11 @@ section{position:relative;overflow:hidden}.wrap{position:relative;z-index:1}
 #prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--gold);z-index:30}
 #stories{display:flex;gap:16px;overflow-x:auto;padding:4px 20px 8px;scrollbar-width:none;scroll-snap-type:x proximity}
 #stories::-webkit-scrollbar{display:none}
-#stories a{flex:none;width:76px;text-align:center;color:var(--off);text-decoration:none;font:600 .78rem/1.2 'Syne';scroll-snap-align:start}
+#stories a{flex:none;width:76px;text-align:center;color:var(--off);text-decoration:none;font:600 .78rem/1.2 'Playfair Display';scroll-snap-align:start}
 #stories b{display:grid;place-items:center;width:68px;height:68px;margin:0 auto 6px;border-radius:50%;background:var(--plum2);border:2.5px solid var(--gold);box-shadow:0 0 0 3px var(--plum),0 0 0 5px var(--orq);font:400 1.6rem 'Pinyon Script';color:var(--gold);transition:transform .3s}
 #stories a:active b{transform:scale(.86) rotate(-14deg)}
 .mq{background:var(--gold);color:var(--plum);overflow:hidden;white-space:nowrap;padding:12px 0;transform:rotate(-1.6deg);margin:0 -12px;position:relative;z-index:4}
-.mq div{display:inline-block;animation:mq 26s linear infinite;font:800 1.25rem 'Syne'}
+.mq div{display:inline-block;animation:mq 26s linear infinite;font:800 1.25rem 'Playfair Display'}
 .mq i{font:400 1.9rem 'Pinyon Script';margin:0 16px}
 @keyframes mq{to{transform:translateX(-50%)}}
 .rn{cursor:pointer;line-height:1.25}.rn span span{display:inline-block;padding:0 .07em;line-height:1.1}
@@ -128,16 +128,16 @@ section{position:relative;overflow:hidden}.wrap{position:relative;z-index:1}
 #lbx{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px}
 .burst{position:absolute;inset:0;display:grid;place-items:center;font-size:6rem;color:var(--gold);pointer-events:none;animation:bst .8s forwards}
 @keyframes bst{from{opacity:1;transform:scale(.4)}to{opacity:0;transform:scale(1.6)}}
-#agb{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:18;background:var(--off);color:var(--plum);border:2px solid var(--gold);border-radius:999px;padding:12px 20px;font:600 1rem 'DM Sans';text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3);transition:transform .4s}
+#agb{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:18;background:var(--off);color:var(--plum);border:2px solid var(--gold);border-radius:999px;padding:12px 20px;font:600 1rem 'Montserrat';text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3);transition:transform .4s}
 @media(max-width:480px){#hero .btns .btn{flex:1 1 100%;text-align:center}#agb,#fab{font-size:.92rem;padding:12px 15px}}
 
 nav{justify-content:flex-start;overflow-y:auto;padding:84px 32px 32px}nav a{font-size:1.5rem}
 .g2{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:16px 0}
 .bx{border:1.5px solid var(--gold);border-radius:22px;padding:18px}.bx h3{font-size:1.2rem;margin-bottom:6px}.bx p{margin:4px 0;font-size:.95rem}
-.bx s{opacity:.6}.bx .pr{font:800 1.3rem 'Syne';color:var(--gold)}
+.bx s{opacity:.6}.bx .pr{font:800 1.3rem 'Playfair Display';color:var(--gold)}
 .rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
 #gift{background:linear-gradient(135deg,var(--gold),var(--orq));color:var(--plum);border-radius:24px;padding:26px;max-width:520px;margin-top:18px}
-#gift b{font:800 1.6rem 'Syne'}#gift .script{font-size:2.4rem}
+#gift b{font:800 1.6rem 'Playfair Display'}#gift .script{font-size:2.4rem}
 #tg{background:none;border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;width:38px;height:34px;cursor:pointer;margin-right:8px}
 html[data-t=dark] body{background:#1b0d2b}
 html[data-t=dark] section:not(.dark):not(.dark2){background:#1b0d2b;color:var(--off)}
@@ -149,22 +149,22 @@ html[data-t=dark] .quote,html[data-t=dark] .res b{color:var(--gold)}
 section{padding:52px 20px}
 .wide{max-width:1100px}.two{display:grid;gap:28px}.g1{display:grid;gap:12px}
 .two #svc>div:first-child .grp{margin-top:0}.grp{margin:22px 0 6px}.card{padding:14px 0}
-.pills{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 0}.pills a{border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;padding:7px 16px;text-decoration:none;font:600 .9rem 'Syne'}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 0}.pills a{border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;padding:7px 16px;text-decoration:none;font:600 .9rem 'Playfair Display'}
 .stats{display:flex;gap:22px;flex-wrap:wrap;margin:22px 0 10px}.stats div{font-size:.85rem;opacity:.9}.stats b{display:block;font:400 2.6rem/1 'Pinyon Script';color:var(--gold)}
 .info{font-size:.85rem;opacity:.7;margin:0}
 .hpic{display:none;position:relative;height:440px;border-radius:200px 200px 28px 28px;border:2px solid var(--gold);background:linear-gradient(160deg,var(--plum2),var(--orq));align-items:center;justify-content:center;color:var(--gold);font-size:2.2rem}
-.hpic i{position:absolute;font:600 .9rem 'Syne';font-style:normal;background:var(--gold);color:var(--plum);border-radius:999px;padding:8px 16px;box-shadow:0 8px 24px rgba(0,0,0,.3);animation:float 7s ease-in-out infinite}
+.hpic i{position:absolute;font:600 .9rem 'Playfair Display';font-style:normal;background:var(--gold);color:var(--plum);border-radius:999px;padding:8px 16px;box-shadow:0 8px 24px rgba(0,0,0,.3);animation:float 7s ease-in-out infinite}
 @media(min-width:800px){.hg{display:grid;grid-template-columns:1.2fr 340px;gap:48px;align-items:center;max-width:1100px}.hpic{display:flex}
 .two{grid-template-columns:1.3fr 1fr;align-items:start}.two aside{position:sticky;top:80px}}
 @media(min-width:720px){section{padding:64px 32px}}
 
 /* ===== reorganização: abas + painéis do menu ===== */
 nav a{font-size:1.35rem}
-nav small{font:600 .75rem 'DM Sans';letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:16px 0 2px}
+nav small{font:600 .75rem 'Montserrat';letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:16px 0 2px}
 nav small:first-child{margin-top:0}
 .tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 0 22px;padding:2px}
 .tabs::-webkit-scrollbar{display:none}
-.tab{flex:none;border:1.5px solid currentColor;background:none;color:inherit;border-radius:999px;padding:8px 18px;font:500 .95rem 'DM Sans',sans-serif;cursor:pointer;white-space:nowrap}
+.tab{flex:none;border:1.5px solid currentColor;background:none;color:inherit;border-radius:999px;padding:8px 18px;font:500 .95rem 'Montserrat',sans-serif;cursor:pointer;white-space:nowrap}
 .tab.on{background:var(--gold);border-color:var(--gold);color:var(--plum)}
 .tp{display:none}.tp.on{display:block}
 .panel{position:fixed;inset:0;z-index:25;display:none;overflow-y:auto;overscroll-behavior:contain;background:var(--off);color:var(--ink)}
@@ -173,7 +173,7 @@ nav small:first-child{margin-top:0}
 .phead{position:sticky;top:0;z-index:5;background:var(--plum);color:var(--off);padding:calc(10px + env(safe-area-inset-top,0px)) 20px 12px}
 .prow{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .prow .script{font-size:1.9rem;line-height:1;color:var(--gold)}
-.pback{background:none;border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;padding:6px 16px;font:500 .95rem 'DM Sans',sans-serif;cursor:pointer}
+.pback{background:none;border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;padding:6px 16px;font:500 .95rem 'Montserrat',sans-serif;cursor:pointer}
 .phead .tabs{margin:0}
 .panel .tp>section{min-height:calc(100svh - 120px);padding-top:36px;padding-bottom:110px}
 body.pn #fab{z-index:27}body.pn #prog{display:none}
@@ -186,7 +186,7 @@ html[data-t=dark] .panel{background:#1b0d2b;color:var(--off)}
 body.adm #fab{display:none}
 .apane{max-width:640px;margin:0 auto;padding:24px 20px 110px}
 .acard{background:var(--plum2);border-radius:22px;padding:16px;margin-bottom:12px}
-.acard h3{font:800 1.1rem 'Syne',sans-serif}.acard p{margin:6px 0 0}
+.acard h3{font:800 1.1rem 'Playfair Display',sans-serif}.acard p{margin:6px 0 0}
 .atop{display:flex;justify-content:space-between;gap:10px}
 .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 .btn.sm{padding:8px 16px;font-size:.92rem}
@@ -196,22 +196,35 @@ body.adm #fab{display:none}
 h3.ag{margin:24px 0 10px}.aerr{color:#f3c8c8;min-height:1.4em;margin:0}.vazio{opacity:.75;text-align:center;padding:30px 0}
 .hpic.has{display:flex;height:360px;margin-top:28px}
 @media(min-width:800px){.hpic.has{height:440px;margin-top:0}}
-#slots{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}#slots .chip{color:var(--off);border-color:var(--orq)}#slots .chip.on{background:var(--gold);color:var(--plum);border-color:var(--gold)}.bar{height:8px;border-radius:8px;background:var(--gold);margin:4px 0 10px}.kpi{font:800 1.8rem Syne;color:var(--gold)}
+#slots{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}#slots .chip{color:var(--off);border-color:var(--orq)}#slots .chip.on{background:var(--gold);color:var(--plum);border-color:var(--gold)}.bar{height:8px;border-radius:8px;background:var(--gold);margin:4px 0 10px}.kpi{font:800 1.8rem 'Playfair Display';color:var(--gold)}
 #pc{max-width:420px;background:var(--off);color:var(--plum);border:3px solid var(--gold);border-radius:28px;padding:18px 14px 14px;position:relative;margin-top:8px;box-shadow:0 14px 36px rgba(0,0,0,.25)}
 #pc .mh{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
-#pc .mt{flex:1;font:400 clamp(1.6rem,7vw,2.2rem)/1.3 'Abril Fatface',serif;color:var(--plum);background:#fff;border:3px solid var(--gold);border-radius:999px;padding:2px 14px;text-align:center}
+#pc .mt{flex:1;font:400 clamp(1.15rem,5.2vw,1.6rem)/1.5 'Dela Gothic One',sans-serif;color:var(--plum);background:#fff;border:3px solid var(--gold);border-radius:999px;padding:2px 14px;text-align:center}
 #pc .mn{flex:none;width:40px;height:40px;border-radius:50%;border:2px solid var(--gold);background:var(--off);color:var(--plum);font-size:1.3rem;line-height:1;padding:0;cursor:pointer}
 #pc .mn:disabled{opacity:.3;cursor:default}
 #pc .wd,#pc .dg{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
-#pc .wd span{background:var(--gold);color:var(--plum);font:700 .62rem Syne;text-align:center;padding:6px 0;border-radius:8px}
+#pc .wd span{background:var(--gold);color:var(--plum);font:400 .56rem 'Dela Gothic One',sans-serif;text-align:center;padding:7px 0;border-radius:8px}
 #pc .dg{margin-top:5px}
-#pc .dg button{aspect-ratio:1;border:1.5px solid var(--lilac);background:#fff;border-radius:12px;font:800 1rem Syne;color:var(--plum2);cursor:pointer;padding:0;transition:.15s}
+#pc .dg button{aspect-ratio:1;border:1.5px solid var(--lilac);background:#fff;border-radius:12px;font:400 1rem 'Dela Gothic One',sans-serif;color:var(--plum2);cursor:pointer;padding:0;transition:.15s}
 #pc .dg button:hover:not(:disabled){border-color:var(--gold);transform:scale(1.08)}
 #pc .dg button:disabled{opacity:.28;cursor:default}
 #pc .dg button.hj{border-style:dashed;border-color:var(--gold)}
 #pc .dg button.on{background:var(--gold);border-color:var(--gold);color:var(--plum);transform:scale(1.08);box-shadow:0 4px 12px rgba(201,164,92,.5)}
 #pc::before,#pc::after{content:'✦';position:absolute;color:var(--gold);font-size:18px}
 #pc::before{top:-12px;left:18px}#pc::after{bottom:-10px;right:22px;font-size:24px}
+body{font-size:15px}h1,h2,h3{letter-spacing:-.01em}
+.sel{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--gold);border-radius:999px;padding:6px 14px;font:600 .74rem 'Montserrat';letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;animation:rise 1.2s both}
+.sel i{font-style:normal;color:var(--gold);animation:stp 1.6s ease-in-out infinite}@keyframes stp{50%{transform:scale(1.6) rotate(25deg);opacity:.6}}
+#cur{position:fixed;left:0;top:0;z-index:99;pointer-events:none;color:var(--gold);font-size:22px;line-height:1;text-shadow:0 0 10px rgba(201,164,92,.9),0 0 22px rgba(201,164,92,.6);opacity:0;transition:opacity .3s}
+body.cc,body.cc a,body.cc button,body.cc summary,body.cc label{cursor:none}body.cc input,body.cc textarea{cursor:text}
+.grid{display:block;columns:2;column-gap:12px}.tile{break-inside:avoid;margin-bottom:12px}
+.tile:nth-child(3n+2){aspect-ratio:1/1.12}.tile:nth-child(3n){aspect-ratio:3/4}.tile:nth-child(3n+1){aspect-ratio:3/4.6}
+.tile::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 30%,rgba(255,255,255,.4),transparent 62%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");mix-blend-mode:overlay;backdrop-filter:contrast(1.18) brightness(1.12) saturate(.88)}
+.tile span,.tile .heart{z-index:2}
+@media(min-width:720px){.grid{columns:3}}
+#agb{animation:pulse 3s infinite}
+.af{background:#180b28;border:1.5px solid rgba(201,164,92,.5);border-radius:22px;padding:18px}.af h3{font-size:1.1rem;margin:10px 0 4px}.af p{margin:0;font-size:.92rem;opacity:.85}
+.af svg{width:34px;height:34px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 </style>
 <meta name="description" content="Ana Macedo: nail designer, design de sobrancelha e lash lifting. Veja os valores, os trabalhos e peça seu horário pelo WhatsApp.">
 <meta name="theme-color" content="#26123a">
@@ -224,7 +237,7 @@ h3.ag{margin:24px 0 10px}.aerr{color:#f3c8c8;min-height:1.4em;margin:0}.vazio{op
 <header><span class="script">Ana Macedo</span><button id="mbtn" aria-expanded="false" aria-controls="menu">menu</button></header>
 <nav id="menu" aria-label="Menu principal">
 <small>Na página</small>
-<a href="#servicos">Serviços e valores</a><a href="#galeria">Trabalhos</a><a href="#agendar">Agendar</a>
+<a href="#servicos">Serviços e valores</a><a href="#galeria">Momento talento (trabalhos)</a><a href="#agendar">Agendar</a>
 <small>Mais</small>
 <a href="#" data-p="descubra:quiz">Qual procedimento é o meu?</a><a href="#" data-p="duvidas:guia">Guia dos serviços</a><a href="#" data-p="duvidas:faq">Dúvidas e cuidados</a><a href="#" data-p="duvidas:local">Como chegar e regras</a><a href="#" data-p="sobre:sobre">Sobre mim</a><a href="#" data-p="extras:vale">Vale-presente</a><a href="#" data-p="extras:cal">Meu horário</a><a href="#" id="mAdm" data-p="admin:ped" hidden>⚙ Painel da Ana</a>
 </nav>
@@ -232,10 +245,11 @@ h3.ag{margin:24px 0 10px}.aerr{color:#f3c8c8;min-height:1.4em;margin:0}.vazio{op
 <section id="hero" class="dark" data-msg="Olá! Vim pelo site e gostaria de agendar um horário.">
 <span class="nail a"></span><span class="nail b"></span><span class="nail c"></span>
 <div class="wrap hg"><div>
+<div class="sel"><i>✦</i><span id="selt"></span></div>
 <div class="tag">seu estilo começa nos detalhes</div>
 <h1 class="script" data-sp="-.12">Ana Macedo</h1>
 <p class="lead">Unhas, sobrancelha e lash feitas com capricho. Escolha o procedimento, veja os valores e peça seu horário em um toque.</p>
-<div class="btns"><a class="btn gold" id="heroWa" href="#">Chamar no WhatsApp</a><a class="btn ghost" href="#galeria">Ver trabalhos</a></div>
+<div class="btns"><a class="btn gold" id="heroWa" href="#">Garanta seu glow up ✨</a><a class="btn ghost" href="#galeria">Ver trabalhos</a></div>
 <div class="pills"><a href="#servicos">✦ Unhas</a><a href="#servicos">✦ Sobrancelhas</a><a href="#servicos">✦ Lash Lifting</a></div>
 <div class="stats"><div><b>3</b>anos de lash</div><div><b>2</b>anos de sobrancelha</div><div><b>1</b>ano de unhas</div></div>
 <p class="info">Seg a sáb · Pix, dinheiro ou cartão · Horário confirmado pelo WhatsApp</p>
@@ -247,7 +261,7 @@ h3.ag{margin:24px 0 10px}.aerr{color:#f3c8c8;min-height:1.4em;margin:0}.vazio{op
 </section>
 
 <section id="galeria" data-msg="Olá! Vi seus trabalhos no site e quero um modelo parecido.">
-<div class="wrap"><h2>Trabalhos e inspirações</h2>
+<div class="wrap"><h2>The Vibe ✦</h2>
 <div class="tabs" data-g="gal"><button class="tab on" data-t="mod">Modelos</button><button class="tab" data-t="ba">Antes e depois</button></div>
 <div class="tp on" data-g="gal" data-id="mod"><p class="lead">Toque no coração dos modelos que amou e mande todos de uma vez pelo WhatsApp.</p>
 <div class="filters" id="filters"></div><div class="grid" id="grid"></div>
@@ -257,8 +271,9 @@ h3.ag{margin:24px 0 10px}.aerr{color:#f3c8c8;min-height:1.4em;margin:0}.vazio{op
 </div>
 </section>
 
+<section id="dolls" class="dark2" data-msg="Olá! Vi os depoimentos e quero meu horário." hidden><div class="wrap"><h2>The Dolls ✦</h2><p class="lead">Quem passa pelo studio sai se sentindo poderosa. Escuta elas.</p><div class="g2" id="dl"></div></div></section>
 <section id="agendar" class="dark" data-msg="Olá! Gostaria de agendar um horário.">
-<div class="wrap"><h2>Peça seu horário</h2><p class="lead">Você envia o pedido e eu confirmo pelo WhatsApp.</p>
+<div class="wrap"><h2>Garanta seu glow up</h2><p class="lead">Você envia o pedido e eu confirmo pelo WhatsApp.</p>
 <div class="pbn"><b>Veio pela Sarah?</b> Quem chega indicada por ela ganha um brinde exclusivo. Marque a opção "Vim pela Sarah" abaixo. Também somos parceiras da Carol (Marie).</div>
 <form id="f">
 <label>Seu nome<input id="fn" required autocomplete="name"></label>
@@ -269,7 +284,7 @@ h3.ag{margin:24px 0 10px}.aerr{color:#f3c8c8;min-height:1.4em;margin:0}.vazio{op
 <label>Observações<textarea id="fo" rows="3"></textarea></label>
 <label class="ck"><input type="checkbox" id="fsa"> Vim pela Sarah</label>
 <p id="err" role="alert"></p>
-<button class="btn gold" type="submit">Enviar pedido pelo WhatsApp</button>
+<button class="btn gold" type="submit">Eleve seu padrão ✦ enviar pedido</button>
 </form></div>
 </section>
 <footer><div class="script">Ana Macedo</div><p>seu estilo começa nos detalhes</p><a class="btn ghost" href="#" id="igBtn2" target="_blank" rel="noopener">Ver Instagram</a><p style="margin:18px 0 0"><button class="btn ghost" style="font-size:.85rem;padding:8px 16px" data-p="admin:ped">Área da Ana</button></p></footer>
@@ -278,7 +293,7 @@ h3.ag{margin:24px 0 10px}.aerr{color:#f3c8c8;min-height:1.4em;margin:0}.vazio{op
 <div class="wrap"><h2>Qual procedimento é a sua cara?</h2><p class="lead">Responde rapidinho e descobre por onde começar.</p><div class="qbox" id="qbox"></div></div>
 </section></div><div class="tp" data-g="descubra" data-id="estilo"><section id="estilo" data-msg="Olá! Fiz o quiz de estilo do site e quero um modelo assim."><div class="wrap"><h2>Qual é o seu estilo?</h2><p class="lead">Responda e veja o que combina com você.</p><div class="qbox" id="sbox"></div></div></section></div></div>
 <div class="panel" id="p-duvidas" role="dialog" aria-modal="true" aria-label="Dúvidas"><div class="phead"><div class="prow"><span class="script">Dúvidas</span><button class="pback" data-close>← voltar</button></div><div class="tabs" data-g="duvidas"><button class="tab on" data-t="faq">Perguntas</button><button class="tab" data-t="guia">Cada serviço</button><button class="tab" data-t="local">Local e regras</button></div></div><div class="tp on" data-g="duvidas" data-id="faq"><section id="cuidados" class="dark2" data-msg="Olá! Tenho uma dúvida sobre os procedimentos.">
-<div class="wrap"><h2>Cuidados e perguntas frequentes</h2>
+<div class="wrap"><h2>Aftercare ✦</h2><p class="lead">Como manter o resultado lindo por mais tempo.</p><div class="g2"><div class="af"><svg viewBox="0 0 32 32"><path d="M10 28V14a6 6 0 0 1 12 0v14z"/><path d="M13 20h6"/></svg><h3>Unhas</h3><p>Óleo na cutícula todo dia e luva pra lavar louça. Unha não é ferramenta, abrir lata e roer ficam de fora.</p></div><div class="af"><svg viewBox="0 0 32 32"><path d="M3 18c6-8 20-8 26 0"/><path d="M8 13l-2-4M16 11V6M24 13l2-4"/><circle cx="16" cy="19" r="3"/></svg><h3>Lash lifting</h3><p>Primeiras 24h: sem molhar, sem rímel e sem esfregar o olho. Penteia com carinho e evita produto oleoso.</p></div><div class="af"><svg viewBox="0 0 32 32"><path d="M3 20c5-9 20-12 26-6"/><path d="M8 24c4-3 11-4 16-2"/></svg><h3>Sobrancelha</h3><p>Primeiras 24h: sem molhar, sem esfregar e sem make na região. Mantém os fios penteados e hidratados.</p></div><div class="af"><svg viewBox="0 0 32 32"><rect x="5" y="7" width="22" height="20" rx="4"/><path d="M5 13h22M11 4v6M21 4v6"/></svg><h3>Manutenção</h3><p>Unhas: 15 a 20 dias. Sobrancelha: ~15 dias. Lash: a cada 3 meses. Marca antes de perder o glow.</p></div></div><h2 style="margin-top:44px">Perguntas frequentes</h2>
 <details><summary>Como me preparar?</summary><p>Para lash e brow lamination, venha de banho tomado. Para unhas, o ideal é não estar roendo as unhas.</p></details>
 <details><summary>Quando volto para manutenção?</summary><p>Unhas: de 15 a 20 dias. Lash: a cada 3 meses. Sobrancelha: cerca de 15 dias, se for certinho, mas varia de pessoa para pessoa.</p></details>
 <details><summary>E os cuidados depois?</summary><p>Depois do atendimento eu te passo tudo pelo WhatsApp.</p></details>
@@ -309,7 +324,7 @@ h3.ag{margin:24px 0 10px}.aerr{color:#f3c8c8;min-height:1.4em;margin:0}.vazio{op
 <div class="tp apane" data-g="admin" data-id="res"><h2>Resumo</h2><div id="aRes"></div><h2 style="margin-top:28px">Relatório do mês</h2><label>Mês<input type="month" id="aMes"></label><div id="aRel"></div></div>
 <div class="tp apane" data-g="admin" data-id="cli"><h2>Clientes</h2><div id="aAni"></div><div id="aCli"></div></div>
 <div class="tp apane" data-g="admin" data-id="blq"><h2>Bloquear horários</h2><p style="opacity:.8">Horários bloqueados somem da lista de horários livres para as clientes.</p><form id="bF"><label>Data<input type="date" id="bd" required></label><label>De<input type="time" id="bi" required value="08:00"></label><label>Até<input type="time" id="bf" required value="19:00"></label><label>Motivo (só você vê)<input id="bm"></label><p class="aerr" id="bE" role="alert"></p><button class="btn gold" type="submit">Bloquear</button></form><div id="bL"></div></div></div>
-<a id="agb" href="#agendar">Agendar horário</a>
+<a id="agb" href="#agendar">Garanta o seu momento 💅✨</a>
 <div id="lb" role="dialog" aria-modal="true" aria-label="Modelo"><button class="nv" id="lbx" aria-label="Fechar">✕</button><div id="lbi"></div><div id="lbt" class="script" style="font-size:2rem;color:var(--gold)"></div><div class="row"><button class="nv" id="lbp" aria-label="Anterior">‹</button><button class="btn ghost" id="lbf" style="color:var(--off)"></button><button class="nv" id="lbn" aria-label="Próximo">›</button></div><a class="btn gold" id="lbw" target="_blank" rel="noopener" href="#">Quero este modelo</a><p style="margin:0;font-size:.85rem;opacity:.7">Toque duas vezes na foto para favoritar</p></div>
 <a id="fab" href="#" target="_blank" rel="noopener">WhatsApp</a>
 
@@ -317,6 +332,8 @@ h3.ag{margin:24px 0 10px}.aerr{color:#f3c8c8;min-height:1.4em;margin:0}.vazio{op
 
 <script>
 /* ====== EDITE AQUI ====== */
+const AGENDA_ABERTA=true; // mude para false quando a agenda estiver cheia
+const DOLLS=[/* {n:'Nome',s:'Lash lifting',t:'Texto do depoimento (só com autorização da cliente)'} */];
 const WA='5542998286662', IG='https://instagram.com/nails_anamacedo';
 /* Supabase: cole a URL do projeto e a chave "anon public" (Project Settings > API) */
 const SUPABASE_URL='https://wwxrnyihzdawqfwuomra.supabase.co', SUPABASE_KEY='sb_publishable_0yUFMhLXmRMPCquKBH7XIg_MNIRo3CR';
@@ -474,7 +491,7 @@ lbi.addEventListener('pointerup',()=>{const n=Date.now();if(n-lt<320){if(!fav.in
 const agb=$('#agb');new IntersectionObserver(es=>es.forEach(e=>agb.style.transform=e.isIntersecting?'translateY(170%)':'none'),{threshold:.25}).observe($('#agendar'));
 /* letras estilo colagem */
 function rn(el){const t=el.dataset.t||(el.dataset.t=el.textContent);el.textContent='';el.classList.add('rn');
-const F=[['Abril Fatface',1],['Syne',.95],['Pinyon Script',1.25],['Rock Salt',.7]],C=[['var(--gold)','var(--plum)'],['var(--plum2)','var(--off)'],['var(--lilac)','var(--plum)'],['transparent','var(--plum2)'],['var(--plum)','var(--gold)']];
+const F=[['Abril Fatface',1],['Playfair Display',.95],['Pinyon Script',1.25],['Rock Salt',.7]],C=[['var(--gold)','var(--plum)'],['var(--plum2)','var(--off)'],['var(--lilac)','var(--plum)'],['transparent','var(--plum2)'],['var(--plum)','var(--gold)']];
 t.split(' ').forEach(w=>{const ws=document.createElement('span');ws.style.cssText='display:inline-block;white-space:nowrap;margin-right:.25em';
 [...w].forEach(ch=>{const s=document.createElement('span'),f=F[Math.random()*4|0],c=C[Math.random()*5|0];s.textContent=ch;s.style.cssText=`font-family:'${f[0]}',serif;font-size:${f[1]}em;background:${c[0]};color:${c[1]};transform:rotate(${(Math.random()*8-4).toFixed(1)}deg)`;ws.appendChild(s)});el.appendChild(ws)});el.onclick=()=>rn(el)}
 rn($('#quiz h2'));rn($('#galeria h2'));
@@ -615,6 +632,12 @@ $('#aVal').onclick=async e=>{if(e.target.id!=='vSave')return;const n=id=>{const 
 CFG.preco={};SERV.forEach((s,i)=>CFG.preco[s.n]=n('vp'+i));CFG.promo=n('vpm');CFG.combos=[{de:n('vc0d'),por:n('vc0p')},{de:n('vc1d'),por:n('vc1p')}];
 CFG.loc={end:$('#vle').value,est:$('#vlp').value,ref:$('#vlr').value,hor:$('#vlh').value,maps:$('#vlm').value.trim()};
 const er=await saveCfg();$('#vOk').textContent=er?'Erro: '+er.message:'Salvo ✓';if(!er)applyCfg()};
+/* selo da agenda, depoimentos e cursor */
+{const n=new Date(),m=n.getDate()>=25?(n.getMonth()+1)%12:n.getMonth();$('#selt').textContent=AGENDA_ABERTA?'Agenda de '+MESES[m]+' aberta':'Agenda lotada · lista de espera'}
+if(DOLLS.length){$('#dolls').hidden=false;$('#dl').innerHTML=DOLLS.map(x=>`<div class="bx"><p class="script" style="font-size:1.5rem;color:var(--gold)">★★★★★</p><p>“${esc(x.t)}”</p><p><b>${esc(x.n)}</b>${x.s?' · '+esc(x.s):''}</p></div>`).join('')}
+if(matchMedia('(hover:hover) and (pointer:fine)').matches){const c=document.createElement('div');c.id='cur';c.textContent='✦';document.body.append(c);document.body.classList.add('cc');let x=0,y=0,tx=0,ty=0,h=1;
+addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;c.style.opacity=1});document.addEventListener('pointerover',e=>{h=e.target.closest('a,button,.tile,summary,.opt')?1.8:1});
+(function f(){x+=(tx-x)*.25;y+=(ty-y)*.25;c.style.transform=`translate(${x}px,${y}px) translate(-50%,-50%) scale(${h})`;requestAnimationFrame(f)})()}
 /* resumo e relatório */
 const hm=x=>String(x||'').slice(0,5),dm=x=>x.split('-').reverse().slice(0,2).join('/'),soma=l=>l.reduce((t,a)=>t+(+a.valor||0),0);
 function drawResumo(){const hj=hojeStr(),mes=hj.slice(0,7),n=new Date(),agora=hj+' '+fmtH(n.getHours()*60+n.getMinutes());
