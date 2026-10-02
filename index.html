@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ana Macedo | Nail designer, sobrancelha e lash</title>
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#26123a"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><title>Ana Macedo | Nail designer, sobrancelha e lash</title>
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Rock+Salt&family=Pinyon+Script&family=Playfair+Display:wght@600;800&family=Cinzel:wght@600&family=Dela+Gothic+One&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--plum:#26123a;--plum2:#3a2058;--orq:#7a56a8;--gold:#c9a45c;--off:#f6f1ea;--lilac:#e4d8f2;--ink:#2a1a3d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -249,6 +249,8 @@ body.cc,body.cc a,body.cc button,body.cc summary,body.cc label{cursor:none}body.
 #agb{animation:pulse 3s infinite}
 .af{background:#180b28;border:1.5px solid rgba(201,164,92,.5);border-radius:22px;padding:18px}.af h3{font-size:1.1rem;margin:10px 0 4px}.af p{margin:0;font-size:.92rem;opacity:.85}
 .af svg{width:34px;height:34px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.fic{border:1.5px solid var(--gold);border-radius:18px;padding:14px 18px;margin:0;display:grid;gap:8px}.fic legend{font:600 1rem 'Playfair Display';padding:0 8px;color:var(--gold)}.fic .ck{font-weight:400;font-size:.95rem}.fic small{opacity:.75}
+#pk{display:block;word-break:break-all;background:rgba(246,241,234,.1);padding:10px 12px;border-radius:12px;margin:8px 0;font:600 .95rem monospace}#inst[hidden]{display:none}
 </style>
 <meta name="description" content="Ana Macedo: nail designer, design de sobrancelha e lash lifting. Veja os valores, os trabalhos e peça seu horário pelo WhatsApp.">
 <meta name="theme-color" content="#26123a">
@@ -301,17 +303,30 @@ body.cc,body.cc a,body.cc button,body.cc summary,body.cc label{cursor:none}body.
 <div class="pbn"><b>Veio pela Sarah?</b> Quem chega indicada por ela ganha um brinde exclusivo. Marque a opção "Vim pela Sarah" abaixo. Também somos parceiras da Carol (Marie).</div>
 <form id="f">
 <label>Seu nome<input id="fn" required autocomplete="name"></label>
+<label>Seu WhatsApp (com DDD)<input id="ft" type="tel" inputmode="tel" required autocomplete="tel" placeholder="(42) 9 9999-9999"></label>
 <label>Serviço<select id="fs"></select></label>
 <div><b>Data</b><div id="pc"></div><input type="hidden" id="fd"></div>
 <div><b>Horário</b><div id="slots"></div><input type="hidden" id="fh"></div>
 <p id="oc" style="margin:0;font-size:.92rem;color:var(--gold)"></p>
 <label>Observações<textarea id="fo" rows="3"></textarea></label>
+<fieldset class="fic" id="ana"><legend>Ficha de saúde</legend><small>Marque o que se aplica a você. É rapidinho e deixa o atendimento mais seguro.</small>
+<label class="ck"><input type="checkbox" name="an" value="alergia a esmalte/gel/acrilato"> Alergia a esmalte, gel ou acrilato</label>
+<label class="ck"><input type="checkbox" name="an" value="alergia a cola de cílios ou látex"> Alergia a cola de cílios ou látex</label>
+<label class="ck"><input type="checkbox" name="an" value="alergia a tintura/henna"> Alergia a tintura ou henna</label>
+<label class="ck"><input type="checkbox" name="an" value="gestante ou lactante"> Gestante ou lactante</label>
+<label class="ck"><input type="checkbox" name="an" value="uso de isotretinoína"> Uso de isotretinoína (Roacutan)</label>
+<label class="ck"><input type="checkbox" name="an" value="infecção/irritação na região"> Infecção ou irritação na região</label>
+<label class="ck"><input type="checkbox" name="an" value="problema nos olhos"> Problema nos olhos (conjuntivite, terçol)</label>
+<label>Outras alergias ou observações de saúde<input id="fal"></label>
+<label class="ck"><input type="checkbox" id="fdc" required> Declaro que as informações estão corretas</label></fieldset>
 <label class="ck"><input type="checkbox" id="fsa"> Vim pela Sarah</label>
 <p id="err" role="alert"></p>
 <button class="btn gold" type="submit">Eleve seu padrão ✦ enviar pedido</button>
-</form></div>
+<button class="btn ghost" type="button" id="fw">Sem horário? Entrar na lista de espera</button>
+</form>
+<div class="pbn" id="pixbox" hidden><b>Quase lá! Garanta seu horário com o sinal</b><p id="pks" style="margin:6px 0"></p><code id="pk"></code><p style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0"><button class="btn ghost" type="button" id="pkc">Copiar chave Pix</button><a class="btn gold" id="pkw" href="#">Enviar pedido e comprovante</a></p></div></div>
 </section>
-<footer><div class="script">Ana Macedo</div><p>seu estilo começa nos detalhes</p><a class="btn ghost" href="#" id="igBtn2" target="_blank" rel="noopener">Ver Instagram</a><p style="margin:18px 0 0"><button class="btn ghost" style="font-size:.85rem;padding:8px 16px" data-p="admin:ped">Área da Ana</button></p></footer>
+<footer><div class="script">Ana Macedo</div><p>seu estilo começa nos detalhes</p><p><button class="btn gold" id="inst" hidden>Instalar no celular 📲</button></p><p id="insti" hidden style="font-size:.9rem;opacity:.8">No iPhone: toque em Compartilhar e depois em "Adicionar à Tela de Início".</p><a class="btn ghost" href="#" id="igBtn2" target="_blank" rel="noopener">Ver Instagram</a><p style="margin:18px 0 0"><button class="btn ghost" style="font-size:.85rem;padding:8px 16px" data-p="admin:ped">Área da Ana</button></p></footer>
 
 <div class="panel" id="p-descubra" role="dialog" aria-modal="true" aria-label="Descubra"><div class="phead"><div class="prow"><span class="script">Descubra</span><button class="pback" data-close>← voltar</button></div><div class="tabs" data-g="descubra"><button class="tab on" data-t="quiz">Qual procedimento?</button><button class="tab" data-t="estilo">Meu estilo</button></div></div><div class="tp on" data-g="descubra" data-id="quiz"><section id="quiz" data-msg="Olá! Fiz o quiz do site e queria ajuda para escolher meu procedimento.">
 <div class="wrap"><h2>Qual procedimento é a sua cara?</h2><p class="lead">Responde rapidinho e descobre por onde começar.</p><div class="qbox" id="qbox"></div></div>
@@ -469,6 +484,7 @@ mostrarOcup();carregarOcupados();
 async function handleAgendamento(e) {
   e.preventDefault();
   const err=$('#err');
+  if(tel().length<10){err.textContent='Informe seu WhatsApp com DDD.';return}
   if(!d.value){err.textContent='Escolha uma data no calendário.';return}
   if(new Date(d.value+'T12:00').getDay()===0) {
     err.textContent='Não atendo aos domingos. Escolha outra data.';
@@ -481,6 +497,7 @@ async function handleAgendamento(e) {
   const [y,m,dd]=d.value.split('-');
   let msg=`Olá! Gostaria de agendar ${$('#fs').value}.\nNome: ${$('#fn').value}\nData: ${dd}/${m}/${y}\nHorário: ${$('#fh').value||'a combinar'}`;
   if($('#fo').value)msg+=`\nObs: ${$('#fo').value}`;
+  msg+='\nWhatsApp: '+$('#ft').value+'\nFicha de saúde: '+fichaTxt();
   if($('#fsa').checked)msg+='\nVim pela Sarah.';
   try{
     if(sb){
@@ -489,14 +506,19 @@ async function handleAgendamento(e) {
         servico: $('#fs').value,
         data: d.value,
         horario: $('#fh').value,
-        obs: $('#fo').value,
+        obs: obsFull(),
         duracao_min: dur($('#fs').value),
         vim_pela_sarah: $('#fsa').checked
       });
       if (error) console.error(error);
     }
   }catch(err){console.error(err)}
-  location.href = wa(msg);
+  if(CFG.pix){
+    $('#pk').textContent=CFG.pix;
+    $('#pks').textContent=CFG.sinal?'Para reservar, envie um sinal de '+money(CFG.sinal)+' por Pix. Ele é abatido do valor do atendimento.':'Para reservar, envie o sinal por Pix.';
+    $('#pkw').href=wa(msg+'\nVou enviar o comprovante do sinal por aqui.');
+    $('#pixbox').hidden=false;$('#pixbox').scrollIntoView({behavior:'smooth',block:'center'});
+  }else location.href = wa(msg);
 }
 $('#f').onsubmit=handleAgendamento;
 
@@ -623,20 +645,21 @@ const {error}=await sb.auth.signInWithPassword({email:$('#aEm').value.trim(),pas
 if(error){$('#aLe').textContent='E-mail ou senha incorretos.';return}$('#aPw').value='';setAdmin(true);setTab('admin','ped');loadPed()};
 $('#aOut').onclick=async()=>{await sb.auth.signOut();setAdmin(false);setTab('admin','login')};
 /* pedidos */
-const NOMES={pendente:'Pendentes',confirmado:'Confirmados',concluido:'Concluídos',cancelado:'Cancelados',todos:'Todos'};
+const NOMES={pendente:'Pendentes',confirmado:'Confirmados',espera:'Lista de espera',concluido:'Concluídos',cancelado:'Cancelados',todos:'Todos'};
 async function loadPed(){const {data,error}=await sb.from('agendamentos').select('*').order('data').order('criado_em');
 if(error){$('#aL').innerHTML='<p class="vazio">Não foi possível carregar. '+esc(error.message)+'</p>';return}peds=data||[];drawPed();drawResumo();drawCli();loadBloq();loadCli()}
 function drawPed(){$('#aF').innerHTML=Object.keys(NOMES).map(k=>`<button class="tab${k===fil?' on':''}" data-k="${k}">${NOMES[k]} (${k==='todos'?peds.length:peds.filter(a=>a.status===k).length})</button>`).join('');
 const it=peds.filter(a=>fil==='todos'||a.status===fil);if(!it.length){$('#aL').innerHTML='<p class="vazio">Nenhum pedido aqui por enquanto.</p>';return}
 $('#aL').innerHTML=it.map(a=>{const dia=new Date(a.data+'T12:00').toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'2-digit'});
 const b=(st,t,c)=>`<button class="btn sm ${c}" data-id="${esc(a.id)}" data-st="${st}">${t}</button>`;
-const ac=a.status==='pendente'?b('confirmado','Confirmar','gold')+b('cancelado','Cancelar','ghost'):a.status==='confirmado'?b('concluido','Concluir','gold')+b('cancelado','Cancelar','ghost')+b('pendente','Voltar para pendente','ghost'):b('pendente','Reabrir','ghost');
-return `<div class="acard"><div class="atop"><h3>${esc(a.servico)}</h3><b style="color:var(--gold);white-space:nowrap">${esc(dia)}</b></div><p><b>${esc(a.nome)}</b>${a.horario?' · '+esc(a.horario):''}</p>${a.obs?`<p>${esc(a.obs)}</p>`:''}${a.vim_pela_sarah?'<p style="color:var(--gold)">✦ Veio pela Sarah</p>':''}<p style="opacity:.7;font-size:.85rem">Status: ${esc(a.status)}</p><div class="acts">${ac}</div></div>`}).join('')}
+const ac=a.status==='pendente'?b('confirmado','Confirmar','gold')+b('cancelado','Cancelar','ghost'):a.status==='confirmado'?b('concluido','Concluir','gold')+b('cancelado','Cancelar','ghost')+b('pendente','Voltar para pendente','ghost'):a.status==='espera'?b('pendente','Chamar para agendar','gold')+b('cancelado','Remover','ghost'):b('pendente','Reabrir','ghost');
+return `<div class="acard"><div class="atop"><h3>${esc(a.servico)}</h3><b style="color:var(--gold);white-space:nowrap">${esc(dia)}</b></div><p><b>${esc(a.nome)}</b>${a.horario?' · '+esc(a.horario):''}</p>${a.obs?`<p>${esc(a.obs)}</p>`:''}${a.vim_pela_sarah?'<p style="color:var(--gold)">✦ Veio pela Sarah</p>':''}<p style="opacity:.7;font-size:.85rem">Status: ${esc(a.status)}</p><div class="acts">${ac}${extraAc(a)}</div></div>`}).join('')}
 $('#aF').onclick=e=>{const k=e.target.dataset.k;if(k){fil=k;drawPed()}};
 $('#aL').onclick=async e=>{const b=e.target.closest('button[data-id]');if(!b)return;const up={status:b.dataset.st};
 if(up.status==='concluido'){const a=peds.find(x=>String(x.id)===b.dataset.id)||{},v=prompt('Valor cobrado (R$):',(CFG.preco||{})[a.servico]??'');if(v===null)return;up.valor=Number(String(v).replace(',','.'))||0}
+const a0=peds.find(x=>String(x.id)===b.dataset.id)||{};let pw=null;if(up.status==='confirmado'&&telOf(a0))pw=window.open('','_blank');
 b.disabled=true;const {error}=await sb.from('agendamentos').update(up).eq('id',b.dataset.id);
-if(error){alert('Não foi possível atualizar: '+error.message);b.disabled=false;return}loadPed()};
+if(error){if(pw)pw.close();alert('Não foi possível atualizar: '+error.message);b.disabled=false;return}if(pw)pw.location=waTo(telOf(a0),msgConf(a0));loadPed()};
 $('#aR').onclick=loadPed;setInterval(()=>{if(isAdmin&&curP&&curP.id==='p-admin')loadPed()},30000);
 /* imagens */
 function rImg(){$('#aImg').innerHTML=SLOTS.map(([k,l])=>{const u=(CFG.img||{})[k];
@@ -650,10 +673,11 @@ $('#aImg').onclick=async e=>{const k=e.target.dataset.rm;if(!k)return;delete CFG
 function rVal(){const C=CFG.combos||[{},{}],f=(id,l,v,ph)=>`<label>${l}<input id="${id}" value="${esc(v??'')}"${ph?` placeholder="${ph}"`:''}></label>`;
 $('#aVal').innerHTML=`<h3 class="ag">Serviços (R$)</h3><div class="g1">${SERV.map((s,i)=>f('vp'+i,s.n,s.preco,'ex.: 120')).join('')}</div>
 <h3 class="ag">Promoção e combos (R$)</h3><div class="g1">${f('vpm','Promoção do mês: lash + sobrancelha',CFG.promo)}${f('vc0d','Combo Olhar · valor "de"',(C[0]||{}).de)}${f('vc0p','Combo Olhar · valor "por"',(C[0]||{}).por)}${f('vc1d','Combo Beauty · valor "de"',(C[1]||{}).de)}${f('vc1p','Combo Beauty · valor "por"',(C[1]||{}).por)}</div>
+<h3 class="ag">Pix e sinal</h3><div class="g1">${f('vpx','Chave Pix (aparece depois do pedido)',CFG.pix)}${f('vsn','Valor do sinal (R$)',CFG.sinal,'ex.: 30')}</div>
 <h3 class="ag">Local</h3><div class="g1">${f('vle','Endereço',LOC.end)}${f('vlp','Estacionamento',LOC.est)}${f('vlr','Pontos de referência',LOC.ref)}${f('vlh','Horários',LOC.hor)}${f('vlm','Link do Google Maps',LOC.maps)}</div>
 <p><button class="btn gold" id="vSave">Salvar alterações</button> <span id="vOk"></span></p>`}
 $('#aVal').onclick=async e=>{if(e.target.id!=='vSave')return;const n=id=>{const v=$('#'+id).value.trim().replace(',','.');return v===''||isNaN(v)?null:Number(v)};
-CFG.preco={};SERV.forEach((s,i)=>CFG.preco[s.n]=n('vp'+i));CFG.promo=n('vpm');CFG.combos=[{de:n('vc0d'),por:n('vc0p')},{de:n('vc1d'),por:n('vc1p')}];
+CFG.preco={};SERV.forEach((s,i)=>CFG.preco[s.n]=n('vp'+i));CFG.promo=n('vpm');CFG.pix=$('#vpx').value.trim();CFG.sinal=n('vsn');CFG.combos=[{de:n('vc0d'),por:n('vc0p')},{de:n('vc1d'),por:n('vc1p')}];
 CFG.loc={end:$('#vle').value,est:$('#vlp').value,ref:$('#vlr').value,hor:$('#vlh').value,maps:$('#vlm').value.trim()};
 const er=await saveCfg();$('#vOk').textContent=er?'Erro: '+er.message:'Salvo ✓';if(!er)applyCfg()};
 /* selo da agenda, depoimentos e cursor */
@@ -694,6 +718,30 @@ $('#bF').onsubmit=async e=>{e.preventDefault();const E=$('#bE');E.textContent=''
 const {error}=await sb.from('bloqueios').insert({data:$('#bd').value,inicio:$('#bi').value,fim:$('#bf').value,motivo:$('#bm').value.trim()});
 if(error){E.textContent='Erro: '+error.message;return}$('#bm').value='';loadBloq()};
 $('#bL').onclick=async e=>{const id=e.target.dataset.bd;if(!id)return;const {error}=await sb.from('bloqueios').delete().eq('id',id);if(error)alert(error.message);loadBloq()};
+/* sinal, lista de espera, avisos e app */
+const dig=v=>String(v||'').replace(/\D/g,'');
+function tel(){return dig($('#ft').value)}
+function fichaTxt(){const c=[...document.querySelectorAll('#ana input[name=an]:checked')].map(x=>x.value),o=$('#fal').value.trim();return (c.length?c.join(', '):'nenhuma informada')+(o?'. Obs: '+o:'')}
+function obsFull(){return [$('#fo').value.trim(),'[Tel: '+tel()+']','[Ficha de saúde: '+fichaTxt()+']'].filter(Boolean).join(' ')}
+function telOf(a){const m=/Tel:\s*(\d{10,13})/.exec(a.obs||'');if(!m)return '';return m[1].length<=11?'55'+m[1]:m[1]}
+const waTo=(t,m)=>`https://wa.me/${t}?text=${encodeURIComponent(m)}`;
+const fd2=d=>d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'});
+function msgConf(a){const d=new Date(a.data+'T12:00'),l=(typeof LOC!=='undefined'&&LOC.end)?'\n📍 '+LOC.end:'';return `Oi, ${a.nome}! 💜 Seu horário está confirmado:\n${a.servico}\n📅 ${fd2(d)} às ${String(a.horario||'').slice(0,5)}${l}\nSe tiver algum imprevisto, me avise com 24h de antecedência. Te espero! ✦ Ana Macedo`}
+function manut(a){const n=/lash|cílio|cilio/i.test(a.servico)?90:/sobrancelha|brow|henna/i.test(a.servico)?15:20,d=new Date(a.data+'T12:00');d.setDate(d.getDate()+n);return d}
+function extraAc(a){const t=telOf(a),sem='<span style="opacity:.7;font-size:.85rem">sem WhatsApp cadastrado</span>';
+if(a.status==='confirmado')return t?`<a class="btn sm gold" target="_blank" rel="noopener" href="${waTo(t,msgConf(a))}">Avisar cliente ✓</a>`:sem;
+if(a.status==='espera')return t?`<a class="btn sm ghost" target="_blank" rel="noopener" href="${waTo(t,`Oi, ${a.nome}! 💜 Abriu uma vaga para ${a.servico}. Quer aproveitar? Me diga o melhor dia e horário ✦`)}">Avisar que abriu vaga</a>`:sem;
+if(a.status==='concluido'){const d=manut(a);return `<span style="font-size:.85rem">Manutenção sugerida: <b>${fd2(d)}</b></span>`+(t?`<a class="btn sm ghost" target="_blank" rel="noopener" href="${waTo(t,`Oi, ${a.nome}! 💜 Já está chegando a hora da manutenção do seu ${a.servico} (por volta de ${fd2(d)}). Quer que eu veja um horário para você? ✦`)}">Lembrar manutenção</a>`:'')}
+return ''}
+$('#pkc').onclick=async()=>{try{await navigator.clipboard.writeText(CFG.pix);$('#pkc').textContent='Copiada ✓'}catch(e){alert('Chave: '+CFG.pix)}};
+$('#fw').onclick=async()=>{const err=$('#err');if(!$('#fn').value.trim()||tel().length<10){err.textContent='Para a lista de espera, preencha seu nome e WhatsApp.';return}
+err.textContent='';const dt=$('#fd').value||hojeStr(),msg=`Olá! Quero entrar na lista de espera para ${$('#fs').value}.\nNome: ${$('#fn').value}\nWhatsApp: ${$('#ft').value}${$('#fd').value?'\nDia de preferência: '+$('#fd').value.split('-').reverse().join('/'):''}`;
+try{if(sb){const {error}=await sb.from('agendamentos').insert({nome:$('#fn').value,servico:$('#fs').value,data:dt,horario:'',obs:'LISTA DE ESPERA '+obsFull(),duracao_min:dur($('#fs').value),status:'espera'});if(error)console.error(error)}}catch(x){console.error(x)}
+err.textContent='Você entrou na lista de espera ✦ Aviso pelo WhatsApp se abrir uma vaga.';location.href=wa(msg)};
+let dip=null;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dip=e;$('#inst').hidden=false});
+$('#inst').onclick=async()=>{if(!dip)return;dip.prompt();await dip.userChoice;dip=null;$('#inst').hidden=true};
+if(/iphone|ipad|ipod/i.test(navigator.userAgent)&&!navigator.standalone)$('#insti').hidden=false;
+if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{});
 loadCfg();
 </script>
 </body>
