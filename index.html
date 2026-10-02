@@ -147,6 +147,30 @@ html[data-t=dark] .chip{color:var(--off);border-color:var(--orq)}html[data-t=dar
 html[data-t=dark] .quote,html[data-t=dark] .res b{color:var(--gold)}
 
 section{padding:52px 20px}
+/* ritmo de cores: roxo / off-white alternados */
+:root{--gold-d:#8a6a28}
+section h2{position:relative}
+section .wrap>h2:first-child::after{content:'';display:block;width:56px;height:3px;border-radius:3px;background:var(--gold);margin-top:.3em}
+#servicos::before,#dolls::before,#galeria::before{content:'✦';position:absolute;right:-8px;top:6px;font-size:9rem;line-height:1;pointer-events:none}
+#servicos::before,#dolls::before{color:var(--orq);opacity:.09}
+#galeria::before{color:var(--gold);opacity:.12}
+html:not([data-t=dark]) .lt{background:var(--off);color:var(--ink)}
+html:not([data-t=dark]) .lt h2,html:not([data-t=dark]) .lt h3{color:var(--plum)}
+html:not([data-t=dark]) .lt .lead{color:var(--ink)}
+html:not([data-t=dark]) .lt .grp{color:var(--gold-d)}
+html:not([data-t=dark]) .lt .card{border-bottom:1px solid rgba(201,164,92,.55)}
+html:not([data-t=dark]) .lt .card .pr{color:var(--plum2)}
+html:not([data-t=dark]) .lt .card .meta a{color:var(--plum2);font-weight:600;text-decoration-color:var(--gold);text-underline-offset:4px}
+html:not([data-t=dark]) .lt .tab{color:var(--plum2);border-color:var(--plum2)}
+html:not([data-t=dark]) .lt .tab.on{background:var(--plum2);border-color:var(--plum2);color:var(--gold)}
+html:not([data-t=dark]) .lt .btn.ghost{color:var(--plum2);border-color:var(--plum2)}
+html:not([data-t=dark]) .lt .bx{background:#fff;border-color:var(--gold);box-shadow:0 10px 26px rgba(58,32,88,.08)}
+html:not([data-t=dark]) .lt .bx .pr{color:var(--plum2)}
+html:not([data-t=dark]) .lt .bx .script,html:not([data-t=dark]) #dl .script{color:var(--gold-d)!important}
+html:not([data-t=dark]) .lt details{border-bottom-color:rgba(201,164,92,.5)}
+#galeria .chip{color:var(--off);border-color:var(--orq)}
+#galeria .chip.on{background:var(--gold);border-color:var(--gold);color:var(--plum)}
+
 .wide{max-width:1100px}.two{display:grid;gap:28px}.g1{display:grid;gap:12px}
 .two #svc>div:first-child .grp{margin-top:0}.grp{margin:22px 0 6px}.card{padding:14px 0}
 .pills{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 0}.pills a{border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;padding:7px 16px;text-decoration:none;font:600 .9rem 'Playfair Display'}
@@ -256,11 +280,11 @@ body.cc,body.cc a,body.cc button,body.cc summary,body.cc label{cursor:none}body.
 </div><div class="hpic"><span class="script">sua foto aqui</span><i style="top:14%;left:-8%">Lash lifting</i><i style="top:46%;right:-8%">Nail art</i><i style="bottom:12%;left:-4%">Brow lamination</i></div></div>
 </section>
 <div class="mq" id="mq" aria-hidden="true"></div>
-<section id="servicos" class="dark2" data-msg="Olá! Vi os valores no site e gostaria de agendar.">
+<section id="servicos" class="lt" data-msg="Olá! Vi os valores no site e gostaria de agendar.">
 <div class="wrap wide"><h2>Serviços e valores</h2><p class="lead">Valores exatos. Pagamento em Pix, dinheiro ou cartão.</p><p><button class="btn ghost" data-p="descubra:quiz">Não sabe qual escolher? Faça o quiz</button></p><div class="two"><div><div class="tabs" data-g="svc"><button class="tab on" data-t="unha">Unhas</button><button class="tab" data-t="sobr">Sobrancelhas</button><button class="tab" data-t="lash">Lash</button></div><div id="svc"></div></div><aside><div class="bx" id="pm"></div><h3 style="margin:22px 0 10px">Combos</h3><div class="g1" id="cmb"></div><p style="opacity:.7;font-size:.9rem">Valores podem variar de acordo com o procedimento.</p></aside></div></div>
 </section>
 
-<section id="galeria" data-msg="Olá! Vi seus trabalhos no site e quero um modelo parecido.">
+<section id="galeria" class="dark" data-msg="Olá! Vi seus trabalhos no site e quero um modelo parecido.">
 <div class="wrap"><h2>Momento Talento ✦</h2>
 <div class="tabs" data-g="gal"><button class="tab on" data-t="mod">Modelos</button><button class="tab" data-t="ba">Antes e depois</button></div>
 <div class="tp on" data-g="gal" data-id="mod"><p class="lead">Toque no coração dos modelos que amou e mande todos de uma vez pelo WhatsApp.</p>
@@ -271,7 +295,7 @@ body.cc,body.cc a,body.cc button,body.cc summary,body.cc label{cursor:none}body.
 </div>
 </section>
 
-<section id="dolls" class="dark2" data-msg="Olá! Vi os depoimentos e quero meu horário." hidden><div class="wrap"><h2>The Dolls ✦</h2><p class="lead">Quem passa pelo studio sai se sentindo poderosa. Escuta elas.</p><div class="g2" id="dl"></div></div></section>
+<section id="dolls" class="lt" data-msg="Olá! Vi os depoimentos e quero meu horário." hidden><div class="wrap"><h2>The Dolls ✦</h2><p class="lead">Quem passa pelo studio sai se sentindo poderosa. Escuta elas.</p><div class="g2" id="dl"></div></div></section>
 <section id="agendar" class="dark" data-msg="Olá! Gostaria de agendar um horário.">
 <div class="wrap"><h2>Garanta seu glow up</h2><p class="lead">Você envia o pedido e eu confirmo pelo WhatsApp.</p>
 <div class="pbn"><b>Veio pela Sarah?</b> Quem chega indicada por ela ganha um brinde exclusivo. Marque a opção "Vim pela Sarah" abaixo. Também somos parceiras da Carol (Marie).</div>
