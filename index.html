@@ -254,6 +254,7 @@ body.cc,body.cc a,body.cc button,body.cc summary,body.cc label{cursor:none}body.
 </style>
 <meta name="description" content="Ana Macedo: nail designer, design de sobrancelha e lash lifting. Veja os valores, os trabalhos e peça seu horário pelo WhatsApp.">
 <meta name="theme-color" content="#26123a">
+<meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:url" content="https://SEU-SITE.com.br/"><meta property="og:image" content="https://SEU-SITE.com.br/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://SEU-SITE.com.br/og-image.png">
 <meta property="og:title" content="Ana Macedo | Nail designer, sobrancelha e lash">
 <meta property="og:description" content="Seu estilo começa nos detalhes. Veja os valores, os trabalhos e peça seu horário.">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -326,7 +327,7 @@ body.cc,body.cc a,body.cc button,body.cc summary,body.cc label{cursor:none}body.
 </form>
 <div class="pbn" id="pixbox" hidden><b>Quase lá! Garanta seu horário com o sinal</b><p id="pks" style="margin:6px 0"></p><code id="pk"></code><p style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0"><button class="btn ghost" type="button" id="pkc">Copiar chave Pix</button><a class="btn gold" id="pkw" href="#">Enviar pedido e comprovante</a></p></div></div>
 </section>
-<footer><div class="script">Ana Macedo</div><p>seu estilo começa nos detalhes</p><p><button class="btn gold" id="inst" hidden>Instalar no celular 📲</button></p><p id="insti" hidden style="font-size:.9rem;opacity:.8">No iPhone: toque em Compartilhar e depois em "Adicionar à Tela de Início".</p><a class="btn ghost" href="#" id="igBtn2" target="_blank" rel="noopener">Ver Instagram</a><p style="margin:18px 0 0"><button class="btn ghost" style="font-size:.85rem;padding:8px 16px" data-p="admin:ped">Área da Ana</button></p></footer>
+<footer><div class="script">Ana Macedo</div><p>seu estilo começa nos detalhes</p><p><button class="btn ghost" data-p="duvidas:local">📍 Como chegar</button></p><p><button class="btn gold" id="inst" hidden>Instalar no celular 📲</button></p><p id="insti" hidden style="font-size:.9rem;opacity:.8">No iPhone: toque em Compartilhar e depois em "Adicionar à Tela de Início".</p><a class="btn ghost" href="#" id="igBtn2" target="_blank" rel="noopener">Ver Instagram</a><p style="margin:18px 0 0"><button class="btn ghost" style="font-size:.85rem;padding:8px 16px" data-p="admin:ped">Área da Ana</button></p></footer>
 
 <div class="panel" id="p-descubra" role="dialog" aria-modal="true" aria-label="Descubra"><div class="phead"><div class="prow"><span class="script">Descubra</span><button class="pback" data-close>← voltar</button></div><div class="tabs" data-g="descubra"><button class="tab on" data-t="quiz">Qual procedimento?</button><button class="tab" data-t="estilo">Meu estilo</button></div></div><div class="tp on" data-g="descubra" data-id="quiz"><section id="quiz" data-msg="Olá! Fiz o quiz do site e queria ajuda para escolher meu procedimento.">
 <div class="wrap"><h2>Qual procedimento é a sua cara?</h2><p class="lead">Responde rapidinho e descobre por onde começar.</p><div class="qbox" id="qbox"></div></div>
@@ -552,7 +553,7 @@ addEventListener('scroll',()=>requestAnimationFrame(tick),{passive:true});tick()
 document.addEventListener('pointerdown',e=>{if(e.target.closest('input,textarea,select,summary,#lb'))return;for(let k=0;k<6;k++){const s=document.createElement('span');s.className='spark sf';s.textContent='✦';s.style.cssText=`left:${e.clientX}px;top:${e.clientY}px;--dx:${(Math.random()-.5)*120}px;--dy:${(Math.random()-.7)*120}px;font-size:${10+Math.random()*14}px`;document.body.appendChild(s);setTimeout(()=>s.remove(),800)}});
 
 /* ===== extras da apresentação ===== */
-const LOC={end:'Enviado pelo WhatsApp ao solicitar o horário',maps:'',est:'Consulte pelo WhatsApp',ref:'Consulte pelo WhatsApp',hor:'Segunda a sábado (domingo não atendo)'};
+const LOC={end:'Amy Beauty, R. das Safiras, 312 - Centro, Carambeí - PR, 84145-000',maps:'',est:'Consulte pelo WhatsApp',ref:'Consulte pelo WhatsApp',hor:'Segunda a sábado (domingo não atendo)'};
 const G={Unhas:{o:'Alongamento, banho de gel e esmaltação para deixar as mãos e pés bonitos e resistentes.',c:'Preparo da unha, aplicação do material ou esmalte, acabamento e finalização.',t:'De 1h a 2h30, conforme o serviço.',p:'Quem quer unhas mais longas, mais fortes ou apenas uma cor nova.',e:'Usar as unhas como ferramenta, abrir latas, roer ou puxar o material.',q:'Hidrate as cutículas com óleo e use luvas em produtos de limpeza.',r:'Manutenção de 15 a 20 dias.'},
 Sobrancelhas:{o:'Design ou brow lamination: desenho alinhado ao rosto e fios organizados.',c:'Mapeamento do formato, alinhamento e finalização; na lamination, os fios são fixados e preenchidos.',t:'Design 40min · Lamination 1h30.',p:'Quem quer moldar, alinhar ou dar volume às sobrancelhas.',e:'Molhar, esfregar e usar maquiagem na região nas primeiras 24h.',q:'Mantenha os fios penteados e hidratados.',r:'Cerca de 15 dias (varia de pessoa para pessoa).'},
 'Lash lifting':{o:'Curvatura e levantamento dos seus próprios cílios, sem extensão.',c:'Os cílios são levantados, fixados e finalizados, deixando o olhar aberto.',t:'Cerca de 1h30; o efeito dura em torno de 3 meses.',p:'Quem quer destacar o olhar sem extensão.',e:'Molhar, usar rímel e esfregar os olhos nas primeiras 24h.',q:'Penteie com cuidado e evite produtos oleosos na região.',r:'A cada 3 meses.'}};
@@ -570,7 +571,7 @@ function sq(i){const b=$('#sbox');if(i>1){b.innerHTML=`<div class="res"><p>RESUL
 b.innerHTML=`<h3>${SQ[i][0]}</h3>`;SQ[i][1].forEach(t=>{const x=document.createElement('button');x.className='opt';x.textContent=t;x.onclick=()=>{sa.push(t);sq(i+1)};b.appendChild(x)})}sq(0);
 /* localização e política */
 $('#loc').innerHTML=[['Endereço',LOC.end],['Estacionamento',LOC.est],['Pontos de referência',LOC.ref],['Horários de atendimento',LOC.hor]].map(a=>`<div class="bx"><h3>${a[0]}</h3><p>${a[1]}</p></div>`).join('');
-$('#maps').href=LOC.maps||wa('Olá! Como chego ao local do atendimento?');
+$('#maps').href=LOC.maps||wa('Olá! Como chego ao local do atendimento?');drawMapa();
 $('#pol').innerHTML=[['Cancelamento','Avise com 24h de antecedência pelo WhatsApp.'],['Atrasos','Passou de 10 minutos, o horário é desmarcado.'],['Pagamento','Pix, dinheiro ou cartão.'],['Acompanhantes','Avise antes se for levar acompanhante.']].map(a=>`<div class="bx"><h3>${a[0]}</h3><p>${a[1]}</p></div>`).join('');
 /* vale-presente */
 function gf(){const v=$('#vv').value;$('#gift').innerHTML=`<div class="script">Vale-presente</div><p>Para ${$('#vt').value||'você'}, com carinho${$('#vf').value?' · de '+$('#vf').value:''}</p><b>${$('#vs').value}${v?' · R$ '+v:''}</b>`;$('#vw').href=wa(`Olá! Quero um vale-presente.\nPara: ${$('#vt').value||'-'}\nDe: ${$('#vf').value||'-'}\nPresente: ${$('#vs').value}${v?'\nValor: R$ '+v:''}`)}
@@ -633,7 +634,7 @@ const cur=($('.tabs[data-g=svc] .tab.on')||{dataset:{t:'unha'}}).dataset.t;rSvc(
 $('#pm .pr').textContent=money(CFG.promo);
 $$('#cmb .bx').forEach((b,i)=>{b.querySelector('s').textContent='De '+money((C[i]||{}).de);b.querySelector('.pr').textContent='Por '+money((C[i]||{}).por)});
 const lv=[LOC.end,LOC.est,LOC.ref,LOC.hor];$$('#loc .bx p').forEach((p,i)=>p.textContent=lv[i]);
-$('#maps').href=LOC.maps||wa('Olá! Como chego ao local do atendimento?');
+$('#maps').href=LOC.maps||wa('Olá! Como chego ao local do atendimento?');drawMapa();
 const h=$('.hpic'),ht=h.querySelector('.script');h.style.background=I.hero?bg(I.hero):'';h.classList.toggle('has',!!I.hero);ht.hidden=!!I.hero;
 $('.ba .af').style.background=I.depois?bg(I.depois):'';$('.ba .be').style.background=I.antes?bg(I.antes):'';
 $$('#sobre .g2 .bx').forEach((b,i)=>{const u=I['c'+i];b.innerHTML=`<p><b>${CERT[i]}</b></p>`+(u?`<img src="${esc(u)}" alt="Certificado ${CERT[i]}" style="width:100%;border-radius:12px;margin-top:6px">`:'<p style="opacity:.6">(foto do certificado)</p>')})}
@@ -718,6 +719,10 @@ $('#bF').onsubmit=async e=>{e.preventDefault();const E=$('#bE');E.textContent=''
 const {error}=await sb.from('bloqueios').insert({data:$('#bd').value,inicio:$('#bi').value,fim:$('#bf').value,motivo:$('#bm').value.trim()});
 if(error){E.textContent='Erro: '+error.message;return}$('#bm').value='';loadBloq()};
 $('#bL').onclick=async e=>{const id=e.target.dataset.bd;if(!id)return;const {error}=await sb.from('bloqueios').delete().eq('id',id);if(error)alert(error.message);loadBloq()};
+/* mapa */
+function drawMapa(){const real=LOC.end&&!/^Enviado/i.test(LOC.end),q=encodeURIComponent(LOC.end||''),m=$('#maps');let f=$('#mapf');if(!f){f=document.createElement('div');f.id='mapf';m.insertAdjacentElement('beforebegin',f)}
+f.innerHTML=real?`<iframe title="Mapa do local" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=${q}&output=embed" style="width:100%;height:260px;border:0;border-radius:22px;margin:0 0 16px"></iframe>`:'';
+if(real&&!LOC.maps)m.href='https://www.google.com/maps/dir/?api=1&destination='+q}
 /* sinal, lista de espera, avisos e app */
 const dig=v=>String(v||'').replace(/\D/g,'');
 function tel(){return dig($('#ft').value)}
@@ -726,7 +731,7 @@ function obsFull(){return [$('#fo').value.trim(),'[Tel: '+tel()+']','[Ficha de s
 function telOf(a){const m=/Tel:\s*(\d{10,13})/.exec(a.obs||'');if(!m)return '';return m[1].length<=11?'55'+m[1]:m[1]}
 const waTo=(t,m)=>`https://wa.me/${t}?text=${encodeURIComponent(m)}`;
 const fd2=d=>d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'});
-function msgConf(a){const d=new Date(a.data+'T12:00'),l=(typeof LOC!=='undefined'&&LOC.end)?'\n📍 '+LOC.end:'';return `Oi, ${a.nome}! 💜 Seu horário está confirmado:\n${a.servico}\n📅 ${fd2(d)} às ${String(a.horario||'').slice(0,5)}${l}\nSe tiver algum imprevisto, me avise com 24h de antecedência. Te espero! ✦ Ana Macedo`}
+function msgConf(a){const d=new Date(a.data+'T12:00'),l=(typeof LOC!=='undefined'&&LOC.end)?'\n📍 '+LOC.end:'';return `Oi, ${a.nome}! 💜 Seu horário está confirmado:\n${a.servico}\n📅 ${fd2(d)} às ${String(a.horario||'').slice(0,5)}${l}${LOC.maps?'\n🗺️ '+LOC.maps:''}\nSe tiver algum imprevisto, me avise com 24h de antecedência. Te espero! ✦ Ana Macedo`}
 function manut(a){const n=/lash|cílio|cilio/i.test(a.servico)?90:/sobrancelha|brow|henna/i.test(a.servico)?15:20,d=new Date(a.data+'T12:00');d.setDate(d.getDate()+n);return d}
 function extraAc(a){const t=telOf(a),sem='<span style="opacity:.7;font-size:.85rem">sem WhatsApp cadastrado</span>';
 if(a.status==='confirmado')return t?`<a class="btn sm gold" target="_blank" rel="noopener" href="${waTo(t,msgConf(a))}">Avisar cliente ✓</a>`:sem;
