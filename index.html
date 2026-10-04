@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#26123a"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><title>Ana Macedo | Nail designer, sobrancelha e lash</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Rock+Salt&family=Pinyon+Script&family=Playfair+Display:wght@600;800&family=Cinzel:wght@600&family=Dela+Gothic+One&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--plum:#26123a;--plum2:#3a2058;--orq:#7a56a8;--gold:#c9a45c;--off:#f6f1ea;--lilac:#e4d8f2;--ink:#2a1a3d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -251,6 +252,11 @@ body.cc,body.cc a,body.cc button,body.cc summary,body.cc label{cursor:none}body.
 .af svg{width:34px;height:34px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .fic{border:1.5px solid var(--gold);border-radius:18px;padding:14px 18px;margin:0;display:grid;gap:8px}.fic legend{font:600 1rem 'Playfair Display';padding:0 8px;color:var(--gold)}.fic .ck{font-weight:400;font-size:.95rem}.fic small{opacity:.75}
 #pk{display:block;word-break:break-all;background:rgba(246,241,234,.1);padding:10px 12px;border-radius:12px;margin:8px 0;font:600 .95rem monospace}#inst[hidden]{display:none}
+
+/* avaliações */
+#rf input,#rf select,#rf textarea{color:var(--ink);background:#fff;border-color:var(--lilac)}
+html[data-t=dark] #rf input,html[data-t=dark] #rf select,html[data-t=dark] #rf textarea{color:var(--off);background:rgba(246,241,234,.08);border-color:var(--orq)}
+#rf{margin-top:8px}.stb{background:none;border:0;font-size:2.1rem;line-height:1;color:#c9bfd6;cursor:pointer;padding:2px 3px}.stb.on{color:var(--gold)}
 </style>
 <meta name="description" content="Ana Macedo: nail designer, design de sobrancelha e lash lifting. Veja os valores, os trabalhos e peça seu horário pelo WhatsApp.">
 <meta name="theme-color" content="#26123a">
@@ -258,13 +264,14 @@ body.cc,body.cc a,body.cc button,body.cc summary,body.cc label{cursor:none}body.
 <meta property="og:title" content="Ana Macedo | Nail designer, sobrancelha e lash">
 <meta property="og:description" content="Seu estilo começa nos detalhes. Veja os valores, os trabalhos e peça seu horário.">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BeautySalon","name":"Ana Macedo","description":"Nail designer, design de sobrancelha e lash lifting.","telephone":"+5542998286662","sameAs":["https://instagram.com/nails_anamacedo"],"address":{"@type":"PostalAddress","streetAddress":"R. das Safiras, 312 - Centro","addressLocality":"Carambeí","addressRegion":"PR","postalCode":"84145-000","addressCountry":"BR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"13:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"19:00"}]}</script>
 </head>
 <body>
 <div id="prog"></div>
 <header><span class="script">Ana Macedo</span><button id="mbtn" aria-expanded="false" aria-controls="menu">menu</button></header>
 <nav id="menu" aria-label="Menu principal">
 <small>Na página</small>
-<a href="#servicos">Serviços e valores</a><a href="#galeria">Momento talento (trabalhos)</a><a href="#agendar">Agendar</a>
+<a href="#servicos">Serviços e valores</a><a href="#galeria">Momento talento (trabalhos)</a><a href="#dolls">Avaliações</a><a href="#agendar">Agendar</a>
 <small>Mais</small>
 <a href="#" data-p="descubra:quiz">Qual procedimento é o meu?</a><a href="#" data-p="duvidas:guia">Guia dos serviços</a><a href="#" data-p="duvidas:faq">Dúvidas e cuidados</a><a href="#" data-p="duvidas:local">Como chegar e regras</a><a href="#" data-p="sobre:sobre">Sobre mim</a><a href="#" data-p="extras:vale">Vale-presente</a><a href="#" data-p="extras:cal">Meu horário</a><a href="#" id="mAdm" data-p="admin:ped" hidden>⚙ Painel da Ana</a>
 </nav>
@@ -279,7 +286,7 @@ body.cc,body.cc a,body.cc button,body.cc summary,body.cc label{cursor:none}body.
 <div class="btns"><a class="btn gold" id="heroWa" href="#">Garanta seu glow up ✨</a><a class="btn ghost" href="#galeria">Ver trabalhos</a></div>
 <div class="pills"><a href="#servicos">✦ Unhas</a><a href="#servicos">✦ Sobrancelhas</a><a href="#servicos">✦ Lash Lifting</a></div>
 <div class="stats"><div><b>3</b>anos de lash</div><div><b>2</b>anos de sobrancelha</div><div><b>1</b>ano de unhas</div></div>
-<p class="info">Seg a sáb · Pix, dinheiro ou cartão · Horário confirmado pelo WhatsApp</p>
+<p class="info">Seg a sex 13h às 20h · sáb 8h às 19h · Pix, dinheiro ou cartão · Horário confirmado pelo WhatsApp</p>
 </div><div class="hpic"><span class="script">sua foto aqui</span><i style="top:14%;left:-8%">Lash lifting</i><i style="top:46%;right:-8%">Nail art</i><i style="bottom:12%;left:-4%">Brow lamination</i></div></div>
 </section>
 <div class="mq" id="mq" aria-hidden="true"></div>
@@ -298,7 +305,16 @@ body.cc,body.cc a,body.cc button,body.cc summary,body.cc label{cursor:none}body.
 </div>
 </section>
 
-<section id="dolls" class="lt" data-msg="Olá! Vi os depoimentos e quero meu horário." hidden><div class="wrap"><h2>The Dolls ✦</h2><p class="lead">Quem passa pelo studio sai se sentindo poderosa. Escuta elas.</p><div class="g2" id="dl"></div></div></section>
+<section id="dolls" class="lt" data-msg="Olá! Vi as avaliações e quero meu horário."><div class="wrap"><h2>The Dolls ✦</h2><p class="lead">Quem passa pelo studio sai se sentindo poderosa. Escuta elas.</p><div id="av"></div><div class="g2" id="dl"></div>
+<p><button class="btn ghost" type="button" id="rbtn">Deixar minha avaliação ✦</button></p>
+<form id="rf" hidden><label>Seu nome<input id="rnm" required maxlength="40" autocomplete="given-name"></label>
+<label>Serviço<select id="rsv"></select></label>
+<div><b>Sua nota</b><div id="rst" role="radiogroup" aria-label="Nota de 1 a 5"></div></div>
+<label>Como foi?<textarea id="rtx" rows="3" required maxlength="400"></textarea></label>
+<input id="rhp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+<p id="rer" role="alert" style="color:#b3261e;min-height:1.4em;margin:0"></p>
+<button class="btn gold" type="submit">Enviar avaliação</button>
+<p style="font-size:.85rem;opacity:.75;margin:0">Não precisa de cadastro. Ela aparece aqui depois que a Ana aprovar.</p></form></div></section>
 <section id="agendar" class="dark" data-msg="Olá! Gostaria de agendar um horário.">
 <div class="wrap"><h2>Garanta seu glow up</h2><p class="lead">Você envia o pedido e eu confirmo pelo WhatsApp.</p>
 <div class="pbn"><b>Veio pela Sarah?</b> Quem chega indicada por ela ganha um brinde exclusivo. Marque a opção "Vim pela Sarah" abaixo. Também somos parceiras da Carol (Marie).</div>
@@ -339,8 +355,8 @@ body.cc,body.cc a,body.cc button,body.cc summary,body.cc label{cursor:none}body.
 <details><summary>E os cuidados depois?</summary><p>Depois do atendimento eu te passo tudo pelo WhatsApp.</p></details>
 <details><summary>Como funciona o cancelamento?</summary><p>Avise com 24 horas de antecedência. Para remarcar ou cancelar, é só falar comigo pelo WhatsApp.</p></details>
 <details><summary>E se eu atrasar?</summary><p>Passou de 10 minutos de atraso, o horário é desmarcado. Se for atrasar, me avise.</p></details>
-<details><summary>Quais dias você atende?</summary><p>De segunda a sábado. Domingo não atendo.</p></details>
-<details><summary>Onde é o atendimento?</summary><p>Te passo o local e os valores pelo WhatsApp assim que você pedir seu horário.</p></details>
+<details><summary>Quais dias você atende?</summary><p>De segunda a sexta, das 13h às 20h, e aos sábados, das 8h às 19h. Domingo não atendo.</p></details>
+<details><summary>Onde é o atendimento?</summary><p>O endereço, o mapa e as regras estão em <a href="#" data-p="duvidas:local" style="color:var(--gold);font-weight:600">Como chegar</a>. Se preferir, também te passo tudo pelo WhatsApp quando você pedir seu horário.</p></details>
 </div>
 </section></div><div class="tp" data-g="duvidas" data-id="guia"><section id="guia" class="dark" data-msg="Olá! Tenho dúvidas sobre um procedimento."><div class="wrap"><h2>Cada serviço explicado</h2><div class="filters" id="gt"></div><div id="gb"></div><h2 style="margin-top:44px">Quando fazer a manutenção?</h2><div class="g2" id="man"></div><a class="btn gold" href="#agendar">Quero agendar minha manutenção</a></div></section></div><div class="tp" data-g="duvidas" data-id="local"><section id="local" data-msg="Olá! Gostaria de saber como chegar."><div class="wrap"><h2>Localização</h2><div class="g2" id="loc"></div><a class="btn gold" id="maps" target="_blank" rel="noopener" href="#">Como chegar</a><h2 style="margin-top:44px">Política de atendimento</h2><div class="g2" id="pol"></div><p style="opacity:.7;font-size:.9rem">Valores podem variar de acordo com o procedimento.</p></div></section></div></div>
 <div class="panel" id="p-sobre" role="dialog" aria-modal="true" aria-label="Sobre"><div class="phead"><div class="prow"><span class="script">Sobre</span><button class="pback" data-close>← voltar</button></div><div class="tabs" data-g="sobre"><button class="tab on" data-t="sobre">Sobre mim</button><button class="tab" data-t="qr">QR Code</button></div></div><div class="tp on" data-g="sobre" data-id="sobre"><section id="sobre" data-msg="Olá! Li sobre você no site e gostaria de agendar.">
@@ -356,14 +372,15 @@ body.cc,body.cc a,body.cc button,body.cc summary,body.cc label{cursor:none}body.
 <form onsubmit="return false"><label>Serviço<select id="cs"></select></label><label>Data<input type="date" id="cd"></label><label>Hora<input type="time" id="ch" value="14:00"></label></form>
 <p id="cb" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"></p></div></section></div></div>
 <div class="panel" id="p-admin" role="dialog" aria-modal="true" aria-label="Painel da Ana"><div class="phead"><div class="prow"><span class="script">Painel da Ana</span><span><button class="pback" id="aOut" hidden>sair</button> <button class="pback" data-close>← modo cliente</button></span></div>
-<div class="tabs" data-g="admin" id="aTabs" hidden><button class="tab on" data-t="ped">Pedidos</button><button class="tab" data-t="img">Imagens</button><button class="tab" data-t="val">Valores</button><button class="tab" data-t="res">Resumo</button><button class="tab" data-t="cli">Clientes</button><button class="tab" data-t="blq">Bloqueios</button></div></div>
+<div class="tabs" data-g="admin" id="aTabs" hidden><button class="tab on" data-t="ped">Pedidos</button><button class="tab" data-t="img">Imagens</button><button class="tab" data-t="val">Valores</button><button class="tab" data-t="res">Resumo</button><button class="tab" data-t="cli">Clientes</button><button class="tab" data-t="blq">Bloqueios</button><button class="tab" data-t="ava">Avaliações</button></div></div>
 <div class="tp on apane" data-g="admin" data-id="login"><h2>Entrar no painel</h2><form id="aLf"><label>E-mail<input type="email" id="aEm" required autocomplete="username"></label><label>Senha<input type="password" id="aPw" required autocomplete="current-password"></label><p class="aerr" id="aLe" role="alert"></p><button class="btn gold" type="submit">Entrar</button></form></div>
 <div class="tp apane" data-g="admin" data-id="ped"><h2>Pedidos de horário</h2><div class="tabs" id="aF"></div><div id="aL"></div><p style="text-align:center"><button class="btn ghost sm" id="aR">Atualizar</button></p></div>
 <div class="tp apane" data-g="admin" data-id="img"><h2>Imagens do site</h2><p style="opacity:.8">Escolha uma foto do celular ou do computador. Ela aparece no site na hora.</p><div id="aImg"></div></div>
 <div class="tp apane" data-g="admin" data-id="val"><h2>Valores e local</h2><div id="aVal"></div></div>
 <div class="tp apane" data-g="admin" data-id="res"><h2>Resumo</h2><div id="aRes"></div><h2 style="margin-top:28px">Relatório do mês</h2><label>Mês<input type="month" id="aMes"></label><div id="aRel"></div></div>
 <div class="tp apane" data-g="admin" data-id="cli"><h2>Clientes</h2><div id="aAni"></div><div id="aCli"></div></div>
-<div class="tp apane" data-g="admin" data-id="blq"><h2>Bloquear horários</h2><p style="opacity:.8">Horários bloqueados somem da lista de horários livres para as clientes.</p><form id="bF"><label>Data<input type="date" id="bd" required></label><label>De<input type="time" id="bi" required value="08:00"></label><label>Até<input type="time" id="bf" required value="19:00"></label><label>Motivo (só você vê)<input id="bm"></label><p class="aerr" id="bE" role="alert"></p><button class="btn gold" type="submit">Bloquear</button></form><div id="bL"></div></div></div>
+<div class="tp apane" data-g="admin" data-id="blq"><h2>Bloquear horários</h2><p style="opacity:.8">Horários bloqueados somem da lista de horários livres para as clientes.</p><form id="bF"><label>Data<input type="date" id="bd" required></label><label>De<input type="time" id="bi" required value="08:00"></label><label>Até<input type="time" id="bf" required value="19:00"></label><label>Motivo (só você vê)<input id="bm"></label><p class="aerr" id="bE" role="alert"></p><button class="btn gold" type="submit">Bloquear</button></form><div id="bL"></div></div>
+<div class="tp apane" data-g="admin" data-id="ava"><h2>Avaliações</h2><p style="opacity:.8">Só as aprovadas aparecem no site.</p><div id="aAv"></div></div></div>
 <a id="agb" href="#agendar">Garanta o seu momento 💅✨</a>
 <div id="lb" role="dialog" aria-modal="true" aria-label="Modelo"><button class="nv" id="lbx" aria-label="Fechar">✕</button><div id="lbi"></div><div id="lbt" class="script" style="font-size:2rem;color:var(--gold)"></div><div class="row"><button class="nv" id="lbp" aria-label="Anterior">‹</button><button class="btn ghost" id="lbf" style="color:var(--off)"></button><button class="nv" id="lbn" aria-label="Próximo">›</button></div><a class="btn gold" id="lbw" target="_blank" rel="noopener" href="#">Quero este modelo</a><p style="margin:0;font-size:.85rem;opacity:.7">Toque duas vezes na foto para favoritar</p></div>
 <a id="fab" href="#" target="_blank" rel="noopener">WhatsApp</a>
@@ -427,9 +444,11 @@ $('#fs').innerHTML=SERV.map(s=>`<option>${s.n}</option>`).join('');
 /* quiz */
 const byN=n=>SERV.find(s=>s.n===n);
 const Q=[
-{q:'Como estão suas unhas hoje?',o:[['Quero unhas maiores',{r:'Alongamento'}],['Já tenho alongamento',{r:'Manutenção do alongamento'}],['Prefiro manter a minha unha natural',{g:1}]]},
-{q:'Quer deixar a unha natural mais forte?',o:[['Sim, quero reforço',{r:'Banho de gel'}],['Não, só quero cor',{g:2}]]},
-{q:'Quanto tempo quer que a cor dure?',o:[['Semanas, com brilho e proteção',{r:'Esmaltação em gel e blindagem'}],['Só um esmalte rápido',{r:'Esmaltação tradicional'}]]}];
+{q:'O que você quer cuidar hoje?',o:[['Unhas das mãos',{g:1}],['Sobrancelhas',{g:4}],['Cílios',{r:'Lash lifting'}],['Pés',{r:'Pedicure'}]]},
+{q:'Como estão suas unhas hoje?',o:[['Quero unhas maiores',{r:'Alongamento'}],['Já tenho alongamento',{r:'Manutenção do alongamento'}],['Prefiro manter a minha unha natural',{g:2}]]},
+{q:'Quer deixar a unha natural mais forte?',o:[['Sim, quero reforço',{r:'Banho de gel'}],['Não, só quero cor',{g:3}]]},
+{q:'Quanto tempo quer que a cor dure?',o:[['Semanas, com brilho e proteção',{r:'Esmaltação em gel e blindagem'}],['Só um esmalte rápido',{r:'Esmaltação tradicional'}]]},
+{q:'O que você busca nas sobrancelhas?',o:[['Desenho e alinhamento',{r:'Design de sobrancelha'}],['Fios alinhados e com mais volume',{r:'Brow lamination'}]]}];
 function qs(i){const b=$('#qbox');b.innerHTML=`<h3>${Q[i].q}</h3>`;
 Q[i].o.forEach(([t,a])=>{const x=document.createElement('button');x.className='opt';x.textContent=t;x.onclick=()=>a.r?qr(a.r):qs(a.g);b.appendChild(x)})}
 function qr(n){const s=byN(n);$('#qbox').innerHTML=`<div class="res"><p>Combina com você:</p><b>${s.n}</b><p>${s.d}</p><p>${s.tempo?'Duração: '+s.tempo+' · ':''}${money(s.preco)}</p></div><a class="btn gold" target="_blank" rel="noopener" href="${wa('Olá! Fiz o quiz do site e gostaria de agendar '+s.n+'.')}">Agendar pelo WhatsApp</a> <button class="btn ghost" style="color:var(--plum2)" id="redo">Refazer</button>`;$('#redo').onclick=()=>qs(0)}
@@ -461,12 +480,13 @@ let bloq=[];
 const hojeStr=()=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
 function busy(dv,a,b){return [...ocup.map(o=>[o.data,toMin(o.horario),toMin(o.horario)+o.duracao_min]),...bloq.map(o=>[o.data,toMin(o.inicio),toMin(o.fim)])].some(([x,i,f])=>x===dv&&a<f&&i<b)}
 function conflito(){const dv=d.value,hv=$('#fh').value;if(!dv||!hv)return null;const i=toMin(hv);return busy(dv,i,i+dur($('#fs').value))}
-const AGENDA={ini:8*60,fim:19*60,passo:30};
+const AGENDA={passo:30};/* seg a sex 13h-20h, sábado 8h-19h, domingo fechado */
+const HORAS=dv=>{const w=new Date(dv+'T12:00').getDay();return w===0?null:w===6?[8*60,19*60]:[13*60,20*60]};
 function drawSlots(){const box=$('#slots'),dv=d.value,fh=$('#fh'),msg=t=>box.innerHTML=`<span style="opacity:.75;font-size:.92rem">${t}</span>`;
 if(!dv){fh.value='';return msg('Escolha a data para ver os horários livres.')}
 if(new Date(dv+'T12:00').getDay()===0){fh.value='';return msg('Não atendo aos domingos.')}
 const du=dur($('#fs').value),n=new Date(),agora=n.getHours()*60+n.getMinutes(),hj=dv===hojeStr(),l=[];
-for(let m=AGENDA.ini;m+du<=AGENDA.fim;m+=AGENDA.passo)if(!busy(dv,m,m+du)&&!(hj&&m<=agora))l.push(fmtH(m));
+const hh=HORAS(dv);for(let m=hh[0];m+du<=hh[1];m+=AGENDA.passo)if(!busy(dv,m,m+du)&&!(hj&&m<=agora))l.push(fmtH(m));
 if(!l.includes(fh.value))fh.value='';
 box.innerHTML=l.length?l.map(h=>`<button type="button" class="chip${h===fh.value?' on':''}" data-h="${h}">${h}</button>`).join(''):'';if(!l.length)msg('Sem horários livres neste dia. Tente outra data.')}
 $('#slots').onclick=e=>{const h=e.target.dataset.h;if(!h)return;$('#fh').value=h;$('#err').textContent='';drawSlots()};
@@ -553,7 +573,7 @@ addEventListener('scroll',()=>requestAnimationFrame(tick),{passive:true});tick()
 document.addEventListener('pointerdown',e=>{if(e.target.closest('input,textarea,select,summary,#lb'))return;for(let k=0;k<6;k++){const s=document.createElement('span');s.className='spark sf';s.textContent='✦';s.style.cssText=`left:${e.clientX}px;top:${e.clientY}px;--dx:${(Math.random()-.5)*120}px;--dy:${(Math.random()-.7)*120}px;font-size:${10+Math.random()*14}px`;document.body.appendChild(s);setTimeout(()=>s.remove(),800)}});
 
 /* ===== extras da apresentação ===== */
-const LOC={end:'Amy Beauty, R. das Safiras, 312 - Centro, Carambeí - PR, 84145-000',maps:'',est:'Consulte pelo WhatsApp',ref:'Consulte pelo WhatsApp',hor:'Segunda a sábado (domingo não atendo)'};
+const LOC={end:'Amy Beauty, R. das Safiras, 312 - Centro, Carambeí - PR, 84145-000',maps:'',est:'Consulte pelo WhatsApp',ref:'Consulte pelo WhatsApp',hor:'Seg a sex, das 13h às 20h · Sáb, das 8h às 19h · Domingo fechado'};
 const G={Unhas:{o:'Alongamento, banho de gel e esmaltação para deixar as mãos e pés bonitos e resistentes.',c:'Preparo da unha, aplicação do material ou esmalte, acabamento e finalização.',t:'De 1h a 2h30, conforme o serviço.',p:'Quem quer unhas mais longas, mais fortes ou apenas uma cor nova.',e:'Usar as unhas como ferramenta, abrir latas, roer ou puxar o material.',q:'Hidrate as cutículas com óleo e use luvas em produtos de limpeza.',r:'Manutenção de 15 a 20 dias.'},
 Sobrancelhas:{o:'Design ou brow lamination: desenho alinhado ao rosto e fios organizados.',c:'Mapeamento do formato, alinhamento e finalização; na lamination, os fios são fixados e preenchidos.',t:'Design 40min · Lamination 1h30.',p:'Quem quer moldar, alinhar ou dar volume às sobrancelhas.',e:'Molhar, esfregar e usar maquiagem na região nas primeiras 24h.',q:'Mantenha os fios penteados e hidratados.',r:'Cerca de 15 dias (varia de pessoa para pessoa).'},
 'Lash lifting':{o:'Curvatura e levantamento dos seus próprios cílios, sem extensão.',c:'Os cílios são levantados, fixados e finalizados, deixando o olhar aberto.',t:'Cerca de 1h30; o efeito dura em torno de 3 meses.',p:'Quem quer destacar o olhar sem extensão.',e:'Molhar, usar rímel e esfregar os olhos nas primeiras 24h.',q:'Penteie com cuidado e evite produtos oleosos na região.',r:'A cada 3 meses.'}};
@@ -648,7 +668,7 @@ $('#aOut').onclick=async()=>{await sb.auth.signOut();setAdmin(false);setTab('adm
 /* pedidos */
 const NOMES={pendente:'Pendentes',confirmado:'Confirmados',espera:'Lista de espera',concluido:'Concluídos',cancelado:'Cancelados',todos:'Todos'};
 async function loadPed(){const {data,error}=await sb.from('agendamentos').select('*').order('data').order('criado_em');
-if(error){$('#aL').innerHTML='<p class="vazio">Não foi possível carregar. '+esc(error.message)+'</p>';return}peds=data||[];drawPed();drawResumo();drawCli();loadBloq();loadCli()}
+if(error){$('#aL').innerHTML='<p class="vazio">Não foi possível carregar. '+esc(error.message)+'</p>';return}peds=data||[];drawPed();drawResumo();drawCli();loadBloq();loadCli();loadAvAdm()}
 function drawPed(){$('#aF').innerHTML=Object.keys(NOMES).map(k=>`<button class="tab${k===fil?' on':''}" data-k="${k}">${NOMES[k]} (${k==='todos'?peds.length:peds.filter(a=>a.status===k).length})</button>`).join('');
 const it=peds.filter(a=>fil==='todos'||a.status===fil);if(!it.length){$('#aL').innerHTML='<p class="vazio">Nenhum pedido aqui por enquanto.</p>';return}
 $('#aL').innerHTML=it.map(a=>{const dia=new Date(a.data+'T12:00').toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'2-digit'});
@@ -683,7 +703,37 @@ CFG.loc={end:$('#vle').value,est:$('#vlp').value,ref:$('#vlr').value,hor:$('#vlh
 const er=await saveCfg();$('#vOk').textContent=er?'Erro: '+er.message:'Salvo ✓';if(!er)applyCfg()};
 /* selo da agenda, depoimentos e cursor */
 {const n=new Date(),m=n.getDate()>=25?(n.getMonth()+1)%12:n.getMonth();$('#selt').textContent=AGENDA_ABERTA?'Agenda de '+MESES[m]+' aberta':'Agenda lotada · lista de espera'}
-if(DOLLS.length){$('#dolls').hidden=false;$('#dl').innerHTML=DOLLS.map(x=>`<div class="bx"><p class="script" style="font-size:1.5rem;color:var(--gold)">★★★★★</p><p>“${esc(x.t)}”</p><p><b>${esc(x.n)}</b>${x.s?' · '+esc(x.s):''}</p></div>`).join('')}
+/* avaliações: enviadas sem cadastro, publicadas só depois que a Ana aprova */
+let AV=[],rnota=0;
+const estr=n=>'★'.repeat(n)+'☆'.repeat(5-n);
+$('#rsv').innerHTML=SERV.map(x=>`<option>${esc(x.n)}</option>`).join('');
+function drawStars(){$('#rst').innerHTML=[1,2,3,4,5].map(n=>`<button type="button" class="stb${n<=rnota?' on':''}" role="radio" aria-checked="${n===rnota}" aria-label="${n} de 5" data-n="${n}">★</button>`).join('')}drawStars();
+$('#rst').onclick=e=>{const n=+(e.target.dataset.n||0);if(n){rnota=n;drawStars()}};
+function drawAval(){const L=[...AV,...DOLLS.map(x=>({nome:x.n,servico:x.s,nota:5,texto:x.t}))];
+$('#dl').innerHTML=L.map(x=>`<div class="bx"><p class="script" style="font-size:1.5rem;color:var(--gold)">${estr(+x.nota||5)}</p><p>“${esc(x.texto)}”</p><p><b>${esc(x.nome)}</b>${x.servico?' · '+esc(x.servico):''}</p></div>`).join('');
+$('#av').innerHTML=L.length?'':'<p class="lead">Ainda não temos avaliações. Seja a primeira a contar como foi.</p>'}
+async function loadAval(){if(sb){try{const {data}=await sb.from('avaliacoes').select('nome,servico,nota,texto').eq('status','aprovada').order('criado_em',{ascending:false}).limit(30);AV=data||[]}catch(e){console.warn(e)}}drawAval()}
+$('#rbtn').onclick=()=>{const f=$('#rf');f.hidden=!f.hidden;if(!f.hidden)$('#rnm').focus()};
+$('#rf').onsubmit=async e=>{e.preventDefault();const er=$('#rer');er.textContent='';if($('#rhp').value)return;
+if(!rnota){er.textContent='Toque nas estrelas para dar sua nota.';return}
+let ult=0;try{ult=+localStorage.getItem('avt')||0}catch(x){}
+if(Date.now()-ult<3e5){er.textContent='Você acabou de enviar uma avaliação. Tente de novo em alguns minutos.';return}
+if(!sb){er.textContent='Não foi possível enviar agora. Tente novamente.';return}
+const {error}=await sb.from('avaliacoes').insert({nome:$('#rnm').value.trim(),servico:$('#rsv').value,nota:rnota,texto:$('#rtx').value.trim()});
+if(error){er.textContent='Não foi possível enviar agora. Tente novamente.';console.error(error);return}
+try{localStorage.setItem('avt',Date.now())}catch(x){}
+$('#rf').innerHTML='<p><b>Obrigada! ✦</b> Sua avaliação foi enviada e aparece aqui depois que a Ana aprovar.</p>'};
+/* painel da Ana: aprovar ou recusar avaliações */
+let avs=[];
+async function loadAvAdm(){const {data,error}=await sb.from('avaliacoes').select('*').order('criado_em',{ascending:false});
+if(error){$('#aAv').innerHTML='<p class="vazio">Não foi possível carregar. '+esc(error.message)+'</p>';return}avs=data||[];
+const pend=avs.filter(a=>a.status==='pendente').length;$('#aTabs .tab[data-t=ava]').textContent='Avaliações'+(pend?` (${pend})`:'');
+const b=(a,t,st,c)=>`<button class="btn sm ${c}" data-av="${esc(a.id)}" data-a="${st}">${t}</button>`;
+$('#aAv').innerHTML=avs.length?avs.map(a=>`<div class="acard"><div class="atop"><h3>${esc(a.nome)}</h3><b style="color:var(--gold);white-space:nowrap">${estr(+a.nota||0)}</b></div><p>${esc(a.servico)}</p><p>“${esc(a.texto)}”</p><p style="opacity:.7;font-size:.85rem">${a.status==='aprovada'?'Publicada no site':'Aguardando sua decisão'}</p><div class="acts">${a.status==='aprovada'?b(a,'Tirar do site','pendente','ghost'):b(a,'Aprovar e publicar','aprovada','gold')}${b(a,'Excluir','del','ghost')}</div></div>`).join(''):'<p class="vazio">Nenhuma avaliação ainda.</p>'}
+$('#aAv').onclick=async e=>{const b=e.target.closest('[data-av]');if(!b)return;if(b.dataset.a==='del'&&!confirm('Excluir esta avaliação?'))return;
+const q=sb.from('avaliacoes'),r=b.dataset.a==='del'?await q.delete().eq('id',b.dataset.av):await q.update({status:b.dataset.a}).eq('id',b.dataset.av);
+if(r.error){alert(r.error.message);return}loadAvAdm();loadAval()};
+loadAval();
 if(matchMedia('(hover:hover) and (pointer:fine)').matches){const c=document.createElement('div');c.id='cur';c.textContent='✦';document.body.append(c);document.body.classList.add('cc');let x=0,y=0,tx=0,ty=0,h=1;
 addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;c.style.opacity=1});document.addEventListener('pointerover',e=>{h=e.target.closest('a,button,.tile,summary,.opt')?1.8:1});
 (function f(){x+=(tx-x)*.25;y+=(ty-y)*.25;c.style.transform=`translate(${x}px,${y}px) translate(-50%,-50%) scale(${h})`;requestAnimationFrame(f)})()}
@@ -736,7 +786,7 @@ function manut(a){const n=/lash|cílio|cilio/i.test(a.servico)?90:/sobrancelha|b
 function extraAc(a){const t=telOf(a),sem='<span style="opacity:.7;font-size:.85rem">sem WhatsApp cadastrado</span>';
 if(a.status==='confirmado')return t?`<a class="btn sm gold" target="_blank" rel="noopener" href="${waTo(t,msgConf(a))}">Avisar cliente ✓</a>`:sem;
 if(a.status==='espera')return t?`<a class="btn sm ghost" target="_blank" rel="noopener" href="${waTo(t,`Oi, ${a.nome}! 💜 Abriu uma vaga para ${a.servico}. Quer aproveitar? Me diga o melhor dia e horário ✦`)}">Avisar que abriu vaga</a>`:sem;
-if(a.status==='concluido'){const d=manut(a);return `<span style="font-size:.85rem">Manutenção sugerida: <b>${fd2(d)}</b></span>`+(t?`<a class="btn sm ghost" target="_blank" rel="noopener" href="${waTo(t,`Oi, ${a.nome}! 💜 Já está chegando a hora da manutenção do seu ${a.servico} (por volta de ${fd2(d)}). Quer que eu veja um horário para você? ✦`)}">Lembrar manutenção</a>`:'')}
+if(a.status==='concluido'){const d=manut(a);return `<span style="font-size:.85rem">Manutenção sugerida: <b>${fd2(d)}</b></span>`+(t?`<a class="btn sm ghost" target="_blank" rel="noopener" href="${waTo(t,`Oi, ${a.nome}! 💜 Já está chegando a hora da manutenção do seu ${a.servico} (por volta de ${fd2(d)}). Quer que eu veja um horário para você? ✦`)}">Lembrar manutenção</a><a class="btn sm ghost" target="_blank" rel="noopener" href="${waTo(t,`Oi, ${a.nome}! 💜 Que bom que você veio! Se puder, deixe sua avaliação no site, leva 1 minutinho: ${location.href.split('#')[0]}#dolls ✦`)}">Pedir avaliação</a>`:'')}
 return ''}
 $('#pkc').onclick=async()=>{try{await navigator.clipboard.writeText(CFG.pix);$('#pkc').textContent='Copiada ✓'}catch(e){alert('Chave: '+CFG.pix)}};
 $('#fw').onclick=async()=>{const err=$('#err');if(!$('#fn').value.trim()||tel().length<10){err.textContent='Para a lista de espera, preencha seu nome e WhatsApp.';return}
