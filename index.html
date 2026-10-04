@@ -257,6 +257,22 @@ body.cc,body.cc a,body.cc button,body.cc summary,body.cc label{cursor:none}body.
 #rf input,#rf select,#rf textarea{color:var(--ink);background:#fff;border-color:var(--lilac)}
 html[data-t=dark] #rf input,html[data-t=dark] #rf select,html[data-t=dark] #rf textarea{color:var(--off);background:rgba(246,241,234,.08);border-color:var(--orq)}
 #rf{margin-top:8px}.stb{background:none;border:0;font-size:2.1rem;line-height:1;color:#c9bfd6;cursor:pointer;padding:2px 3px}.stb.on{color:var(--gold)}
+
+#rsf{color:var(--ink);background:#fff;border-color:var(--lilac);width:auto;padding:8px 14px;border-radius:999px;font-size:.95rem}
+html[data-t=dark] #rsf{color:var(--off);background:rgba(246,241,234,.08);border-color:var(--orq)}
+.rsum{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin:0 0 18px}
+.rbig{text-align:center}.rbig b{font:800 3.2rem/1 'Playfair Display';display:block;color:var(--plum2)}.rbig span{color:var(--gold-d);letter-spacing:.1em}.rbig small{display:block;opacity:.75}
+html[data-t=dark] .rbig b{color:var(--gold)}
+.rbars{flex:1;min-width:200px;max-width:360px}.rbars button{display:flex;align-items:center;gap:8px;width:100%;background:none;border:0;padding:3px 0;font:500 .85rem 'Montserrat';color:inherit;cursor:pointer}
+.rbars i{flex:1;height:8px;border-radius:8px;background:var(--lilac);overflow:hidden}.rbars u{display:block;height:100%;background:var(--gold)}
+.rc{border-bottom:1px solid rgba(201,164,92,.5);padding:16px 0}.rh{display:flex;gap:10px;align-items:center}
+.rav{width:38px;height:38px;border-radius:50%;background:var(--plum2);color:var(--gold);display:grid;place-items:center;font:800 1.1rem 'Playfair Display'}
+.rs{color:var(--gold-d);font-size:.95rem;letter-spacing:.08em}.rm{margin:6px 0 0;font-size:.82rem;opacity:.7}.rc p{margin:6px 0 0}
+.rt,.rph{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.rtb,.rpv{position:relative;width:76px;height:96px;border-radius:12px;border:0;padding:0;background-size:cover;background-position:center;cursor:pointer}
+.rpv button{position:absolute;top:2px;right:2px;width:24px;height:24px;border-radius:50%;border:0;background:rgba(246,241,234,.9);cursor:pointer}
+#rlb{position:fixed;inset:0;z-index:45;background:rgba(24,11,40,.95);display:flex;align-items:center;justify-content:center;gap:10px;padding:16px}
+#rlb img{max-width:min(72vw,560px);max-height:80svh;border-radius:16px;border:5px solid #fff}#rlb #rlx{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px}
 </style>
 <meta name="description" content="Ana Macedo: nail designer, design de sobrancelha e lash lifting. Veja os valores, os trabalhos e peça seu horário pelo WhatsApp.">
 <meta name="theme-color" content="#26123a">
@@ -305,13 +321,14 @@ html[data-t=dark] #rf input,html[data-t=dark] #rf select,html[data-t=dark] #rf t
 </div>
 </section>
 
-<section id="dolls" class="lt" data-msg="Olá! Vi as avaliações e quero meu horário."><div class="wrap"><h2>The Dolls ✦</h2><p class="lead">Quem passa pelo studio sai se sentindo poderosa. Escuta elas.</p><div id="av"></div><div class="g2" id="dl"></div>
+<section id="dolls" class="lt" data-msg="Olá! Vi as avaliações e quero meu horário."><div class="wrap"><h2>The Dolls ✦</h2><p class="lead">Quem passa pelo studio sai se sentindo poderosa. Escuta elas.</p><div id="av"></div><div class="filters" id="rfl"></div><div id="dl"></div><p><button class="btn ghost" type="button" id="rmore" hidden>Ver mais avaliações</button></p>
 <p><button class="btn ghost" type="button" id="rbtn">Deixar minha avaliação ✦</button></p>
 <form id="rf" hidden><label>Seu nome<input id="rnm" required maxlength="40" autocomplete="given-name"></label>
 <label>Serviço<select id="rsv"></select></label>
 <div><b>Sua nota</b><div id="rst" role="radiogroup" aria-label="Nota de 1 a 5"></div></div>
 <label>Como foi?<textarea id="rtx" rows="3" required maxlength="400"></textarea></label>
 <input id="rhp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+<div><b>Fotos (opcional, até 3)</b><div id="rph" class="rph"></div><label class="btn sm ghost" style="display:inline-block;width:fit-content;margin-top:6px">Adicionar foto<input type="file" id="rfi" accept="image/*" multiple hidden></label></div>
 <p id="rer" role="alert" style="color:#b3261e;min-height:1.4em;margin:0"></p>
 <button class="btn gold" type="submit">Enviar avaliação</button>
 <p style="font-size:.85rem;opacity:.75;margin:0">Não precisa de cadastro. Ela aparece aqui depois que a Ana aprovar.</p></form></div></section>
@@ -382,6 +399,7 @@ html[data-t=dark] #rf input,html[data-t=dark] #rf select,html[data-t=dark] #rf t
 <div class="tp apane" data-g="admin" data-id="blq"><h2>Bloquear horários</h2><p style="opacity:.8">Horários bloqueados somem da lista de horários livres para as clientes.</p><form id="bF"><label>Data<input type="date" id="bd" required></label><label>De<input type="time" id="bi" required value="08:00"></label><label>Até<input type="time" id="bf" required value="19:00"></label><label>Motivo (só você vê)<input id="bm"></label><p class="aerr" id="bE" role="alert"></p><button class="btn gold" type="submit">Bloquear</button></form><div id="bL"></div></div>
 <div class="tp apane" data-g="admin" data-id="ava"><h2>Avaliações</h2><p style="opacity:.8">Só as aprovadas aparecem no site.</p><div id="aAv"></div></div></div>
 <a id="agb" href="#agendar">Garanta o seu momento 💅✨</a>
+<div id="rlb" hidden><button class="nv" id="rlx" aria-label="Fechar">✕</button><button class="nv" id="rlp" aria-label="Foto anterior">‹</button><img id="rli" alt="Foto da avaliação"><button class="nv" id="rln" aria-label="Próxima foto">›</button></div>
 <div id="lb" role="dialog" aria-modal="true" aria-label="Modelo"><button class="nv" id="lbx" aria-label="Fechar">✕</button><div id="lbi"></div><div id="lbt" class="script" style="font-size:2rem;color:var(--gold)"></div><div class="row"><button class="nv" id="lbp" aria-label="Anterior">‹</button><button class="btn ghost" id="lbf" style="color:var(--off)"></button><button class="nv" id="lbn" aria-label="Próximo">›</button></div><a class="btn gold" id="lbw" target="_blank" rel="noopener" href="#">Quero este modelo</a><p style="margin:0;font-size:.85rem;opacity:.7">Toque duas vezes na foto para favoritar</p></div>
 <a id="fab" href="#" target="_blank" rel="noopener">WhatsApp</a>
 
@@ -709,18 +727,40 @@ const estr=n=>'★'.repeat(n)+'☆'.repeat(5-n);
 $('#rsv').innerHTML=SERV.map(x=>`<option>${esc(x.n)}</option>`).join('');
 function drawStars(){$('#rst').innerHTML=[1,2,3,4,5].map(n=>`<button type="button" class="stb${n<=rnota?' on':''}" role="radio" aria-checked="${n===rnota}" aria-label="${n} de 5" data-n="${n}">★</button>`).join('')}drawStars();
 $('#rst').onclick=e=>{const n=+(e.target.dataset.n||0);if(n){rnota=n;drawStars()}};
-function drawAval(){const L=[...AV,...DOLLS.map(x=>({nome:x.n,servico:x.s,nota:5,texto:x.t}))];
-$('#dl').innerHTML=L.map(x=>`<div class="bx"><p class="script" style="font-size:1.5rem;color:var(--gold)">${estr(+x.nota||5)}</p><p>“${esc(x.texto)}”</p><p><b>${esc(x.nome)}</b>${x.servico?' · '+esc(x.servico):''}</p></div>`).join('');
-$('#av').innerHTML=L.length?'':'<p class="lead">Ainda não temos avaliações. Seja a primeira a contar como foi.</p>'}
-async function loadAval(){if(sb){try{const {data}=await sb.from('avaliacoes').select('nome,servico,nota,texto').eq('status','aprovada').order('criado_em',{ascending:false}).limit(30);AV=data||[]}catch(e){console.warn(e)}}drawAval()}
+let rfil='todas',rsvf='',rshow=6,RVU=[],rfs=[],rlu=[],rli=0;
+const RFT=a=>(a||[]).filter(f=>/^[\w.-]+\.jpg$/.test(f)).map(f=>sb.storage.from('avaliacoes').getPublicUrl(f).data.publicUrl);
+const dtr=x=>x?new Date(x).toLocaleDateString('pt-BR'):'';
+function drawAval(){const L=[...AV,...DOLLS.map(x=>({nome:x.n,servico:x.s,nota:5,texto:x.t,fotos:[]}))],n=L.length,med=n?L.reduce((t,a)=>t+(+a.nota||5),0)/n:0,cnt=k=>L.filter(a=>Math.round(a.nota)===k).length,cf=L.filter(a=>(a.fotos||[]).length).length;
+$('#av').innerHTML=n?`<div class="rsum"><div class="rbig"><b>${med.toFixed(1).replace('.',',')}</b><span>${estr(Math.round(med))}</span><small>${n} ${n===1?'avaliação':'avaliações'}</small></div><div class="rbars">${[5,4,3,2,1].map(k=>`<button type="button" data-f="${k}"><span>${k}★</span><i><u style="width:${cnt(k)/n*100}%"></u></i><span>${cnt(k)}</span></button>`).join('')}</div></div>`:'<p class="lead">Ainda não temos avaliações. Seja a primeira a contar como foi.</p>';
+const F=[['todas','Todas ('+n+')'],['foto','Com foto ('+cf+')'],...[5,4,3,2,1].map(k=>[String(k),k+' ★ ('+cnt(k)+')'])],sv=[...new Set(L.map(a=>a.servico).filter(Boolean))];
+$('#rfl').innerHTML=n?F.map(([k,t])=>`<button type="button" class="chip${k===rfil?' on':''}" data-f="${k}">${t}</button>`).join('')+(sv.length>1?`<select id="rsf" aria-label="Filtrar por serviço"><option value="">Todos os serviços</option>${sv.map(v=>`<option${v===rsvf?' selected':''}>${esc(v)}</option>`).join('')}</select>`:''):'';
+const R=L.filter(a=>(rfil==='todas'||(rfil==='foto'?(a.fotos||[]).length:Math.round(a.nota)===+rfil))&&(!rsvf||a.servico===rsvf)),V=R.slice(0,rshow);RVU=V.map(a=>RFT(a.fotos));
+$('#dl').innerHTML=V.map((x,j)=>`<article class="rc"><div class="rh"><span class="rav">${esc((x.nome||'?')[0].toUpperCase())}</span><div><b>${esc(x.nome)}</b><div class="rs">${estr(+x.nota||5)}</div></div></div><p class="rm">${esc(x.servico||'')}${x.criado_em?' · '+dtr(x.criado_em):''}</p><p>${esc(x.texto)}</p>${RVU[j].length?`<div class="rt">${RVU[j].map((u,i)=>`<button type="button" class="rtb" data-r="${j}" data-i="${i}" style="background-image:url('${esc(u)}')" aria-label="Ver foto ${i+1}"></button>`).join('')}</div>`:''}</article>`).join('')||(n?'<p class="vazio">Nenhuma avaliação com esse filtro.</p>':'');
+$('#rmore').hidden=R.length<=rshow}
+const setF=k=>{rfil=k;rshow=6;drawAval()};
+$('#av').onclick=e=>{const b=e.target.closest('[data-f]');if(b)setF(rfil===b.dataset.f?'todas':b.dataset.f)};
+$('#rfl').onclick=e=>{const b=e.target.closest('button[data-f]');if(b)setF(b.dataset.f)};
+$('#rfl').onchange=e=>{if(e.target.id==='rsf'){rsvf=e.target.value;rshow=6;drawAval()}};
+$('#rmore').onclick=()=>{rshow+=6;drawAval()};
+const rlb=$('#rlb');function rls(i){rli=(i+rlu.length)%rlu.length;$('#rli').src=rlu[rli];$('#rlp').hidden=$('#rln').hidden=rlu.length<2}
+const rlc=()=>{rlb.hidden=true;document.body.style.overflow=''};
+$('#dl').onclick=e=>{const b=e.target.closest('[data-r]');if(!b)return;rlu=RVU[+b.dataset.r];rls(+b.dataset.i);rlb.hidden=false;document.body.style.overflow='hidden'};
+$('#rlx').onclick=rlc;rlb.onclick=e=>{if(e.target===rlb)rlc()};$('#rlp').onclick=()=>rls(rli-1);$('#rln').onclick=()=>rls(rli+1);
+addEventListener('keydown',e=>{if(!rlb.hidden&&e.key==='Escape')rlc()});
+function drawPh(){$('#rph').innerHTML=rfs.map((f,i)=>`<span class="rpv" style="background-image:url('${URL.createObjectURL(f)}')"><button type="button" data-x="${i}" aria-label="Remover foto">✕</button></span>`).join('');$('#rfi').parentElement.hidden=rfs.length>=3}
+$('#rfi').onchange=e=>{rfs=[...rfs,...[...e.target.files].filter(f=>f.type.startsWith('image/'))].slice(0,3);e.target.value='';drawPh()};
+$('#rph').onclick=e=>{const x=e.target.dataset.x;if(x!==undefined){rfs.splice(+x,1);drawPh()}};
+async function loadAval(){if(sb){try{const {data}=await sb.from('avaliacoes').select('nome,servico,nota,texto,fotos,criado_em').eq('status','aprovada').order('criado_em',{ascending:false}).limit(100);AV=data||[]}catch(e){console.warn(e)}}drawAval()}
 $('#rbtn').onclick=()=>{const f=$('#rf');f.hidden=!f.hidden;if(!f.hidden)$('#rnm').focus()};
-$('#rf').onsubmit=async e=>{e.preventDefault();const er=$('#rer');er.textContent='';if($('#rhp').value)return;
+$('#rf').onsubmit=async e=>{e.preventDefault();const er=$('#rer'),bt=e.submitter;er.textContent='';if($('#rhp').value)return;
 if(!rnota){er.textContent='Toque nas estrelas para dar sua nota.';return}
 let ult=0;try{ult=+localStorage.getItem('avt')||0}catch(x){}
 if(Date.now()-ult<3e5){er.textContent='Você acabou de enviar uma avaliação. Tente de novo em alguns minutos.';return}
 if(!sb){er.textContent='Não foi possível enviar agora. Tente novamente.';return}
-const {error}=await sb.from('avaliacoes').insert({nome:$('#rnm').value.trim(),servico:$('#rsv').value,nota:rnota,texto:$('#rtx').value.trim()});
-if(error){er.textContent='Não foi possível enviar agora. Tente novamente.';console.error(error);return}
+if(bt)bt.disabled=true;const nomes=[];
+try{for(const f of rfs){const b=await shrink(f),n=Date.now()+'-'+Math.random().toString(36).slice(2,8)+'.jpg',{error}=await sb.storage.from('avaliacoes').upload(n,b,{contentType:'image/jpeg'});if(error)throw error;nomes.push(n)}
+const {error}=await sb.from('avaliacoes').insert({nome:$('#rnm').value.trim(),servico:$('#rsv').value,nota:rnota,texto:$('#rtx').value.trim(),fotos:nomes});if(error)throw error}
+catch(x){console.error(x);er.textContent='Não foi possível enviar agora. Tente novamente.';if(bt)bt.disabled=false;return}
 try{localStorage.setItem('avt',Date.now())}catch(x){}
 $('#rf').innerHTML='<p><b>Obrigada! ✦</b> Sua avaliação foi enviada e aparece aqui depois que a Ana aprovar.</p>'};
 /* painel da Ana: aprovar ou recusar avaliações */
@@ -729,8 +769,9 @@ async function loadAvAdm(){const {data,error}=await sb.from('avaliacoes').select
 if(error){$('#aAv').innerHTML='<p class="vazio">Não foi possível carregar. '+esc(error.message)+'</p>';return}avs=data||[];
 const pend=avs.filter(a=>a.status==='pendente').length;$('#aTabs .tab[data-t=ava]').textContent='Avaliações'+(pend?` (${pend})`:'');
 const b=(a,t,st,c)=>`<button class="btn sm ${c}" data-av="${esc(a.id)}" data-a="${st}">${t}</button>`;
-$('#aAv').innerHTML=avs.length?avs.map(a=>`<div class="acard"><div class="atop"><h3>${esc(a.nome)}</h3><b style="color:var(--gold);white-space:nowrap">${estr(+a.nota||0)}</b></div><p>${esc(a.servico)}</p><p>“${esc(a.texto)}”</p><p style="opacity:.7;font-size:.85rem">${a.status==='aprovada'?'Publicada no site':'Aguardando sua decisão'}</p><div class="acts">${a.status==='aprovada'?b(a,'Tirar do site','pendente','ghost'):b(a,'Aprovar e publicar','aprovada','gold')}${b(a,'Excluir','del','ghost')}</div></div>`).join(''):'<p class="vazio">Nenhuma avaliação ainda.</p>'}
+$('#aAv').innerHTML=avs.length?avs.map(a=>`<div class="acard"><div class="atop"><h3>${esc(a.nome)}</h3><b style="color:var(--gold);white-space:nowrap">${estr(+a.nota||0)}</b></div><p>${esc(a.servico)}</p><p>“${esc(a.texto)}”</p>${RFT(a.fotos).map(u=>`<img src="${esc(u)}" alt="" style="width:64px;height:84px;object-fit:cover;border-radius:10px;margin:6px 6px 0 0">`).join("")}<p style="opacity:.7;font-size:.85rem">${a.status==='aprovada'?'Publicada no site':'Aguardando sua decisão'}</p><div class="acts">${a.status==='aprovada'?b(a,'Tirar do site','pendente','ghost'):b(a,'Aprovar e publicar','aprovada','gold')}${b(a,'Excluir','del','ghost')}</div></div>`).join(''):'<p class="vazio">Nenhuma avaliação ainda.</p>'}
 $('#aAv').onclick=async e=>{const b=e.target.closest('[data-av]');if(!b)return;if(b.dataset.a==='del'&&!confirm('Excluir esta avaliação?'))return;
+const a0=avs.find(x=>String(x.id)===b.dataset.av);if(b.dataset.a==='del'&&a0&&(a0.fotos||[]).length)await sb.storage.from('avaliacoes').remove(a0.fotos);
 const q=sb.from('avaliacoes'),r=b.dataset.a==='del'?await q.delete().eq('id',b.dataset.av):await q.update({status:b.dataset.a}).eq('id',b.dataset.av);
 if(r.error){alert(r.error.message);return}loadAvAdm();loadAval()};
 loadAval();
