@@ -750,7 +750,8 @@ addEventListener('keydown',e=>{if(!rlb.hidden&&e.key==='Escape')rlc()});
 function drawPh(){$('#rph').innerHTML=rfs.map((f,i)=>`<span class="rpv" style="background-image:url('${URL.createObjectURL(f)}')"><button type="button" data-x="${i}" aria-label="Remover foto">✕</button></span>`).join('');$('#rfi').parentElement.hidden=rfs.length>=3}
 $('#rfi').onchange=e=>{rfs=[...rfs,...[...e.target.files].filter(f=>f.type.startsWith('image/'))].slice(0,3);e.target.value='';drawPh()};
 $('#rph').onclick=e=>{const x=e.target.dataset.x;if(x!==undefined){rfs.splice(+x,1);drawPh()}};
-async function loadAval(){if(sb){try{const {data}=await sb.from('avaliacoes').select('nome,servico,nota,texto,fotos,criado_em').eq('status','aprovada').order('criado_em',{ascending:false}).limit(100);AV=data||[]}catch(e){console.warn(e)}}drawAval()}
+async function loadAval(){if(sb){try{const q=c=>sb.from('avaliacoes').select(c).eq('status','aprovada').order('criado_em',{ascending:false}).limit(100);
+let r=await q('nome,servico,nota,texto,fotos,criado_em');if(r.error){console.warn(r.error);r=await q('nome,servico,nota,texto,criado_em')}AV=r.data||[]}catch(e){console.warn(e)}}drawAval()}
 $('#rbtn').onclick=()=>{const f=$('#rf');f.hidden=!f.hidden;if(!f.hidden)$('#rnm').focus()};
 $('#rf').onsubmit=async e=>{e.preventDefault();const er=$('#rer'),bt=e.submitter;er.textContent='';if($('#rhp').value)return;
 if(!rnota){er.textContent='Toque nas estrelas para dar sua nota.';return}
