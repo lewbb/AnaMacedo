@@ -321,7 +321,7 @@ html[data-t=dark] .rbig b{color:var(--gold)}
 </div>
 </section>
 
-<section id="dolls" class="lt" data-msg="Olá! Vi as avaliações e quero meu horário."><div class="wrap"><h2>The Dolls ✦</h2><p class="lead">Quem passa pelo studio sai se sentindo poderosa. Escuta elas.</p><div id="av"></div><div class="filters" id="rfl"></div><div id="dl"></div><p><button class="btn ghost" type="button" id="rmore" hidden>Ver mais avaliações</button></p>
+<section id="dolls" class="lt" data-msg="Olá! Vi as avaliações e quero meu horário."><div class="wrap"><h2>The Dolls ✦</h2><p class="lead">Quem passa pelo studio sai se sentindo poderosa. Escuta elas.</p><div id="av"></div><div class="filters" id="rfl"></div><div id="rlist"></div><p><button class="btn ghost" type="button" id="rmore" hidden>Ver mais avaliações</button></p>
 <p><button class="btn ghost" type="button" id="rbtn">Deixar minha avaliação ✦</button></p>
 <form id="rf" hidden><label>Seu nome<input id="rnm" required maxlength="40" autocomplete="given-name"></label>
 <label>Serviço<select id="rsv"></select></label>
@@ -735,7 +735,7 @@ $('#av').innerHTML=n?`<div class="rsum"><div class="rbig"><b>${med.toFixed(1).re
 const F=[['todas','Todas ('+n+')'],['foto','Com foto ('+cf+')'],...[5,4,3,2,1].map(k=>[String(k),k+' ★ ('+cnt(k)+')'])],sv=[...new Set(L.map(a=>a.servico).filter(Boolean))];
 $('#rfl').innerHTML=n?F.map(([k,t])=>`<button type="button" class="chip${k===rfil?' on':''}" data-f="${k}">${t}</button>`).join('')+(sv.length>1?`<select id="rsf" aria-label="Filtrar por serviço"><option value="">Todos os serviços</option>${sv.map(v=>`<option${v===rsvf?' selected':''}>${esc(v)}</option>`).join('')}</select>`:''):'';
 const R=L.filter(a=>(rfil==='todas'||(rfil==='foto'?(a.fotos||[]).length:Math.round(a.nota)===+rfil))&&(!rsvf||a.servico===rsvf)),V=R.slice(0,rshow);RVU=V.map(a=>RFT(a.fotos));
-$('#dl').innerHTML=V.map((x,j)=>`<article class="rc"><div class="rh"><span class="rav">${esc((x.nome||'?')[0].toUpperCase())}</span><div><b>${esc(x.nome)}</b><div class="rs">${estr(+x.nota||5)}</div></div></div><p class="rm">${esc(x.servico||'')}${x.criado_em?' · '+dtr(x.criado_em):''}</p><p>${esc(x.texto)}</p>${RVU[j].length?`<div class="rt">${RVU[j].map((u,i)=>`<button type="button" class="rtb" data-r="${j}" data-i="${i}" style="background-image:url('${esc(u)}')" aria-label="Ver foto ${i+1}"></button>`).join('')}</div>`:''}</article>`).join('')||(n?'<p class="vazio">Nenhuma avaliação com esse filtro.</p>':'');
+$('#rlist').innerHTML=V.map((x,j)=>`<article class="rc"><div class="rh"><span class="rav">${esc((x.nome||'?')[0].toUpperCase())}</span><div><b>${esc(x.nome)}</b><div class="rs">${estr(+x.nota||5)}</div></div></div><p class="rm">${esc(x.servico||'')}${x.criado_em?' · '+dtr(x.criado_em):''}</p><p>${esc(x.texto)}</p>${RVU[j].length?`<div class="rt">${RVU[j].map((u,i)=>`<button type="button" class="rtb" data-r="${j}" data-i="${i}" style="background-image:url('${esc(u)}')" aria-label="Ver foto ${i+1}"></button>`).join('')}</div>`:''}</article>`).join('')||(n?'<p class="vazio">Nenhuma avaliação com esse filtro.</p>':'');
 $('#rmore').hidden=R.length<=rshow}
 const setF=k=>{rfil=k;rshow=6;drawAval()};
 $('#av').onclick=e=>{const b=e.target.closest('[data-f]');if(b)setF(rfil===b.dataset.f?'todas':b.dataset.f)};
@@ -744,7 +744,7 @@ $('#rfl').onchange=e=>{if(e.target.id==='rsf'){rsvf=e.target.value;rshow=6;drawA
 $('#rmore').onclick=()=>{rshow+=6;drawAval()};
 const rlb=$('#rlb');function rls(i){rli=(i+rlu.length)%rlu.length;$('#rli').src=rlu[rli];$('#rlp').hidden=$('#rln').hidden=rlu.length<2}
 const rlc=()=>{rlb.hidden=true;document.body.style.overflow=''};
-$('#dl').onclick=e=>{const b=e.target.closest('[data-r]');if(!b)return;rlu=RVU[+b.dataset.r];rls(+b.dataset.i);rlb.hidden=false;document.body.style.overflow='hidden'};
+$('#rlist').onclick=e=>{const b=e.target.closest('[data-r]');if(!b)return;rlu=RVU[+b.dataset.r];rls(+b.dataset.i);rlb.hidden=false;document.body.style.overflow='hidden'};
 $('#rlx').onclick=rlc;rlb.onclick=e=>{if(e.target===rlb)rlc()};$('#rlp').onclick=()=>rls(rli-1);$('#rln').onclick=()=>rls(rli+1);
 addEventListener('keydown',e=>{if(!rlb.hidden&&e.key==='Escape')rlc()});
 function drawPh(){$('#rph').innerHTML=rfs.map((f,i)=>`<span class="rpv" style="background-image:url('${URL.createObjectURL(f)}')"><button type="button" data-x="${i}" aria-label="Remover foto">✕</button></span>`).join('');$('#rfi').parentElement.hidden=rfs.length>=3}
