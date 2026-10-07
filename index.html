@@ -172,7 +172,8 @@ html:not([data-t=dark]) .lt details{border-bottom-color:rgba(201,164,92,.5)}
 #galeria .chip{color:var(--off);border-color:var(--orq)}
 #galeria .chip.on{background:var(--gold);border-color:var(--gold);color:var(--plum)}
 
-.wide{max-width:1100px}.two{display:grid;gap:28px}.g1{display:grid;gap:12px}
+.wide{max-width:1100px}#pbar{flex:0 0 auto;width:calc(100% + 40px);margin:10px -20px -10px;padding:7px 16px;background:var(--gold);color:var(--plum);text-align:center;font:600 .85rem/1.3 'Montserrat',sans-serif;text-decoration:none}#pbar[hidden]{display:none}header:has(#pbar:not([hidden])){flex-wrap:wrap}
+.two{display:grid;gap:28px}.two.solo{grid-template-columns:1fr!important}.g1{display:grid;gap:12px}
 .two #svc>div:first-child .grp{margin-top:0}.grp{margin:22px 0 6px}.card{padding:14px 0}
 .pills{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 0}.pills a{border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;padding:7px 16px;text-decoration:none;font:600 .9rem 'Playfair Display'}
 .stats{display:flex;gap:22px;flex-wrap:wrap;margin:22px 0 10px}.stats div{font-size:.85rem;opacity:.9}.stats b{display:block;font:400 2.6rem/1 'Pinyon Script';color:var(--gold)}
@@ -284,7 +285,7 @@ html[data-t=dark] .rbig b{color:var(--gold)}
 </head>
 <body>
 <div id="prog"></div>
-<header><span class="script">Ana Macedo</span><button id="mbtn" aria-expanded="false" aria-controls="menu">menu</button></header>
+<header><span class="script">Ana Macedo</span><button id="mbtn" aria-expanded="false" aria-controls="menu">menu</button><a id="pbar" href="#servicos" hidden></a></header>
 <nav id="menu" aria-label="Menu principal">
 <small>Na página</small>
 <a href="#servicos">Serviços e valores</a><a href="#galeria">Momento talento (trabalhos)</a><a href="#dolls">Avaliações</a><a href="#agendar">Agendar</a>
@@ -307,7 +308,7 @@ html[data-t=dark] .rbig b{color:var(--gold)}
 </section>
 <div class="mq" id="mq" aria-hidden="true"></div>
 <section id="servicos" class="lt" data-msg="Olá! Vi os valores no site e gostaria de agendar.">
-<div class="wrap wide"><h2>Serviços e valores</h2><p class="lead">Valores exatos. Pagamento em Pix, dinheiro ou cartão.</p><p><button class="btn ghost" data-p="descubra:quiz">Não sabe qual escolher? Faça o quiz</button></p><div class="two"><div><div class="tabs" data-g="svc"><button class="tab on" data-t="unha">Unhas</button><button class="tab" data-t="sobr">Sobrancelhas</button><button class="tab" data-t="lash">Lash</button></div><div id="svc"></div></div><aside><div class="bx" id="pm"></div><h3 style="margin:22px 0 10px">Combos</h3><div class="g1" id="cmb"></div><p style="opacity:.7;font-size:.9rem">Valores podem variar de acordo com o procedimento.</p></aside></div></div>
+<div class="wrap wide"><h2>Serviços e valores</h2><p class="lead">Valores exatos. Pagamento em Pix, dinheiro ou cartão.</p><p><button class="btn ghost" data-p="descubra:quiz">Não sabe qual escolher? Faça o quiz</button></p><div class="two"><div><div class="tabs" data-g="svc"><button class="tab on" data-t="unha">Unhas</button><button class="tab" data-t="sobr">Sobrancelhas</button><button class="tab" data-t="lash">Lash</button></div><div id="svc"></div></div><aside id="promoBox" hidden><div class="bx" id="pm" hidden></div><div id="cmbWrap" hidden><h3 style="margin:22px 0 10px">Combos</h3><div class="g1" id="cmb"></div></div></aside></div><p style="opacity:.7;font-size:.9rem">Valores podem variar de acordo com o procedimento.</p></div>
 </section>
 
 <section id="galeria" class="dark" data-msg="Olá! Vi seus trabalhos no site e quero um modelo parecido.">
@@ -389,11 +390,12 @@ html[data-t=dark] .rbig b{color:var(--gold)}
 <form onsubmit="return false"><label>Serviço<select id="cs"></select></label><label>Data<input type="date" id="cd"></label><label>Hora<input type="time" id="ch" value="14:00"></label></form>
 <p id="cb" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"></p></div></section></div></div>
 <div class="panel" id="p-admin" role="dialog" aria-modal="true" aria-label="Painel da Ana"><div class="phead"><div class="prow"><span class="script">Painel da Ana</span><span><button class="pback" id="aOut" hidden>sair</button> <button class="pback" data-close>← modo cliente</button></span></div>
-<div class="tabs" data-g="admin" id="aTabs" hidden><button class="tab on" data-t="ped">Pedidos</button><button class="tab" data-t="img">Imagens</button><button class="tab" data-t="val">Valores</button><button class="tab" data-t="res">Resumo</button><button class="tab" data-t="cli">Clientes</button><button class="tab" data-t="blq">Bloqueios</button><button class="tab" data-t="ava">Avaliações</button></div></div>
+<div class="tabs" data-g="admin" id="aTabs" hidden><button class="tab on" data-t="ped">Pedidos</button><button class="tab" data-t="img">Imagens</button><button class="tab" data-t="val">Valores</button><button class="tab" data-t="promo">Promoções</button><button class="tab" data-t="res">Resumo</button><button class="tab" data-t="cli">Clientes</button><button class="tab" data-t="blq">Bloqueios</button><button class="tab" data-t="ava">Avaliações</button></div></div>
 <div class="tp on apane" data-g="admin" data-id="login"><h2>Entrar no painel</h2><form id="aLf"><label>E-mail<input type="email" id="aEm" required autocomplete="username"></label><label>Senha<input type="password" id="aPw" required autocomplete="current-password"></label><p class="aerr" id="aLe" role="alert"></p><button class="btn gold" type="submit">Entrar</button></form></div>
 <div class="tp apane" data-g="admin" data-id="ped"><h2>Pedidos de horário</h2><div class="tabs" id="aF"></div><div id="aL"></div><p style="text-align:center"><button class="btn ghost sm" id="aR">Atualizar</button></p></div>
 <div class="tp apane" data-g="admin" data-id="img"><h2>Imagens do site</h2><p style="opacity:.8">Escolha uma foto do celular ou do computador. Ela aparece no site na hora.</p><div id="aImg"></div></div>
 <div class="tp apane" data-g="admin" data-id="val"><h2>Valores e local</h2><div id="aVal"></div></div>
+<div class="tp apane" data-g="admin" data-id="promo"><h2>Promoção e combos</h2><p style="opacity:.8">Nada aparece no site até você cadastrar aqui. Use o botão de ligar/desligar para pausar sem apagar. Com data de início, a promoção entra sozinha no dia; depois da data final, ela some sozinha. Enquanto a promoção estiver no ar, aparece um aviso dourado no topo do site.</p><div id="aPromo"></div></div>
 <div class="tp apane" data-g="admin" data-id="res"><h2>Resumo</h2><div id="aRes"></div><h2 style="margin-top:28px">Relatório do mês</h2><label>Mês<input type="month" id="aMes"></label><div id="aRel"></div></div>
 <div class="tp apane" data-g="admin" data-id="cli"><h2>Clientes</h2><div id="aAni"></div><div id="aCli"></div></div>
 <div class="tp apane" data-g="admin" data-id="blq"><h2>Bloquear horários</h2><p style="opacity:.8">Horários bloqueados somem da lista de horários livres para as clientes.</p><form id="bF"><label>Data<input type="date" id="bd" required></label><label>De<input type="time" id="bi" required value="08:00"></label><label>Até<input type="time" id="bf" required value="19:00"></label><label>Motivo (só você vê)<input id="bm"></label><p class="aerr" id="bE" role="alert"></p><button class="btn gold" type="submit">Bloquear</button></form><div id="bL"></div></div>
@@ -600,9 +602,6 @@ function gs(k){const g=G[k];$('#gb').innerHTML=`<div class="g2"><div class="bx">
 gt.onclick=e=>{const k=e.target.dataset.k;if(!k)return;gt.querySelectorAll('.chip').forEach(b=>b.classList.toggle('on',b===e.target));gs(k)};gs('Unhas');
 $('#man').innerHTML=[['Unhas','15 a 20 dias'],['Lash lifting','cerca de 3 meses'],['Sobrancelhas','cerca de 15 dias']].map(a=>`<div class="bx"><h3>${a[0]}</h3><p class="pr">${a[1]}</p><p>aproximadamente</p></div>`).join('');
 /* promo + combos */
-const now=new Date(),ed=new Date(now.getFullYear(),now.getMonth()+1,0,23,59,59),dl=Math.ceil((ed-now)/864e5);
-$('#pm').innerHTML=`<h3>PROMOÇÕES DO MÊS</h3><p>Lash lifting + sobrancelha · <span class="pr">${money(null)}</span></p><p>Até ${ed.toLocaleDateString('pt-BR')} · oferta termina em <b id="dl">${dl}</b> ${dl===1?'dia':'dias'}</p><a class="btn gold" target="_blank" rel="noopener" href="${wa('Olá! Quero a promoção do mês (lash lifting + sobrancelha).')}">Quero aproveitar</a>`;
-$('#cmb').innerHTML=[['COMBO OLHAR','Design de sobrancelha + Lash lifting'],['COMBO BEAUTY','Unhas + sobrancelha']].map(c=>`<div class="bx"><h3>${c[0]}</h3><p>${c[1]}</p><p><s>De R$ ––</s> <span class="pr">Por R$ ––</span></p><a class="btn ghost" style="font-size:.9rem;padding:10px 18px" target="_blank" rel="noopener" href="${wa('Olá! Tenho interesse no '+c[0]+'.')}">Quero este combo</a></div>`).join('');
 /* quiz de estilo */
 const SQ=[['Qual estilo você prefere?',['Delicado','Elegante','Marcante','Romântico']],['Qual formato?',['Quadrado','Almond','Bailarina','Stiletto']]];let sa=[];
 function sq(i){const b=$('#sbox');if(i>1){b.innerHTML=`<div class="res"><p>RESULTADO</p><b>${sa[0]} + ${sa[1]}</b><p>Seu estilo combina com unhas ${sa[0].toLowerCase()}s no formato ${sa[1].toLowerCase()}. Veja os trabalhos relacionados.</p></div><a class="btn gold" href="#galeria">Ver trabalhos</a> <a class="btn ghost" style="color:var(--plum2)" target="_blank" rel="noopener" href="${wa('Olá! Meu estilo é '+sa[0].toLowerCase()+', formato '+sa[1].toLowerCase()+'. Pode me indicar um modelo?')}">Falar no WhatsApp</a> <button class="btn ghost" style="color:var(--plum2)" id="sr">Refazer</button>`;$('#sr').onclick=()=>{sa=[];sq(0)};return}
@@ -662,21 +661,35 @@ const $$=q=>[...document.querySelectorAll(q)];
 const esc=t=>String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const CERT=['Design de sobrancelhas','Lash lifting','Nail Designer','Nail Art'];
 const SLOTS=[['hero','Foto principal (topo do site)']].concat(FOTOS.map((f,i)=>['g'+i,'Trabalho '+(i+1)+' · '+f.t]),[['antes','Antes'],['depois','Depois']],CERT.map((c,i)=>['c'+i,'Certificado: '+c]));
-let isAdmin=false,CFG={img:{},preco:{},promo:null,combos:[{},{}],loc:{}},fil='pendente',peds=[];
+let isAdmin=false,CFG={img:{},preco:{},promo:null,combos:[],loc:{}},fil='pendente',peds=[];
 function setAdmin(on){isAdmin=on;$('#aTabs').hidden=$('#aOut').hidden=$('#mAdm').hidden=!on}
 async function saveCfg(){const {error}=await sb.from('site_config').upsert({id:1,data:CFG});return error}
+/* promoção e combos: só aparecem se a Ana cadastrou no painel */
+const hoje=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+const promoOk=()=>{const p=CFG.promo;if(!p||typeof p!=='object'||!String(p.titulo||'').trim()||p.ativa===false)return null;if(p.inicio&&p.inicio>hoje())return null;if(p.ate&&p.ate<hoje())return null;return p};
+const combosOk=()=>(Array.isArray(CFG.combos)?CFG.combos:[]).filter(c=>c&&String(c.nome||'').trim());
+const combosVis=()=>combosOk().filter(c=>c.ativo!==false);
+const precoHtml=o=>{const d=o.de!=null&&o.de!=='',r=o.por!=null&&o.por!=='';return d||r?`<p>${d?`<s>De ${money(o.de)}</s> `:''}${r?`<span class="pr">Por ${money(o.por)}</span>`:''}</p>`:''};
+function drawPromo(){
+const p=promoOk(),cs=combosVis(),pm=$('#pm'),cw=$('#cmbWrap'),pb=$('#pbar');
+if(p){let fim='';if(p.ate){const ed=new Date(p.ate+'T23:59:59'),dl=Math.max(1,Math.ceil((ed-new Date())/864e5));fim=`<p>Até ${ed.toLocaleDateString('pt-BR')} · termina em <b>${dl}</b> ${dl===1?'dia':'dias'}</p>`}
+pm.innerHTML=`<h3>${esc(p.titulo)}</h3>${p.desc?`<p>${esc(p.desc)}</p>`:''}${precoHtml(p)}${fim}<a class="btn gold" target="_blank" rel="noopener" href="${wa('Olá! Quero a promoção: '+p.titulo+'.')}">Quero aproveitar</a>`;pm.classList.add('rv','in')}
+pm.hidden=!p;
+cw.hidden=!cs.length;
+$('#cmb').innerHTML=cs.map(c=>`<div class="bx rv in"><h3>${esc(c.nome)}</h3>${c.desc?`<p>${esc(c.desc)}</p>`:''}${precoHtml(c)}<a class="btn ghost" style="font-size:.9rem;padding:10px 18px" target="_blank" rel="noopener" href="${wa('Olá! Tenho interesse no '+c.nome+'.')}">Quero este combo</a></div>`).join('');
+pb.hidden=!p;if(p){const pr=p.por!=null&&p.por!=='';pb.textContent='🎁 '+p.titulo+(pr?' · por '+money(p.por):'')+(p.ate?' · até '+new Date(p.ate+'T12:00:00').toLocaleDateString('pt-BR'):'')+' · toque para ver'}
+const tem=!!p||cs.length;$('#promoBox').hidden=!tem;document.querySelector('.two').classList.toggle('solo',!tem)}
 function applyCfg(){
-const I=CFG.img||{},P=CFG.preco||{},C=CFG.combos||[{},{}],bg=u=>`url('${u}') center/cover`;
+const I=CFG.img||{},P=CFG.preco||{},bg=u=>`url('${u}') center/cover`;
 SERV.forEach(s=>{if(s.n in P)s.preco=P[s.n]});FOTOS.forEach((f,i)=>f.img=I['g'+i]||'');Object.assign(LOC,CFG.loc||{});
 const cur=($('.tabs[data-g=svc] .tab.on')||{dataset:{t:'unha'}}).dataset.t;rSvc();setTab('svc',cur);draw();
-$('#pm .pr').textContent=money(CFG.promo);
-$$('#cmb .bx').forEach((b,i)=>{b.querySelector('s').textContent='De '+money((C[i]||{}).de);b.querySelector('.pr').textContent='Por '+money((C[i]||{}).por)});
+drawPromo();
 const lv=[LOC.end,LOC.est,LOC.ref,LOC.hor];$$('#loc .bx p').forEach((p,i)=>p.textContent=lv[i]);
 $('#maps').href=LOC.maps||wa('Olá! Como chego ao local do atendimento?');drawMapa();
 const h=$('.hpic'),ht=h.querySelector('.script');h.style.background=I.hero?bg(I.hero):'';h.classList.toggle('has',!!I.hero);ht.hidden=!!I.hero;
 $('.ba .af').style.background=I.depois?bg(I.depois):'';$('.ba .be').style.background=I.antes?bg(I.antes):'';
 $$('#sobre .g2 .bx').forEach((b,i)=>{const u=I['c'+i];b.innerHTML=`<p><b>${CERT[i]}</b></p>`+(u?`<img src="${esc(u)}" alt="Certificado ${CERT[i]}" style="width:100%;border-radius:12px;margin-top:6px">`:'<p style="opacity:.6">(foto do certificado)</p>')})}
-async function loadCfg(){if(sb){try{const {data}=await sb.from('site_config').select('data').eq('id',1).maybeSingle();if(data&&data.data)CFG=Object.assign(CFG,data.data)}catch(e){console.warn(e)}}applyCfg();rImg();rVal()}
+async function loadCfg(){if(sb){try{const {data}=await sb.from('site_config').select('data').eq('id',1).maybeSingle();if(data&&data.data)CFG=Object.assign(CFG,data.data)}catch(e){console.warn(e)}}applyCfg();rImg();rVal();rPromo()}
 /* login */
 if(sb)sb.auth.getSession().then(({data})=>setAdmin(!!(data&&data.session)));
 $('#aLf').onsubmit=async e=>{e.preventDefault();$('#aLe').textContent='';
@@ -709,16 +722,35 @@ try{const b=await shrink(f),n=`${k}-${Date.now()}.jpg`,{error}=await sb.storage.
 CFG.img=CFG.img||{};CFG.img[k]=sb.storage.from('site').getPublicUrl(n).data.publicUrl;const er=await saveCfg();if(er)throw er;applyCfg()}catch(x){alert('Não foi possível enviar: '+(x.message||x))}rImg()};
 $('#aImg').onclick=async e=>{const k=e.target.dataset.rm;if(!k)return;delete CFG.img[k];const er=await saveCfg();if(er)alert(er.message);applyCfg();rImg()};
 /* valores e local */
-function rVal(){const C=CFG.combos||[{},{}],f=(id,l,v,ph)=>`<label>${l}<input id="${id}" value="${esc(v??'')}"${ph?` placeholder="${ph}"`:''}></label>`;
+function rVal(){const f=(id,l,v,ph)=>`<label>${l}<input id="${id}" value="${esc(v??'')}"${ph?` placeholder="${ph}"`:''}></label>`;
 $('#aVal').innerHTML=`<h3 class="ag">Serviços (R$)</h3><div class="g1">${SERV.map((s,i)=>f('vp'+i,s.n,s.preco,'ex.: 120')).join('')}</div>
-<h3 class="ag">Promoção e combos (R$)</h3><div class="g1">${f('vpm','Promoção do mês: lash + sobrancelha',CFG.promo)}${f('vc0d','Combo Olhar · valor "de"',(C[0]||{}).de)}${f('vc0p','Combo Olhar · valor "por"',(C[0]||{}).por)}${f('vc1d','Combo Beauty · valor "de"',(C[1]||{}).de)}${f('vc1p','Combo Beauty · valor "por"',(C[1]||{}).por)}</div>
 <h3 class="ag">Pix e sinal</h3><div class="g1">${f('vpx','Chave Pix (aparece depois do pedido)',CFG.pix)}${f('vsn','Valor do sinal (R$)',CFG.sinal,'ex.: 30')}</div>
 <h3 class="ag">Local</h3><div class="g1">${f('vle','Endereço',LOC.end)}${f('vlp','Estacionamento',LOC.est)}${f('vlr','Pontos de referência',LOC.ref)}${f('vlh','Horários',LOC.hor)}${f('vlm','Link do Google Maps',LOC.maps)}</div>
 <p><button class="btn gold" id="vSave">Salvar alterações</button> <span id="vOk"></span></p>`}
 $('#aVal').onclick=async e=>{if(e.target.id!=='vSave')return;const n=id=>{const v=$('#'+id).value.trim().replace(',','.');return v===''||isNaN(v)?null:Number(v)};
-CFG.preco={};SERV.forEach((s,i)=>CFG.preco[s.n]=n('vp'+i));CFG.promo=n('vpm');CFG.pix=$('#vpx').value.trim();CFG.sinal=n('vsn');CFG.combos=[{de:n('vc0d'),por:n('vc0p')},{de:n('vc1d'),por:n('vc1p')}];
+CFG.preco={};SERV.forEach((s,i)=>CFG.preco[s.n]=n('vp'+i));CFG.pix=$('#vpx').value.trim();CFG.sinal=n('vsn');
 CFG.loc={end:$('#vle').value,est:$('#vlp').value,ref:$('#vlr').value,hor:$('#vlh').value,maps:$('#vlm').value.trim()};
 const er=await saveCfg();$('#vOk').textContent=er?'Erro: '+er.message:'Salvo ✓';if(!er)applyCfg()};
+/* aba Promoções: cadastrar, editar e remover promoção e combos */
+let PC=[];
+function rPromo(){
+const p=(CFG.promo&&typeof CFG.promo==='object')?CFG.promo:{};PC=combosOk().map(c=>({...c}));
+const f=(id,l,v,t,ph)=>`<label>${l}<input id="${id}" type="${t||'text'}" value="${esc(v??'')}"${ph?` placeholder="${ph}"`:''}></label>`;
+$('#aPromo').innerHTML=`<h3 class="ag">Promoção</h3><label style="display:flex;gap:10px;align-items:center"><input type="checkbox" id="pmOn" style="width:auto"${p.ativa===false?'':' checked'}> Promoção ligada (aparece no site)</label><div class="g1">${f('pmT','Título (deixe vazio para não mostrar)',p.titulo,'','ex.: Lash lifting + sobrancelha')}${f('pmD','Descrição (opcional)',p.desc)}${f('pmDe','Valor "de" (R$, opcional)',p.de,'','ex.: 180')}${f('pmPo','Valor "por" (R$)',p.por,'','ex.: 150')}${f('pmI','Começa em (opcional)',p.inicio,'date')}${f('pmA','Válida até (opcional)',p.ate,'date')}</div>
+<h3 class="ag">Combos</h3><div id="pcL"></div><p><button class="btn ghost sm" id="pcAdd" type="button">+ Adicionar combo</button></p>
+<p><button class="btn gold" id="pSave" type="button">Salvar</button> <button class="btn ghost sm" id="pClr" type="button">Remover promoção</button> <span id="pOk"></span></p>`;drawPC()}
+function drawPC(){const f=(k,i,l,v,ph)=>`<label>${l}<input data-k="${k}" data-i="${i}" value="${esc(v??'')}"${ph?` placeholder="${ph}"`:''}></label>`;
+$('#pcL').innerHTML=PC.length?PC.map((c,i)=>`<div class="bx" style="margin-bottom:12px"><label style="display:flex;gap:10px;align-items:center"><input type="checkbox" data-on="${i}" style="width:auto"${c.ativo===false?'':' checked'}> Combo ligado (aparece no site)</label><div class="g1">${f('nome',i,'Nome do combo',c.nome,'ex.: Combo Olhar')}${f('desc',i,'O que inclui',c.desc,'ex.: Design de sobrancelha + Lash lifting')}${f('de',i,'Valor "de" (R$, opcional)',c.de)}${f('por',i,'Valor "por" (R$)',c.por)}</div><p><button class="btn ghost sm" type="button" data-rmc="${i}">Remover este combo</button></p></div>`).join(''):'<p class="vazio">Nenhum combo cadastrado. Nada aparece no site.</p>'}
+$('#aPromo').oninput=e=>{const t=e.target;if(t.dataset.on!=null){PC[+t.dataset.on].ativo=t.checked;return}if(t.dataset.k!=null&&t.dataset.i!=null)PC[+t.dataset.i][t.dataset.k]=t.value};
+$('#aPromo').onclick=async e=>{const t=e.target;
+if(t.id==='pcAdd'){PC.push({nome:'',desc:'',de:'',por:'',ativo:true});drawPC();return}
+if(t.dataset.rmc!=null){PC.splice(+t.dataset.rmc,1);drawPC();return}
+const num=v=>{v=String(v??'').trim().replace(',','.');return v===''||isNaN(v)?null:Number(v)};
+if(t.id==='pClr'){if(!confirm('Remover a promoção do site?'))return;CFG.promo=null;const er=await saveCfg();$('#pOk').textContent=er?'Erro: '+er.message:'Removida ✓';if(!er){applyCfg();rPromo()}return}
+if(t.id==='pSave'){const titulo=$('#pmT').value.trim();
+CFG.promo=titulo?{titulo,desc:$('#pmD').value.trim(),de:num($('#pmDe').value),por:num($('#pmPo').value),ate:$('#pmA').value||'',inicio:$('#pmI').value||'',ativa:$('#pmOn').checked}:null;
+CFG.combos=PC.filter(c=>String(c.nome||'').trim()).map(c=>({nome:c.nome.trim(),desc:String(c.desc||'').trim(),de:num(c.de),por:num(c.por),ativo:c.ativo!==false}));
+const er=await saveCfg();$('#pOk').textContent=er?'Erro: '+er.message:'Salvo ✓';if(!er){applyCfg();rPromo()}}};
 /* selo da agenda, depoimentos e cursor */
 {const n=new Date(),m=n.getDate()>=25?(n.getMonth()+1)%12:n.getMonth();$('#selt').textContent=AGENDA_ABERTA?'Agenda de '+MESES[m]+' aberta':'Agenda lotada · lista de espera'}
 /* avaliações: enviadas sem cadastro, publicadas só depois que a Ana aprova */
