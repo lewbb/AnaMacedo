@@ -78,6 +78,59 @@ nav a:hover{color:var(--gold)}
 /* parceria */
 .pcard{border:1.5px solid var(--gold);border-radius:28px;padding:28px;background:#fff;max-width:600px}
 .pcard h2{font-size:clamp(1.8rem,7vw,2.6rem)}
+/* parcerias */
+#parc{position:relative;overflow:hidden;background:radial-gradient(120% 70% at 85% 0,#4d2b78 0,var(--plum) 55%,#180b28 100%)}
+#parc .wrap{position:relative;z-index:2}
+.pa-orb{position:absolute;border-radius:50%;filter:blur(42px);pointer-events:none;animation:paf 14s ease-in-out infinite;translate:calc(var(--mx,0)*24px) calc(var(--my,0)*24px);transition:translate .4s}
+.pa-orb.o1{width:280px;height:280px;background:var(--orq);top:-70px;right:-90px;opacity:.5}
+.pa-orb.o2{width:210px;height:210px;background:var(--gold);top:46%;left:-100px;opacity:.26;animation-delay:-5s}
+.pa-orb.o3{width:200px;height:200px;background:#b46fd6;bottom:6%;right:-80px;opacity:.32;animation-delay:-9s}
+@keyframes paf{50%{transform:translate(16px,-34px) scale(1.12)}}
+.pa-st{position:absolute;color:var(--gold);pointer-events:none;z-index:1;animation:pat 5s ease-in-out infinite}
+@keyframes pat{0%,100%{opacity:.1;transform:scale(.5) rotate(0)}50%{opacity:1;transform:scale(1.2) rotate(90deg)}}
+.pa-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.pa-kick{font:400 clamp(1.3rem,5.5vw,2rem) 'Rock Salt',cursive;color:var(--lilac);display:inline-block;transform:rotate(-3deg);animation:rise 1s both}
+.pa-bdg{width:96px;height:96px;flex:none;color:var(--gold);animation:spin 16s linear infinite}
+.pa-h{font:400 clamp(3rem,16vw,7rem)/.92 'Dela Gothic One',sans-serif;margin:.12em 0 .1em;background:linear-gradient(100deg,var(--gold) 0%,#fff1c9 50%,var(--gold) 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:pash 5s linear infinite,rise 1.1s .15s both}
+@keyframes pash{to{background-position:200% 0}}
+.pa-sub{font:400 clamp(2rem,9vw,3.2rem) 'Pinyon Script',cursive;color:var(--off);margin:0 0 6px;animation:rise 1.1s .3s both}
+.pa-lead{max-width:46ch;opacity:.85;margin:0 0 6px;animation:rise 1.1s .45s both}
+.pa-n{display:inline-block;margin-top:10px;font:600 .8rem 'Cinzel',serif;letter-spacing:.16em;text-transform:uppercase;border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;padding:6px 16px;animation:pop .8s .6s both}
+@keyframes pop{from{opacity:0;transform:scale(.3) rotate(-12deg)}to{opacity:1;transform:none}}
+.pa-mq{overflow:hidden;white-space:nowrap;margin:30px -20px;padding:12px 0;border-block:1.5px solid rgba(201,164,92,.55);background:rgba(201,164,92,.08);transform:rotate(-1.4deg)}
+.pa-mq div{display:inline-block;animation:pamq 30s linear infinite}
+.pa-mq span{margin:0 18px;font:400 1.5rem 'Abril Fatface',serif}
+.pa-mq span:nth-child(4n+2){font-family:'Pinyon Script',cursive;font-size:2.1rem;color:var(--gold)}
+.pa-mq span:nth-child(4n+3){font-family:'Cinzel',serif;font-size:1.1rem;letter-spacing:.2em;text-transform:uppercase}
+.pa-mq span:nth-child(4n){font-family:'Rock Salt',cursive;font-size:1rem;color:var(--lilac)}
+@keyframes pamq{to{transform:translateX(-50%)}}
+.pa-grid{display:grid;gap:40px 20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));padding:14px 0 10px}
+.pa-c{position:relative;opacity:0;transform:translateY(60px) rotate(var(--r,0deg));transition:opacity .8s var(--d,0s),transform .9s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.pa-c.in{opacity:1;transform:rotate(var(--r,0deg))}
+.pa-c.in:hover,.pa-c.in:focus-within{transform:rotate(0) translateY(-10px) scale(1.03);transition:transform .35s;z-index:3}
+.pa-pol{position:relative;background:#fff;color:var(--ink);padding:12px 12px 18px;border-radius:8px;box-shadow:0 22px 44px rgba(0,0,0,.4)}
+.pa-pol::before{content:'';position:absolute;top:-13px;left:50%;width:84px;height:26px;margin-left:-42px;background:rgba(201,164,92,.78);transform:rotate(-4deg);box-shadow:0 2px 6px rgba(0,0,0,.2);z-index:2}
+.pa-ph{position:relative;aspect-ratio:1;overflow:hidden;background:var(--lilac);margin-bottom:12px}
+.pa-ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s}
+.pa-c:hover .pa-ph img{transform:scale(1.1) rotate(1.5deg)}
+.pa-ph::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.6) 50%,transparent 65%);transform:translateX(-130%);pointer-events:none}
+.pa-c:hover .pa-ph::after{transform:translateX(130%);transition:transform .9s}
+.pa-s1 .pa-ph{border-radius:6px}.pa-s2 .pa-ph{border-radius:50%;border:5px solid var(--gold)}.pa-s0 .pa-ph{border-radius:999px 999px 8px 8px}
+.pa-ph.no{display:grid;place-items:center;background:linear-gradient(135deg,var(--orq),var(--plum2))}
+.pa-ph.no span{font:400 clamp(4rem,22vw,6rem) 'Pinyon Script',cursive;color:var(--gold);animation:float 6s ease-in-out infinite}
+.pa-tag{font:600 .72rem 'Cinzel',serif;letter-spacing:.2em;text-transform:uppercase;color:var(--orq);margin-bottom:2px}
+.pa-pol h3{line-height:1.1;margin:2px 0 6px;color:var(--plum2)}
+.pa-pol p{margin:0 0 8px;font-size:.92rem;opacity:.85}
+.pa-ben{display:inline-block;background:var(--gold);color:var(--plum);border-radius:999px;padding:5px 13px;font:600 .8rem 'Montserrat',sans-serif;animation:pap 2.4s ease-in-out infinite}
+@keyframes pap{0%,100%{box-shadow:0 0 0 0 rgba(201,164,92,.55)}50%{box-shadow:0 0 0 9px rgba(201,164,92,0)}}
+.pa-ig{display:inline-block;margin:6px 0 0 4px;font:600 .85rem 'Montserrat',sans-serif;color:var(--plum2);text-decoration:none;border-bottom:1.5px solid var(--gold)}
+.pa-empty{text-align:center;padding:40px 10px;font:400 clamp(1.8rem,8vw,2.6rem) 'Pinyon Script',cursive;color:var(--lilac)}.pa-empty b{display:block;font-size:3rem;color:var(--gold);animation:pat 3s ease-in-out infinite}
+.pa-cta{margin-top:50px;text-align:center;padding:34px 20px;border:1.5px dashed var(--gold);border-radius:30px;background:rgba(246,241,234,.05)}
+.pa-cta .rs{font:400 1.2rem 'Rock Salt',cursive;color:var(--lilac);transform:rotate(-2deg);display:block;margin-bottom:6px}
+.pa-cta h2{font:400 clamp(1.8rem,8vw,2.8rem) 'Abril Fatface',serif;margin:0 0 14px}
+.pa-cta .btn{animation:pap 2.4s ease-in-out infinite}
+.pa-wave{display:block;width:200%;height:34px;margin:6px 0 0;animation:paw 9s linear infinite;color:var(--gold);opacity:.7}
+@keyframes paw{to{transform:translateX(-50%)}}
 /* faq */
 details{border-bottom:1px solid rgba(246,241,234,.2);padding:14px 0}
 summary{font:600 1.1rem 'Playfair Display';cursor:pointer;list-style:none}
@@ -290,7 +343,7 @@ html[data-t=dark] .rbig b{color:var(--gold)}
 <small>Na página</small>
 <a href="#servicos">Serviços e valores</a><a href="#galeria">Momento talento (trabalhos)</a><a href="#dolls">Avaliações</a><a href="#agendar">Agendar</a>
 <small>Mais</small>
-<a href="#" data-p="descubra:quiz">Qual procedimento é o meu?</a><a href="#" data-p="duvidas:guia">Guia dos serviços</a><a href="#" data-p="duvidas:faq">Dúvidas e cuidados</a><a href="#" data-p="duvidas:local">Como chegar e regras</a><a href="#" data-p="sobre:sobre">Sobre mim</a><a href="#" data-p="extras:vale">Vale-presente</a><a href="#" data-p="extras:cal">Meu horário</a><a href="#" id="mAdm" data-p="admin:ped" hidden>⚙ Painel da Ana</a>
+<a href="#" data-p="descubra:quiz">Qual procedimento é o meu?</a><a href="#" data-p="duvidas:guia">Guia dos serviços</a><a href="#" data-p="duvidas:faq">Dúvidas e cuidados</a><a href="#" data-p="duvidas:local">Como chegar e regras</a><a href="#" data-p="parcerias:lista">Parcerias</a><a href="#" data-p="sobre:sobre">Sobre mim</a><a href="#" data-p="extras:vale">Vale-presente</a><a href="#" data-p="extras:cal">Meu horário</a><a href="#" id="mAdm" data-p="admin:ped" hidden>⚙ Painel da Ana</a>
 </nav>
 
 <section id="hero" class="dark" data-msg="Olá! Vim pelo site e gostaria de agendar um horário.">
@@ -361,7 +414,7 @@ html[data-t=dark] .rbig b{color:var(--gold)}
 </form>
 <div class="pbn" id="pixbox" hidden><b>Quase lá! Garanta seu horário com o sinal</b><p id="pks" style="margin:6px 0"></p><code id="pk"></code><p style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0"><button class="btn ghost" type="button" id="pkc">Copiar chave Pix</button><a class="btn gold" id="pkw" href="#">Enviar pedido e comprovante</a></p></div></div>
 </section>
-<footer><div class="script">Ana Macedo</div><p>seu estilo começa nos detalhes</p><p><button class="btn ghost" data-p="duvidas:local">📍 Como chegar</button></p><p><button class="btn gold" id="inst" hidden>Instalar no celular 📲</button></p><p id="insti" hidden style="font-size:.9rem;opacity:.8">No iPhone: toque em Compartilhar e depois em "Adicionar à Tela de Início".</p><a class="btn ghost" href="#" id="igBtn2" target="_blank" rel="noopener">Ver Instagram</a><p style="margin:18px 0 0"><button class="btn ghost" style="font-size:.85rem;padding:8px 16px" data-p="admin:ped">Área da Ana</button></p></footer>
+<footer><div class="script">Ana Macedo</div><p>seu estilo começa nos detalhes</p><p><button class="btn ghost" data-p="duvidas:local">📍 Como chegar</button> <button class="btn ghost" data-p="parcerias:lista">🤝 Parcerias</button></p><p><button class="btn gold" id="inst" hidden>Instalar no celular 📲</button></p><p id="insti" hidden style="font-size:.9rem;opacity:.8">No iPhone: toque em Compartilhar e depois em "Adicionar à Tela de Início".</p><a class="btn ghost" href="#" id="igBtn2" target="_blank" rel="noopener">Ver Instagram</a><p style="margin:18px 0 0"><button class="btn ghost" style="font-size:.85rem;padding:8px 16px" data-p="admin:ped">Área da Ana</button></p></footer>
 
 <div class="panel" id="p-descubra" role="dialog" aria-modal="true" aria-label="Descubra"><div class="phead"><div class="prow"><span class="script">Descubra</span><button class="pback" data-close>← voltar</button></div><div class="tabs" data-g="descubra"><button class="tab on" data-t="quiz">Qual procedimento?</button><button class="tab" data-t="estilo">Meu estilo</button></div></div><div class="tp on" data-g="descubra" data-id="quiz"><section id="quiz" data-msg="Olá! Fiz o quiz do site e queria ajuda para escolher meu procedimento.">
 <div class="wrap"><h2>Qual procedimento é a sua cara?</h2><p class="lead">Responde rapidinho e descobre por onde começar.</p><div class="qbox" id="qbox"></div></div>
@@ -389,13 +442,25 @@ html[data-t=dark] .rbig b{color:var(--gold)}
 <div id="gift"></div><p><a class="btn gold" id="vw" target="_blank" rel="noopener" href="#">Solicitar vale pelo WhatsApp</a></p></div></section></div><div class="tp" data-g="extras" data-id="cal"><section id="calendario" class="dark" data-msg="Olá! Preciso remarcar meu horário."><div class="wrap"><h2>Meu horário</h2><p class="lead">Depois que eu confirmar, salve no seu calendário. Precisou mudar? Reagende em um toque.</p>
 <form onsubmit="return false"><label>Serviço<select id="cs"></select></label><label>Data<input type="date" id="cd"></label><label>Hora<input type="time" id="ch" value="14:00"></label></form>
 <p id="cb" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"></p></div></section></div></div>
+<div class="panel" id="p-parcerias" role="dialog" aria-modal="true" aria-label="Parcerias"><div class="phead"><div class="prow"><span class="script">Parcerias</span><button class="pback" data-close>← voltar</button></div><div class="tabs" data-g="parcerias" hidden><button class="tab on" data-t="lista">Parcerias</button></div></div><div class="tp on" data-g="parcerias" data-id="lista"><section id="parc" class="dark" data-msg="Olá! Vi a página de parcerias e tenho interesse em fazer parceria com você.">
+<i class="pa-orb o1"></i><i class="pa-orb o2"></i><i class="pa-orb o3"></i>
+<span class="pa-st" style="top:90px;left:12%;font-size:20px">✦</span><span class="pa-st" style="top:240px;right:9%;font-size:15px;animation-delay:-1.5s">✦</span><span class="pa-st" style="top:520px;left:5%;font-size:24px;animation-delay:-3s">✧</span><span class="pa-st" style="top:760px;right:14%;font-size:18px;animation-delay:-2s">✦</span><span class="pa-st" style="top:1000px;left:18%;font-size:16px;animation-delay:-4s">✧</span><span class="pa-st" style="top:1250px;right:6%;font-size:22px;animation-delay:-.8s">✦</span>
+<div class="wrap wide"><div class="pa-top"><div><span class="pa-kick">quem anda comigo</span></div>
+<svg class="pa-bdg" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="pacirc" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text font-size="11" fill="currentColor" font-family="Cinzel,serif" textLength="270" lengthAdjust="spacing"><textPath href="#pacirc" textLength="270" lengthAdjust="spacing">PARCERIAS ✦ BELEZA ✦ AMOR ✦ </textPath></text><text x="60" y="70" text-anchor="middle" font-size="28" fill="currentColor">✦</text></svg></div>
+<h1 class="pa-h">Parcerias</h1><p class="pa-sub">gente linda que eu amo</p><p class="pa-lead">Profissionais e marcas que caminham comigo. Muitas têm benefício especial para quem é cliente da Ana.</p><span class="pa-n" id="paCount" hidden></span>
+<div class="pa-mq" aria-hidden="true"><div id="paMq"></div></div>
+<div class="pa-grid" id="paGrid"></div>
+<svg class="pa-wave" viewBox="0 0 800 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 17 Q50 0 100 17 T200 17 T300 17 T400 17 T500 17 T600 17 T700 17 T800 17" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+<div class="pa-cta"><span class="rs">vamos juntas?</span><h2>Quer ser parceira?</h2><p style="opacity:.85;margin:0 0 18px">Tem um trabalho que combina com o meu? Me chama que a gente conversa.</p><a class="btn gold" target="_blank" rel="noopener" href="${''}">Falar com a Ana</a></div>
+</div></section></div></div>
 <div class="panel" id="p-admin" role="dialog" aria-modal="true" aria-label="Painel da Ana"><div class="phead"><div class="prow"><span class="script">Painel da Ana</span><span><button class="pback" id="aOut" hidden>sair</button> <button class="pback" data-close>← modo cliente</button></span></div>
-<div class="tabs" data-g="admin" id="aTabs" hidden><button class="tab on" data-t="ped">Pedidos</button><button class="tab" data-t="img">Imagens</button><button class="tab" data-t="val">Valores</button><button class="tab" data-t="promo">Promoções</button><button class="tab" data-t="res">Resumo</button><button class="tab" data-t="cli">Clientes</button><button class="tab" data-t="blq">Bloqueios</button><button class="tab" data-t="ava">Avaliações</button></div></div>
+<div class="tabs" data-g="admin" id="aTabs" hidden><button class="tab on" data-t="ped">Pedidos</button><button class="tab" data-t="img">Imagens</button><button class="tab" data-t="val">Valores</button><button class="tab" data-t="promo">Promoções</button><button class="tab" data-t="parc">Parcerias</button><button class="tab" data-t="res">Resumo</button><button class="tab" data-t="cli">Clientes</button><button class="tab" data-t="blq">Bloqueios</button><button class="tab" data-t="ava">Avaliações</button></div></div>
 <div class="tp on apane" data-g="admin" data-id="login"><h2>Entrar no painel</h2><form id="aLf"><label>E-mail<input type="email" id="aEm" required autocomplete="username"></label><label>Senha<input type="password" id="aPw" required autocomplete="current-password"></label><p class="aerr" id="aLe" role="alert"></p><button class="btn gold" type="submit">Entrar</button></form></div>
 <div class="tp apane" data-g="admin" data-id="ped"><h2>Pedidos de horário</h2><div class="tabs" id="aF"></div><div id="aL"></div><p style="text-align:center"><button class="btn ghost sm" id="aR">Atualizar</button></p></div>
 <div class="tp apane" data-g="admin" data-id="img"><h2>Imagens do site</h2><p style="opacity:.8">Escolha uma foto do celular ou do computador. Ela aparece no site na hora.</p><div id="aImg"></div></div>
 <div class="tp apane" data-g="admin" data-id="val"><h2>Valores e local</h2><div id="aVal"></div></div>
 <div class="tp apane" data-g="admin" data-id="promo"><h2>Promoção e combos</h2><p style="opacity:.8">Nada aparece no site até você cadastrar aqui. Use o botão de ligar/desligar para pausar sem apagar. Com data de início, a promoção entra sozinha no dia; depois da data final, ela some sozinha. Enquanto a promoção estiver no ar, aparece um aviso dourado no topo do site.</p><div id="aPromo"></div></div>
+<div class="tp apane" data-g="admin" data-id="parc"><h2>Parcerias</h2><p style="opacity:.8">Adicione, edite ou exclua. Cada parceria aparece na página Parcerias do site, com foto e animações.</p><div id="aParc"></div></div>
 <div class="tp apane" data-g="admin" data-id="res"><h2>Resumo</h2><div id="aRes"></div><h2 style="margin-top:28px">Relatório do mês</h2><label>Mês<input type="month" id="aMes"></label><div id="aRel"></div></div>
 <div class="tp apane" data-g="admin" data-id="cli"><h2>Clientes</h2><div id="aAni"></div><div id="aCli"></div></div>
 <div class="tp apane" data-g="admin" data-id="blq"><h2>Bloquear horários</h2><p style="opacity:.8">Horários bloqueados somem da lista de horários livres para as clientes.</p><form id="bF"><label>Data<input type="date" id="bd" required></label><label>De<input type="time" id="bi" required value="08:00"></label><label>Até<input type="time" id="bf" required value="19:00"></label><label>Motivo (só você vê)<input id="bm"></label><p class="aerr" id="bE" role="alert"></p><button class="btn gold" type="submit">Bloquear</button></form><div id="bL"></div></div>
@@ -683,13 +748,13 @@ function applyCfg(){
 const I=CFG.img||{},P=CFG.preco||{},bg=u=>`url('${u}') center/cover`;
 SERV.forEach(s=>{if(s.n in P)s.preco=P[s.n]});FOTOS.forEach((f,i)=>f.img=I['g'+i]||'');Object.assign(LOC,CFG.loc||{});
 const cur=($('.tabs[data-g=svc] .tab.on')||{dataset:{t:'unha'}}).dataset.t;rSvc();setTab('svc',cur);draw();
-drawPromo();
+drawPromo();drawParc();
 const lv=[LOC.end,LOC.est,LOC.ref,LOC.hor];$$('#loc .bx p').forEach((p,i)=>p.textContent=lv[i]);
 $('#maps').href=LOC.maps||wa('Olá! Como chego ao local do atendimento?');drawMapa();
 const h=$('.hpic'),ht=h.querySelector('.script');h.style.background=I.hero?bg(I.hero):'';h.classList.toggle('has',!!I.hero);ht.hidden=!!I.hero;
 $('.ba .af').style.background=I.depois?bg(I.depois):'';$('.ba .be').style.background=I.antes?bg(I.antes):'';
 $$('#sobre .g2 .bx').forEach((b,i)=>{const u=I['c'+i];b.innerHTML=`<p><b>${CERT[i]}</b></p>`+(u?`<img src="${esc(u)}" alt="Certificado ${CERT[i]}" style="width:100%;border-radius:12px;margin-top:6px">`:'<p style="opacity:.6">(foto do certificado)</p>')})}
-async function loadCfg(){if(sb){try{const {data}=await sb.from('site_config').select('data').eq('id',1).maybeSingle();if(data&&data.data)CFG=Object.assign(CFG,data.data)}catch(e){console.warn(e)}}applyCfg();rImg();rVal();rPromo()}
+async function loadCfg(){if(sb){try{const {data}=await sb.from('site_config').select('data').eq('id',1).maybeSingle();if(data&&data.data)CFG=Object.assign(CFG,data.data)}catch(e){console.warn(e)}}applyCfg();rImg();rVal();rPromo();rParc()}
 /* login */
 if(sb)sb.auth.getSession().then(({data})=>setAdmin(!!(data&&data.session)));
 $('#aLf').onsubmit=async e=>{e.preventDefault();$('#aLe').textContent='';
@@ -756,6 +821,44 @@ if(t.id==='pSave'){const titulo=$('#pmT').value.trim();
 CFG.promo=titulo?{titulo,desc:$('#pmD').value.trim(),de:num($('#pmDe').value),por:num($('#pmPo').value),ate:$('#pmA').value||'',inicio:$('#pmI').value||'',ativa:$('#pmOn').checked}:null;
 CFG.combos=PC.filter(c=>String(c.nome||'').trim()).map(c=>({nome:c.nome.trim(),desc:String(c.desc||'').trim(),de:num(c.de),por:num(c.por),ativo:c.ativo!==false}));
 const er=await saveCfg();$('#pOk').textContent=er?'Erro: '+er.message:'Salvo ✓';if(!er){applyCfg();rPromo()}}};
+/* parcerias: página pública + cadastro no painel */
+const PAF=[['Abril Fatface',1],['Playfair Display',.95],['Dela Gothic One',.8],['Rock Salt',.62],['Pinyon Script',1.35]];
+const igUser=v=>{v=String(v||'').trim().replace(/^https?:\/\/(www\.)?instagram\.com\//i,'').replace(/^@/,'').split(/[\/?#\s]/)[0];return /^[\w.]{1,30}$/.test(v)?v:''};
+const parcList=()=>(Array.isArray(CFG.parceiros)?CFG.parceiros:[]).filter(p=>p&&String(p.nome||'').trim());
+let paIO=null;
+$('#p-parcerias .pa-cta a').href=wa('Olá! Vi a página de parcerias e tenho interesse em fazer parceria com você.');
+function drawParc(){
+const L=parcList(),g=$('#paGrid');
+$('#paCount').hidden=!L.length;$('#paCount').textContent=L.length+(L.length===1?' parceria':' parcerias')+' ✦';
+const palavras=['parcerias','beleza','amor','estilo','cuidado'].concat(L.map(p=>p.nome)),mq=palavras.map(w=>`<span>${esc(w)}</span><span>✦</span>`).join('');
+$('#paMq').innerHTML=mq+mq;
+g.innerHTML=L.length?L.map((p,i)=>{const [ff,k]=PAF[i%PAF.length],ig=igUser(p.insta),n=String(p.nome).trim();
+return `<article class="pa-c" style="--r:${[-2.5,2,-1.5,3][i%4]}deg;--d:${Math.min(i,8)*.09}s"><div class="pa-pol pa-s${i%3}"><div class="pa-ph${p.foto?'':' no'}">${p.foto?`<img src="${esc(p.foto)}" alt="Foto de ${esc(n)}" loading="lazy">`:`<span>${esc(n[0].toUpperCase())}</span>`}</div>${p.tipo?`<div class="pa-tag">${esc(p.tipo)}</div>`:''}<h3 style="font-family:'${ff}',serif;font-weight:400;font-size:${(1.7*k).toFixed(2)}rem">${esc(n)}</h3>${p.desc?`<p>${esc(p.desc)}</p>`:''}${p.beneficio?`<span class="pa-ben">🎁 ${esc(p.beneficio)}</span>`:''}${ig?`<a class="pa-ig" target="_blank" rel="noopener" href="https://instagram.com/${ig}">@${ig}</a>`:''}</div></article>`}).join(''):'<div class="pa-empty"><b>✦</b>novas parcerias em breve</div>';
+if(!paIO)paIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');paIO.unobserve(e.target)}}),{threshold:.12});
+$$('#paGrid .pa-c').forEach(c=>paIO.observe(c))}
+{const pc=$('#parc');let raf=0;pc.addEventListener('pointermove',e=>{if(raf)return;raf=requestAnimationFrame(()=>{raf=0;const r=pc.getBoundingClientRect();pc.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(2));pc.style.setProperty('--my',((e.clientY-r.top)/Math.min(r.height,800)-.5).toFixed(2))})},{passive:true})}
+let paEd=null;
+function rParc(){const L=parcList(),e=L.find(x=>x.id===paEd)||{};
+const f=(id,l,v,ph,ml)=>`<label>${l}<input id="${id}" maxlength="${ml||60}" value="${esc(v??'')}"${ph?` placeholder="${ph}"`:''}></label>`;
+$('#aParc').innerHTML=`<h3 class="ag">${paEd?'Editar parceria':'Adicionar parceria'}</h3><div class="g1">${f('paN','Nome',e.nome,'ex.: Studio Bela')}${f('paT','Tipo (aparece em letras pequenas)',e.tipo,'ex.: Cabeleireira',40)}<label>Sobre a parceria (opcional)<textarea id="paD" rows="3" maxlength="240">${esc(e.desc||'')}</textarea></label>${f('paB','Benefício para as clientes (opcional)',e.beneficio,'ex.: 10% de desconto',60)}${f('paI','Instagram (opcional)',e.insta,'@usuario',60)}</div>
+<p style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">${e.foto?`<img src="${esc(e.foto)}" alt="" style="width:64px;height:64px;border-radius:12px;object-fit:cover">`:''}<label class="btn sm ghost" style="display:inline-block">${e.foto?'Trocar foto':'Escolher foto'}<input type="file" id="paP" accept="image/*" hidden></label><span id="paPn" style="font-size:.85rem;opacity:.8"></span></p>
+<p><button class="btn gold" id="paS" type="button">${paEd?'Salvar alterações':'Adicionar parceria'}</button> ${paEd?'<button class="btn ghost sm" id="paC" type="button">Cancelar</button>':''} <span id="paOk"></span></p>
+<h3 class="ag">Parcerias no site (${L.length})</h3>${L.length?L.map((p,i)=>`<div class="acard islot">${p.foto?`<img src="${esc(p.foto)}" alt="">`:'<div class="ph"></div>'}<div style="flex:1"><b>${esc(p.nome)}</b>${p.tipo?`<br><small style="opacity:.7">${esc(p.tipo)}</small>`:''}<div class="acts"><button class="btn sm ghost" data-pu="${i}"${i?'':' disabled'} aria-label="Subir">↑</button><button class="btn sm ghost" data-pd="${i}"${i<L.length-1?'':' disabled'} aria-label="Descer">↓</button><button class="btn sm gold" data-pe="${esc(p.id)}">Editar</button><button class="btn sm ghost" data-px="${esc(p.id)}">Excluir</button></div></div></div>`).join(''):'<p class="vazio">Nenhuma parceria ainda. No site aparece só o convite para ser parceira.</p>'}`}
+async function saveParc(nova){const ant=CFG.parceiros;CFG.parceiros=nova;const er=await saveCfg();if(er){CFG.parceiros=ant;alert('Não foi possível salvar: '+er.message);return false}applyCfg();return true}
+$('#aParc').onchange=e=>{if(e.target.id==='paP')$('#paPn').textContent=e.target.files[0]?e.target.files[0].name:''};
+$('#aParc').onclick=async e=>{const t=e.target,L=parcList();
+if(t.id==='paC'){paEd=null;rParc();return}
+if(t.dataset.pe){paEd=t.dataset.pe;rParc();$('#aParc').closest('.panel').scrollTop=0;return}
+if(t.dataset.px){const p=L.find(x=>x.id===t.dataset.px)||{};if(!confirm('Excluir a parceria "'+(p.nome||'')+'"? Ela some do site. Não dá para desfazer.'))return;t.disabled=true;if(await saveParc(L.filter(x=>x.id!==t.dataset.px))){if(paEd===t.dataset.px)paEd=null}rParc();return}
+if(t.dataset.pu!=null||t.dataset.pd!=null){const i=+(t.dataset.pu??t.dataset.pd),j=t.dataset.pu!=null?i-1:i+1;if(j<0||j>=L.length)return;const n=L.slice();[n[i],n[j]]=[n[j],n[i]];await saveParc(n);rParc();return}
+if(t.id==='paS'){const nome=$('#paN').value.trim();if(!nome){$('#paOk').textContent='Escreva o nome.';return}
+t.disabled=true;$('#paOk').textContent='Salvando…';
+try{const fi=$('#paP').files[0],ant=L.find(x=>x.id===paEd)||{};let foto=ant.foto||'';
+if(fi){const b=await shrink(fi),nm=`parc-${Date.now()}.jpg`,{error}=await sb.storage.from('site').upload(nm,b,{contentType:'image/jpeg'});if(error)throw error;foto=sb.storage.from('site').getPublicUrl(nm).data.publicUrl}
+const o={id:paEd||'p'+Date.now().toString(36),nome,tipo:$('#paT').value.trim(),desc:$('#paD').value.trim(),beneficio:$('#paB').value.trim(),insta:$('#paI').value.trim(),foto};
+const novo=paEd?L.map(x=>x.id===paEd?o:x):L.concat(o);
+if(await saveParc(novo)){paEd=null;rParc();$('#paOk').textContent='Salvo ✓'}else{t.disabled=false;$('#paOk').textContent=''}}
+catch(x){t.disabled=false;$('#paOk').textContent='';alert('Não foi possível enviar a foto: '+(x.message||x))}}};
 /* selo da agenda, depoimentos e cursor */
 {const n=new Date(),m=n.getDate()>=25?(n.getMonth()+1)%12:n.getMonth();$('#selt').textContent=AGENDA_ABERTA?'Agenda de '+MESES[m]+' aberta':'Agenda lotada · lista de espera'}
 /* avaliações: enviadas sem cadastro, publicadas só depois que a Ana aprova */
