@@ -646,7 +646,7 @@ function rn(el){const t=el.dataset.t||(el.dataset.t=el.textContent);el.textConte
 const F=[['Abril Fatface',1],['Playfair Display',.95],['Pinyon Script',1.25],['Rock Salt',.7]],C=[['var(--gold)','var(--plum)'],['var(--plum2)','var(--off)'],['var(--lilac)','var(--plum)'],['transparent','var(--plum2)'],['var(--plum)','var(--gold)']];
 t.split(' ').forEach(w=>{const ws=document.createElement('span');ws.style.cssText='display:inline-block;white-space:nowrap;margin-right:.25em';
 [...w].forEach(ch=>{const s=document.createElement('span'),f=F[Math.random()*4|0],c=C[Math.random()*5|0];s.textContent=ch;s.style.cssText=`font-family:'${f[0]}',serif;font-size:${f[1]}em;background:${c[0]};color:${c[1]};transform:rotate(${(Math.random()*8-4).toFixed(1)}deg)`;ws.appendChild(s)});el.appendChild(ws)});el.onclick=()=>rn(el)}
-rn($('#quiz h2'));rn($('#galeria h2'));
+
 /* faixa em movimento */
 $('#mq').innerHTML='<div>'+'anti basic nails<i>✦</i>seu estilo começa nos detalhes<i>✦</i>bora agendar<i>✦</i>unha, sobrancelha e lash<i>✦</i>'.repeat(4)+'</div>';
 /* estrelas + parallax + progresso */
